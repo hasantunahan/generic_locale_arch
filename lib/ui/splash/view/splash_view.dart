@@ -51,7 +51,7 @@ class _SplashViewState extends State<SplashView> {
                   onPressed: () => context.read<ThemeProvider>().toggleTheme(),
                   child: const Text("Theme")),
               !loading
-                  ? Text(users[0].name ?? "")
+                  ? Text(users[5].name ?? "")
                   : const CircularProgressIndicator()
             ],
           ),
@@ -64,10 +64,9 @@ class _SplashViewState extends State<SplashView> {
     setState(() {
       loading = true;
     });
-    final client = ApiClient(
-        Dio(BaseOptions(contentType: "application/json")));
+    final client = ApiClient(Dio(BaseOptions(contentType: "application/json")));
     ResponseData<List<User>> res = await client.getUsers();
-    log(res.data!.toString());
+    users.addAll(res.data!);
 
     setState(() {
       loading = false;
