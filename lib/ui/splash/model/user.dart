@@ -3,7 +3,7 @@ import 'package:with_retro_firebase/core/base/model/basemodel.dart';
 part 'user.g.dart';
 
 @JsonSerializable()
-class User extends BaseModel<User> {
+class User {
   int? id;
   String? name;
   String? email;
@@ -18,9 +18,9 @@ class User extends BaseModel<User> {
     this.status,
   });
 
-  @override
-  User fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
-  @override
-  Map<String, dynamic> toJson() => _$UserToJson(this);
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+
+
+  // factory Map<String, dynamic> User.toJson() => _$UserToJson(this);
 }

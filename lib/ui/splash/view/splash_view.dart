@@ -64,7 +64,7 @@ class _SplashViewState extends State<SplashView> {
     setState(() {
       loading = true;
     });
-    final client = ApiClient<List<User>>(
+    final client = ApiClient(
         Dio(BaseOptions(contentType: "application/json")));
     ResponseData<List<User>> res = await client.getUsers();
     log(res.data!.toString());
