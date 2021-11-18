@@ -1,4 +1,37 @@
-import 'dart:developer';
+import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:with_retro_firebase/core/base/view/baseview.dart';
+import 'package:with_retro_firebase/ui/_partial/skeleton/skeleton.dart';
+import 'package:with_retro_firebase/ui/splash/viewmodel/splash_viewmodel.dart';
+
+class SplashView extends StatelessWidget {
+  const SplashView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BaseView<SplashViewModel>(
+      viewModel: SplashViewModel(),
+      onModelReady: (model) {
+        model.setContext(context);
+        model.init();
+      },
+      onPageBuilder: (BuildContext context, SplashViewModel value) =>
+          renderBody(value),
+    );
+  }
+
+  renderBody(SplashViewModel value) => Scaffold(
+        appBar: AppBar(),
+        body: Observer(builder: (_) {
+          return value.isLoading
+              ? const Center(child: Skeleton())
+              : Text(value.datalist[1].email ?? "");
+        }),
+      );
+}
+
+
+/* import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -73,3 +106,4 @@ class _SplashViewState extends State<SplashView> {
     });
   }
 }
+ */
