@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:with_retro_firebase/core/base/view/baseview.dart';
 import 'package:with_retro_firebase/ui/_partial/skeleton/skeleton.dart';
 import 'package:with_retro_firebase/ui/splash/viewmodel/splash_viewmodel.dart';
@@ -25,7 +26,16 @@ class SplashView extends StatelessWidget {
         body: Observer(builder: (_) {
           return value.isLoading
               ? const Center(child: Skeleton())
-              : Text(value.datalist[1].email ?? "");
+              : Column(
+                  children: [
+                    Text(value.datalist[1].email ?? ""),
+                    TextButton(
+                        onPressed: () async {
+                          await value.changeTheme();
+                        },
+                        child: const Text("changeTheme"))
+                  ],
+                );
         }),
       );
 }

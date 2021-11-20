@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 import 'package:with_retro_firebase/core/init/navigation/route/navigation_route.dart';
 import 'package:with_retro_firebase/core/init/navigation/service/navigation_service.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 Future<void> main() async {
   await _init();
+  await Hive.initFlutter();
   runApp(
     MultiProvider(
       providers: [...ApplicationProvider.instance.dependItems],
