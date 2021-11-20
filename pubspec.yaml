@@ -79,6 +79,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  assets:
+    - assets/svg/
+    - assets/images/
+    - assets/icons/
+    - assets/lotties/
   # fonts:
   #   - family: Schyler
   #     fonts:
@@ -93,5 +98,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Comfortaa
+      fonts:
+        - asset: assets/fonts/AxiformaBold.otf
+        - asset: assets/fonts/AxiformaLight.otf
+        - asset: assets/fonts/AxiformaRegular.otf
+        - asset: assets/fonts/AxiformaThin.otf
 flutter_intl:
   enabled: true
