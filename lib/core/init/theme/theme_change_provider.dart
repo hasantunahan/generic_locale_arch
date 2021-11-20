@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:with_retro_firebase/core/init/theme/themes/colors.dart';
+import 'package:with_retro_firebase/core/init/theme/themes/text.dart';
 
 ThemeProvider currentTheme = ThemeProvider();
 
@@ -16,28 +19,18 @@ class ThemeProvider with ChangeNotifier {
       primaryColor: Colors.amberAccent,
       backgroundColor: Colors.white,
       scaffoldBackgroundColor: Colors.white,
-      textTheme: const TextTheme(
-        headline1: TextStyle(color: Colors.black),
-        headline2: TextStyle(color: Colors.black),
-        bodyText1: TextStyle(color: Colors.black),
-        bodyText2: TextStyle(color: Colors.black),
-      ),
-      colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
+      textTheme: TextThemes.lightTextTheme(),
+      colorScheme: ThemeColors.lightColors(),
     );
   }
 
   static ThemeData get darkTheme {
     return ThemeData(
       primaryColor: Colors.black,
-      backgroundColor: Colors.grey,
+      backgroundColor: const Color(0xFF171717),
       scaffoldBackgroundColor: Colors.grey,
-      textTheme: const TextTheme(
-        headline1: TextStyle(color: Colors.white),
-        headline2: TextStyle(color: Colors.white),
-        bodyText1: TextStyle(color: Colors.white),
-        bodyText2: TextStyle(color: Colors.white),
-      ),
-      colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red),
+      textTheme: TextThemes.darkTextTheme(),
+      colorScheme: ThemeColors.darkColors(),
     );
   }
 }

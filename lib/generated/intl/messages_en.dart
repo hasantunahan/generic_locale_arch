@@ -22,6 +22,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "welcome": MessageLookupByLibrary.simpleMessage("Welcome")
+        "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
+        "back": MessageLookupByLibrary.simpleMessage("Back"),
+        "intro1Body": MessageLookupByLibrary.simpleMessage(
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard"),
+        "intro2Body": MessageLookupByLibrary.simpleMessage(
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s "),
+        "intro3Body": MessageLookupByLibrary.simpleMessage(
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  has been  industry\'s standard"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "skip_intro": MessageLookupByLibrary.simpleMessage("Skip"),
+        "start": MessageLookupByLibrary.simpleMessage("Start"),
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+        "what": MessageLookupByLibrary.simpleMessage("What is Anons?")
       };
 }

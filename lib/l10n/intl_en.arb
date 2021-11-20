@@ -1,3 +1,12 @@
 {
-  "welcome": "Welcome"
+  "app_name" : "Anons",
+  "welcome": "Welcome",
+  "start" : "Start",
+  "next" : "Next",
+  "back" : "Back",
+  "intro1Body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+  "intro2Body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ",
+  "intro3Body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  has been  industry's standard",
+  "what" : "What is Anons?",
+  "skip_intro" : "Skip"
 }

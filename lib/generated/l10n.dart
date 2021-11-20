@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -51,11 +50,101 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Anons`
+  String get app_name {
+    return Intl.message(
+      'Anons',
+      name: 'app_name',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Welcome`
   String get welcome {
     return Intl.message(
       'Welcome',
       name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start`
+  String get start {
+    return Intl.message(
+      'Start',
+      name: 'start',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back`
+  String get back {
+    return Intl.message(
+      'Back',
+      name: 'back',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard`
+  String get intro1Body {
+    return Intl.message(
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard',
+      name: 'intro1Body',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's `
+  String get intro2Body {
+    return Intl.message(
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s ',
+      name: 'intro2Body',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  has been  industry's standard`
+  String get intro3Body {
+    return Intl.message(
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  has been  industry\'s standard',
+      name: 'intro3Body',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What is Anons?`
+  String get what {
+    return Intl.message(
+      'What is Anons?',
+      name: 'what',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skip`
+  String get skip_intro {
+    return Intl.message(
+      'Skip',
+      name: 'skip_intro',
       desc: '',
       args: [],
     );
