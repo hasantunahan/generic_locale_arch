@@ -1,5 +1,5 @@
-import 'package:with_retro_firebase/core/base/model/basemodel.dart';
-import 'package:with_retro_firebase/core/init/network/response/response_model.dart';
+import '../../base/model/basemodel.dart';
+import '../../init/network/response/response_model.dart';
 
 extension _ParserExtension on ResponseData {
   R? _responseParser<R, T>(BaseModel model, dynamic data) {

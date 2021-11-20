@@ -1,8 +1,8 @@
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
-import 'package:with_retro_firebase/core/init/lang/language_change_provider.dart';
-import 'package:with_retro_firebase/core/init/navigation/service/navigation_service.dart';
-import 'package:with_retro_firebase/core/init/theme/theme_change_provider.dart';
+import '../lang/language_change_provider.dart';
+import '../navigation/service/navigation_service.dart';
+import '../theme/theme_change_provider.dart';
 
 class ApplicationProvider {
   static ApplicationProvider? _instance;

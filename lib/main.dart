@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
-import 'package:with_retro_firebase/core/init/navigation/route/navigation_route.dart';
-import 'package:with_retro_firebase/core/init/navigation/service/navigation_service.dart';
-import 'package:with_retro_firebase/core/init/theme/theme_change_provider.dart';
+import 'core/init/navigation/route/navigation_route.dart';
+import 'core/init/navigation/service/navigation_service.dart';
+import 'core/init/theme/theme_change_provider.dart';
 import 'core/init/lang/language_change_provider.dart';
 import 'core/init/notifier/providers.dart';
 import 'generated/l10n.dart';

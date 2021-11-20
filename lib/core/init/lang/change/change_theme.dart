@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/src/provider.dart';
-import 'package:with_retro_firebase/core/init/lang/language_change_provider.dart';
+import '../language_change_provider.dart';
 
 class ChangeLanguage {
   final BuildContext context;

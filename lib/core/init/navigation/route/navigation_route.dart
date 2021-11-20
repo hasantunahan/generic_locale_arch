@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:with_retro_firebase/core/base/error/page/not_found_page.dart';
-import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
-import 'package:with_retro_firebase/ui/splash/view/splash_view.dart';
+import '../../../base/error/page/not_found_page.dart';
+import '../../../constant/navigation/navigation_contant.dart';
+import '../../../../ui/splash/view/splash_view.dart';
 
 class NavigationRoute {
   static final NavigationRoute _instance = NavigationRoute._init();
@@ -12,7 +12,7 @@ class NavigationRoute {
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
       case NavigationConstants.def:
-        return _normalNavigate(SplashView());
+        return _normalNavigate(const SplashView());
       default:
         return MaterialPageRoute(
           builder: (context) => const NotFoundNavigationWidget(),

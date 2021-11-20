@@ -1,5 +1,5 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:with_retro_firebase/core/init/cache/i_hive_manager.dart';
+import 'i_hive_manager.dart';
 
 class CacheManager<T> extends IHiveManager<T> {
   Box? _box;

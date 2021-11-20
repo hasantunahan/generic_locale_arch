@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:with_retro_firebase/core/base/model/basemodel.dart';
+import '../../../core/base/model/basemodel.dart';
 part 'user.g.dart';
 
 @JsonSerializable()
@@ -18,9 +18,7 @@ class User {
     this.status,
   });
 
-
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
-
 
   // factory Map<String, dynamic> User.toJson() => _$UserToJson(this);
 }

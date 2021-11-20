@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:with_retro_firebase/core/init/navigation/interface/i_navigation.dart';
+import '../interface/i_navigation.dart';
 
 class NavigationService implements INavigationService {
   static final NavigationService _instance = NavigationService._init();
