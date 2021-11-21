@@ -10,7 +10,7 @@ class ThemeColors {
         surface: Colors.blue, //xx
         background: Color(0xffffffff), //xx
         error: Colors.red,
-        onPrimary: Color(0xFF926783),
+        onPrimary: Color(0xFF505050),
         onSecondary: Color(0xFF313131), //x
         onSurface: Color(0xFF667A95),
         onBackground: Color(0xFFF9F9F9),
@@ -27,7 +27,7 @@ class ThemeColors {
         surface: Colors.blue, //xx
         background: Color(0xffffffff), //xx
         error: Colors.red,
-        onPrimary: Color(0xFF926783),
+        onPrimary: Color(0xFFE4E4E4),
         onSecondary: Color(0xFFFFFFFF), //x
         onSurface: Color(0xFF667A95),
         onBackground: Color(0xFFF9F9F9),

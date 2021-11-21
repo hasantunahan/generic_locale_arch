@@ -149,6 +149,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Login with email address`
+  String get login_email_infotext {
+    return Intl.message(
+      'Login with email address',
+      name: 'login_email_infotext',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

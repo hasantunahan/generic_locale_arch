@@ -8,5 +8,6 @@
   "intro2Body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ",
   "intro3Body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  has been  industry's standard",
   "what" : "What is Anons?",
-  "skip_intro" : "Skip"
+  "skip_intro" : "Skip",
+  "login_email_infotext" : "Login with email address"
 }
