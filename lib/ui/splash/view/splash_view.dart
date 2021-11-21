@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
-import 'package:with_retro_firebase/core/init/theme/theme_change_provider.dart';
+import 'package:with_retro_firebase/core/extension/context_extension.dart';
 import '../../../core/base/view/baseview.dart';
-import '../../_partial/skeleton/skeleton.dart';
 import '../viewmodel/splash_viewmodel.dart';
+import 'package:with_retro_firebase/core/extension/image/image_extension.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -25,38 +25,59 @@ class SplashView extends StatelessWidget {
   }
 
   renderBody(SplashViewModel value, BuildContext context, theme) => Scaffold(
-        appBar: AppBar(
-          backgroundColor: theme.backgroundColor,
-          systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: theme.backgroundColor,
-              statusBarBrightness: Brightness.light),
-          elevation: 0,
-        ),
+        backgroundColor: theme.backgroundColor,
+        appBar: renderAppBar(theme),
         body: Observer(builder: (_) {
           return value.isLoading
-              ? const Center(child: Skeleton())
-              : Column(
-                  children: [
-                    Text(value.datalist[1].email ?? ""),
-                    TextButton(
-                        onPressed: () async {
-                          await value.changeTheme();
-                        },
-                        child: Column(
-                          children: [
-                            const Text("changeTheme"),
-                            TextButton(
-                                onPressed: () {
-                                  Navigator.pushReplacementNamed(
-                                      context, NavigationConstants.intro);
-                                },
-                                child: const Text("go"))
-                          ],
-                        ))
-                  ],
+              ? const Center(child: CircularProgressIndicator())
+              : SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'logo_image'.toImagePng,
+                        fit: BoxFit.contain,
+                        width: context.width * .3,
+                      ),
+                      Text(value.datalist[1].email ?? ""),
+                      TextButton(
+                          onPressed: () async {
+                            await value.changeTheme();
+                          },
+                          child: Column(
+                            children: [
+                              const Text("changeTheme"),
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.pushReplacementNamed(
+                                        context, NavigationConstants.intro);
+                                  },
+                                  child: const Text("go"))
+                            ],
+                          ))
+                    ],
+                  ),
                 );
         }),
       );
+
+  AppBar renderAppBar(theme) {
+    return AppBar(
+      backgroundColor: theme.backgroundColor,
+      systemOverlayStyle: overlayStyle(theme),
+      elevation: 0,
+    );
+  }
+
+  SystemUiOverlayStyle overlayStyle(theme) {
+    return SystemUiOverlayStyle(
+        statusBarColor: theme.backgroundColor,
+        statusBarBrightness: theme.colorScheme.brightness,
+        statusBarIconBrightness: theme.colorScheme.brightness,
+        systemNavigationBarIconBrightness: theme.colorScheme.brightness);
+  }
 }
 
 /* import 'dart:developer';

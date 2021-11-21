@@ -28,10 +28,10 @@ class ThemeColors {
         background: Color(0xffffffff), //xx
         error: Colors.red,
         onPrimary: Color(0xFF926783),
-        onSecondary: Color(0xFF313131), //x
+        onSecondary: Color(0xFFFFFFFF), //x
         onSurface: Color(0xFF667A95),
         onBackground: Color(0xFFF9F9F9),
         onError: Color(0xffffa08d), //xx
-        brightness: Brightness.light);
+        brightness: Brightness.dark);
   }
 }

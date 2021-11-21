@@ -1,33 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:with_retro_firebase/core/constant/image/image_constant.dart';
 import 'package:with_retro_firebase/core/extension/image/image_extension.dart';
-import 'package:with_retro_firebase/core/extension/image/svg_extension.dart';
 import 'package:with_retro_firebase/generated/l10n.dart';
 
 class IntroView extends StatelessWidget {
   const IntroView({Key? key}) : super(key: key);
 
-  List<PageViewModel> getPackages(context, theme) {
+  List<PageViewModel> getPackages(context, ThemeData theme) {
     return [
       PageViewModel(
-        decoration: PageDecoration(
-          pageColor: theme.backgroundColor,
-        ),
-        title: S.of(context).app_name,
-        body: S.of(context).intro1Body,
-        image: Image.asset('intro1'.toImagePng),
-      ),
+          decoration: PageDecoration(
+              pageColor: theme.backgroundColor,
+              titleTextStyle: theme.textTheme.headline5!
+                  .copyWith(color: theme.colorScheme.primary),
+              bodyTextStyle: theme.textTheme.bodyText1!),
+          title: S.of(context).what,
+          body: S.of(context).intro1Body,
+          image: Image.asset('intro1'.toImagePng)),
       PageViewModel(
-        decoration: PageDecoration(pageColor: theme.backgroundColor),
-        title: S.of(context).app_name,
+        decoration: PageDecoration(
+            pageColor: theme.backgroundColor,
+            titleTextStyle: theme.textTheme.headline5!
+                .copyWith(color: theme.colorScheme.primary),
+            bodyTextStyle: theme.textTheme.bodyText1!),
+        title: S.of(context).what,
         body: S.of(context).intro2Body,
         image: Image.asset('intro2'.toImagePng),
       ),
       PageViewModel(
-        decoration: PageDecoration(pageColor: theme.backgroundColor),
-        title: S.of(context).app_name,
+        decoration: PageDecoration(
+            pageColor: theme.backgroundColor,
+            titleTextStyle: theme.textTheme.headline5!
+                .copyWith(color: theme.colorScheme.primary),
+            bodyTextStyle: theme.textTheme.bodyText1!),
+        title: S.of(context).what,
         body: S.of(context).intro3Body,
         image: Image.asset('intro3'.toImagePng),
       ),
