@@ -3,4 +3,5 @@ class NavigationConstants {
   static const def = '/';
   static const settings = '/settings';
   static const intro = '/intro';
+  static const login = '/login';
 }

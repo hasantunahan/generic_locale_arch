@@ -27,40 +27,16 @@ class SplashView extends StatelessWidget {
   renderBody(SplashViewModel value, BuildContext context, theme) => Scaffold(
         backgroundColor: theme.backgroundColor,
         appBar: renderAppBar(theme),
-        body: Observer(builder: (_) {
-          return value.isLoading
-              ? const Center(child: CircularProgressIndicator())
-              : SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'logo_image'.toImagePng,
-                        fit: BoxFit.contain,
-                        width: context.width * .3,
-                      ),
-                      Text(value.datalist[1].email ?? ""),
-                      TextButton(
-                          onPressed: () async {
-                            await value.changeTheme();
-                          },
-                          child: Column(
-                            children: [
-                              const Text("changeTheme"),
-                              TextButton(
-                                  onPressed: () {
-                                    Navigator.pushReplacementNamed(
-                                        context, NavigationConstants.intro);
-                                  },
-                                  child: const Text("go"))
-                            ],
-                          ))
-                    ],
-                  ),
-                );
-        }),
+        body: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: Center(
+            child: Image.asset(
+              'logo_image'.toImagePng,
+              fit: BoxFit.contain,
+              width: context.width * .3,
+            ),
+          ),
+        ),
       );
 
   AppBar renderAppBar(theme) {

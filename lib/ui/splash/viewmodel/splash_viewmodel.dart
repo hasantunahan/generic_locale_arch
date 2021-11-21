@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/src/provider.dart';
+import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
 import '../../../core/base/model/baseviewmodel.dart';
 import '../../../core/constant/cache/cache_constant.dart';
 import '../../../core/constant/enum/theme/enum.dart';
@@ -22,6 +22,9 @@ abstract class _SplashViewModelBase with Store, BaseViewModel {
   var themeManager = CacheManager<String>("setting");
   @observable
   List<User> datalist = <User>[];
+
+  @observable
+  bool isSeen = false;
 
   @observable
   bool isLoading = false;
@@ -58,11 +61,27 @@ abstract class _SplashViewModelBase with Store, BaseViewModel {
   }
 
   @action
+  introSeenControl() async {
+    var seen = themeManager.getItem(Cacheconstant.intro);
+    log(seen.toString() + "seen");
+    if (seen == null) {
+      isSeen = false;
+      await navigation.navigateToPageClear(path: NavigationConstants.intro);
+    } else {
+      isSeen = true;
+      await navigation.navigateToPageClear(path: NavigationConstants.login);
+    }
+  }
+
+  @action
   Future fetchData() async {
     themeManager.init().then((value) => {themeControl()});
-    changeIsLoading();
+    Future.delayed(const Duration(milliseconds: 2500), () {
+      introSeenControl();
+    });
+    /* changeIsLoading();
     await getUsers();
-    changeIsLoading();
+    changeIsLoading(); */
   }
 
   @override

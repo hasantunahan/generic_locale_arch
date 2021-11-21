@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:with_retro_firebase/core/constant/cache/cache_constant.dart';
 import 'package:with_retro_firebase/core/extension/image/image_extension.dart';
+import 'package:with_retro_firebase/core/init/cache/cache_manager.dart';
 import 'package:with_retro_firebase/generated/l10n.dart';
 
 class IntroView extends StatelessWidget {
@@ -64,7 +67,9 @@ class IntroView extends StatelessWidget {
             S.of(context).start,
             style: const TextStyle(fontFamily: 'Comfortaa'),
           ),
-          onDone: () {},
+          onDone: () {
+            goHomeAndMarked();
+          },
           pages: getPackages(context, theme),
           skip: Text(
             S.of(context).skip_intro,
@@ -80,5 +85,10 @@ class IntroView extends StatelessWidget {
             activeColor: theme.colorScheme.primary,
           ),
         ));
+  }
+
+  void goHomeAndMarked() {
+    var cache = CacheManager<String>("setting");
+    cache.init().then((value) => {cache.putItem(Cacheconstant.intro, "true")});
   }
 }

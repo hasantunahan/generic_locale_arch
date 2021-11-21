@@ -24,6 +24,21 @@ mixin _$SplashViewModel on _SplashViewModelBase, Store {
     });
   }
 
+  final _$isSeenAtom = Atom(name: '_SplashViewModelBase.isSeen');
+
+  @override
+  bool get isSeen {
+    _$isSeenAtom.reportRead();
+    return super.isSeen;
+  }
+
+  @override
+  set isSeen(bool value) {
+    _$isSeenAtom.reportWrite(value, super.isSeen, () {
+      super.isSeen = value;
+    });
+  }
+
   final _$isLoadingAtom = Atom(name: '_SplashViewModelBase.isLoading');
 
   @override
@@ -37,6 +52,14 @@ mixin _$SplashViewModel on _SplashViewModelBase, Store {
     _$isLoadingAtom.reportWrite(value, super.isLoading, () {
       super.isLoading = value;
     });
+  }
+
+  final _$introSeenControlAsyncAction =
+      AsyncAction('_SplashViewModelBase.introSeenControl');
+
+  @override
+  Future introSeenControl() {
+    return _$introSeenControlAsyncAction.run(() => super.introSeenControl());
   }
 
   final _$fetchDataAsyncAction = AsyncAction('_SplashViewModelBase.fetchData');
@@ -64,6 +87,7 @@ mixin _$SplashViewModel on _SplashViewModelBase, Store {
   String toString() {
     return '''
 datalist: ${datalist},
+isSeen: ${isSeen},
 isLoading: ${isLoading}
     ''';
   }
