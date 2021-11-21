@@ -29,6 +29,13 @@
             {
               "client_id": "708957317346-5adbt2blhf5nj8egb5c29ph416qtliqt.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "708957317346-pmo934asmhgjqj2n1g85caa3fvshbq0g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tashteam.anonsmedia"
+              }
             }
           ]
         }
