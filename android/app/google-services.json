@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "708957317346",
+    "project_id": "anonsmedia-7c592",
+    "storage_bucket": "anonsmedia-7c592.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708957317346:android:d7ab20b5065956d38d16bb",
+        "android_client_info": {
+          "package_name": "com.tashteam.anonsmedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708957317346-5adbt2blhf5nj8egb5c29ph416qtliqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuL2SOltfjG-V8q-Z8X92UkeKqrNGGQgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708957317346-5adbt2blhf5nj8egb5c29ph416qtliqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.with_retro_firebase
+package com.tashteam.anonsmedia
 
 import io.flutter.embedding.android.FlutterActivity
 
