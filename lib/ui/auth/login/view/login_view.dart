@@ -11,6 +11,14 @@ class LoginView extends StatelessWidget {
         viewModel: LoginViewModel(),
         onModelReady: (model) {},
         onPageBuilder: (BuildContext context, LoginViewModel viewModel) =>
-            const Scaffold());
+            Scaffold(
+              body: Center(
+                child: TextButton(
+                    onPressed: () {
+                      viewModel.login();
+                    },
+                    child: const Text("Login")),
+              ),
+            ));
   }
 }

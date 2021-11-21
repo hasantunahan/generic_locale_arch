@@ -9,21 +9,6 @@ part of 'splash_viewmodel.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$SplashViewModel on _SplashViewModelBase, Store {
-  final _$datalistAtom = Atom(name: '_SplashViewModelBase.datalist');
-
-  @override
-  List<User> get datalist {
-    _$datalistAtom.reportRead();
-    return super.datalist;
-  }
-
-  @override
-  set datalist(List<User> value) {
-    _$datalistAtom.reportWrite(value, super.datalist, () {
-      super.datalist = value;
-    });
-  }
-
   final _$isSeenAtom = Atom(name: '_SplashViewModelBase.isSeen');
 
   @override
@@ -86,7 +71,6 @@ mixin _$SplashViewModel on _SplashViewModelBase, Store {
   @override
   String toString() {
     return '''
-datalist: ${datalist},
 isSeen: ${isSeen},
 isLoading: ${isLoading}
     ''';

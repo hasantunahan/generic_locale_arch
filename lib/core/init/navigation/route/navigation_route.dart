@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:with_retro_firebase/ui/auth/login/view/login_view.dart';
+import 'package:with_retro_firebase/ui/features/home_nav/view/home_navigation_view.dart';
 import 'package:with_retro_firebase/ui/intro/intro_view.dart';
 import '../../../base/error/page/not_found_page.dart';
 import '../../../constant/navigation/navigation_contant.dart';
@@ -19,6 +20,8 @@ class NavigationRoute {
         return _normalNavigate(const IntroView());
       case NavigationConstants.login:
         return _normalNavigate(const LoginView());
+      case NavigationConstants.homenav:
+        return _normalNavigate(const HomeNavView());
       default:
         return MaterialPageRoute(
           builder: (context) => const NotFoundNavigationWidget(),
