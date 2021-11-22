@@ -9,5 +9,8 @@
   "intro3Body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  has been  industry's standard",
   "what" : "Anons Nedir?",
   "skip_intro" : "Geç",
-  "login_email_infotext" : "Email ile giriş yapabilirsiniz."
+  "login_email_infotext" : "Email ile giriş yapabilirsiniz.",
+  "login" : "Giriş yap",
+  "enter_email" : "Email adresi giriniz",
+  "enter_password" : "Şifre giriniz"
 }

@@ -19,7 +19,7 @@ class NavigationRoute {
       case NavigationConstants.intro:
         return _normalNavigate(const IntroView());
       case NavigationConstants.login:
-        return _normalNavigate(const LoginView());
+        return _normalNavigate(LoginView());
       case NavigationConstants.homenav:
         return _normalNavigate(const HomeNavView());
       default:
