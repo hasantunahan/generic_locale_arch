@@ -16,6 +16,21 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
     return _$loginAsyncAction.run(() => super.login());
   }
 
+  final _$_LoginViewModelBaseActionController =
+      ActionController(name: '_LoginViewModelBase');
+
+  @override
+  void logins(
+      TextEditingController controller, TextEditingController controller2) {
+    final _$actionInfo = _$_LoginViewModelBaseActionController.startAction(
+        name: '_LoginViewModelBase.logins');
+    try {
+      return super.logins(controller, controller2);
+    } finally {
+      _$_LoginViewModelBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''

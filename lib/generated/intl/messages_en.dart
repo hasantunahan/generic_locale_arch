@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter email address"),
         "enter_password":
             MessageLookupByLibrary.simpleMessage("Enter password"),
+        "forgot_password":
+            MessageLookupByLibrary.simpleMessage("Forgot Password"),
         "intro1Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard"),
         "intro2Body": MessageLookupByLibrary.simpleMessage(
@@ -38,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_email_infotext":
             MessageLookupByLibrary.simpleMessage("Login with email address"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Skip"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),

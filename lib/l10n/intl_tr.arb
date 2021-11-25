@@ -12,5 +12,7 @@
   "login_email_infotext" : "Email ile giriş yapabilirsiniz.",
   "login" : "Giriş yap",
   "enter_email" : "Email adresi giriniz",
-  "enter_password" : "Şifre giriniz"
+  "enter_password" : "Şifre giriniz",
+  "forgot_password" : "Şifremi Unuttum",
+  "signup" : "Kayıt Ol"
 }

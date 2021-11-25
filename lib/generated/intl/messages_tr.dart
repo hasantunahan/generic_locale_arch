@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "enter_email":
             MessageLookupByLibrary.simpleMessage("Email adresi giriniz"),
         "enter_password": MessageLookupByLibrary.simpleMessage("Şifre giriniz"),
+        "forgot_password":
+            MessageLookupByLibrary.simpleMessage("Şifremi Unuttum"),
         "intro1Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard"),
         "intro2Body": MessageLookupByLibrary.simpleMessage(
@@ -37,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_email_infotext": MessageLookupByLibrary.simpleMessage(
             "Email ile giriş yapabilirsiniz."),
         "next": MessageLookupByLibrary.simpleMessage("İleri"),
+        "signup": MessageLookupByLibrary.simpleMessage("Kayıt Ol"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Geç"),
         "start": MessageLookupByLibrary.simpleMessage("Giriş"),
         "welcome": MessageLookupByLibrary.simpleMessage("Hoşgeldiniz"),

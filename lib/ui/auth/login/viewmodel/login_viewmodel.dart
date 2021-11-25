@@ -11,8 +11,18 @@ class LoginViewModel = _LoginViewModelBase with _$LoginViewModel;
 abstract class _LoginViewModelBase with Store, BaseViewModel {
   @override
   void setContext(BuildContext context) => this.context = context;
+
   @override
   void init() async {}
+
+  @action
+  void logins(
+      TextEditingController controller, TextEditingController controller2) {
+    log(controller.text);
+    log(controller2.text);
+    controller.clear();
+    controller2.clear();
+  }
 
   @action
   Future login() async {
