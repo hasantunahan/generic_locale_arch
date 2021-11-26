@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:with_retro_firebase/core/constant/cache/cache_constant.dart';
+import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
 import 'package:with_retro_firebase/core/extension/image/image_extension.dart';
 import 'package:with_retro_firebase/core/init/cache/cache_manager.dart';
+import 'package:with_retro_firebase/core/init/navigation/service/navigation_service.dart';
 import 'package:with_retro_firebase/generated/l10n.dart';
 
 class IntroView extends StatelessWidget {
@@ -89,6 +91,10 @@ class IntroView extends StatelessWidget {
 
   void goHomeAndMarked() {
     var cache = CacheManager<String>("setting");
-    cache.init().then((value) => {cache.putItem(Cacheconstant.intro, "true")});
+    cache
+        .init()
+        .then((value) => {cache.putItem(Cacheconstant.intro, "true")})
+        .then((value) => NavigationService.instance
+            .navigateToPageClear(path: NavigationConstants.login));
   }
 }
