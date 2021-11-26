@@ -5,8 +5,16 @@ class DefaultTextField extends StatelessWidget {
   final ThemeData? theme;
   final String? hintText;
   final bool? secure;
+  final IconData? icon;
+  final Widget? customIcon;
   const DefaultTextField(
-      {Key? key, this.controller, this.theme, this.hintText, this.secure})
+      {Key? key,
+      this.controller,
+      this.theme,
+      this.hintText,
+      this.secure,
+      this.icon,
+      this.customIcon})
       : super(key: key);
 
   @override
@@ -16,10 +24,11 @@ class DefaultTextField extends StatelessWidget {
       controller: controller,
       obscureText: secure ?? false,
       decoration: InputDecoration(
-          prefixIcon: Icon(
-            Icons.email,
-            color: theme!.colorScheme.secondary,
-          ),
+          prefixIcon: customIcon ??
+              Icon(
+                icon,
+                color: theme!.colorScheme.secondary,
+              ),
           hintText: hintText,
           hintStyle: theme!.textTheme.bodyText1!
               .copyWith(color: theme!.colorScheme.onSurface)),

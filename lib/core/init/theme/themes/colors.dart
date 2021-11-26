@@ -5,7 +5,7 @@ class ThemeColors {
     return const ColorScheme(
         primary: Color(0xFF7F41FA),
         primaryVariant: Colors.white, //xx
-        secondary: Color(0xFFfb8c00),
+        secondary: Color(0xFFFB003F),
         secondaryVariant: Colors.white,
         surface: Colors.blue, //xx
         background: Color(0xffffffff), //xx
@@ -22,7 +22,7 @@ class ThemeColors {
     return const ColorScheme(
         primary: Color(0xFF7F41FA),
         primaryVariant: Color(0xFF505050), //xx
-        secondary: Color(0xFFfb8c00),
+        secondary: Color(0xFFFB003F),
         secondaryVariant: Colors.white,
         surface: Colors.blue, //xx
         background: Color(0xffffffff), //xx

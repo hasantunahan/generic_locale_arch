@@ -124,6 +124,7 @@ class LoginView extends StatelessWidget {
     return DefaultTextField(
       controller: passwordController,
       secure: true,
+      icon: Icons.lock,
       hintText: S.of(context).enter_password,
       theme: theme,
     );
@@ -132,6 +133,7 @@ class LoginView extends StatelessWidget {
   renderEmailTextField(BuildContext context, ThemeData theme) {
     return DefaultTextField(
       controller: emailController,
+      icon: Icons.email,
       hintText: S.of(context).enter_email,
       theme: theme,
     );
