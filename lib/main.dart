@@ -24,6 +24,7 @@ Future<void> main() async {
   await _init();
   await Hive.initFlutter();
   await Firebase.initializeApp();
+  FirebaseMessaging.instance.requestPermission();
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
   FirebaseNotification.instance.implementations();
   runApp(
