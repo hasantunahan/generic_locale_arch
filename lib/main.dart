@@ -1,7 +1,12 @@
+import 'dart:developer';
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
+import 'package:with_retro_firebase/core/init/service/notification.dart';
 import 'core/init/navigation/route/navigation_route.dart';
 import 'core/init/navigation/service/navigation_service.dart';
 import 'core/init/theme/theme_change_provider.dart';
@@ -10,10 +15,17 @@ import 'core/init/notifier/providers.dart';
 import 'generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  log('A bg message just showed up :  ${message.messageId}');
+}
+
 Future<void> main() async {
   await _init();
   await Hive.initFlutter();
   await Firebase.initializeApp();
+  FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
+  FirebaseNotification.instance.implementations();
   runApp(
     MultiProvider(
       providers: [...ApplicationProvider.instance.dependItems],

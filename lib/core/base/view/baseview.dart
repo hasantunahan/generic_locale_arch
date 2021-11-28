@@ -1,4 +1,10 @@
+import 'dart:developer';
+
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:with_retro_firebase/core/init/service/notification.dart';
+import 'package:with_retro_firebase/main.dart';
 
 class BaseView<T> extends StatefulWidget {
   final Widget Function(BuildContext context, T value) onPageBuilder;
@@ -25,6 +31,8 @@ class _BaseViewState<T> extends State<BaseView<T>> {
     model = widget.viewModel;
     widget.onModelReady(model);
     super.initState();
+    FirebaseNotification.instance.listen();
+    FirebaseNotification.instance.openedApp(context);
   }
 
   @override
