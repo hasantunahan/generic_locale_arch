@@ -28,23 +28,26 @@ class LoginView extends StatelessWidget {
   }
 
   renderBody(BuildContext context, ThemeData theme, value) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              flex: 2,
-              child: renderTopview(context),
-            ),
-            Expanded(flex: 8, child: renderPhoneImage(context)),
-            Expanded(
-              flex: 10,
-              child: renderBottomContainer(theme, context, value),
-            )
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: theme.backgroundColor,
+        toolbarHeight: 0,
+        elevation: 0,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            flex: 2,
+            child: renderTopview(context),
+          ),
+          Expanded(flex: 8, child: renderPhoneImage(context)),
+          Expanded(
+            flex: 10,
+            child: renderBottomContainer(theme, context, value),
+          )
+        ],
       ),
     );
   }
