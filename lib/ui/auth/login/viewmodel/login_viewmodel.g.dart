@@ -12,23 +12,9 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
   final _$loginAsyncAction = AsyncAction('_LoginViewModelBase.login');
 
   @override
-  Future<dynamic> login() {
-    return _$loginAsyncAction.run(() => super.login());
-  }
-
-  final _$_LoginViewModelBaseActionController =
-      ActionController(name: '_LoginViewModelBase');
-
-  @override
-  void logins(
+  Future<dynamic> login(
       TextEditingController controller, TextEditingController controller2) {
-    final _$actionInfo = _$_LoginViewModelBaseActionController.startAction(
-        name: '_LoginViewModelBase.logins');
-    try {
-      return super.logins(controller, controller2);
-    } finally {
-      _$_LoginViewModelBaseActionController.endAction(_$actionInfo);
-    }
+    return _$loginAsyncAction.run(() => super.login(controller, controller2));
   }
 
   @override

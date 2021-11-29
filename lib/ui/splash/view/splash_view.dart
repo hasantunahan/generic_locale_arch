@@ -44,6 +44,7 @@ class SplashView extends StatelessWidget {
       backgroundColor: theme.backgroundColor,
       systemOverlayStyle: overlayStyle(theme),
       elevation: 0,
+      toolbarHeight: 0,
     );
   }
 

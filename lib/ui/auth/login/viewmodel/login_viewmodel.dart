@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
@@ -16,20 +15,23 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   void init() async {}
 
   @action
-  void logins(
-      TextEditingController controller, TextEditingController controller2) {
-    log(controller.text);
-    log(controller2.text);
-    controller.clear();
-    controller2.clear();
-  }
-
-  @action
-  Future login() async {
-    UserCredential userCredential = await FirebaseAuth.instance
-        .signInWithEmailAndPassword(
-            email: "hasantunahan12345@gmail.com", password: "pes2011_");
+  Future login(TextEditingController controller,
+      TextEditingController controller2) async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+              email: controller.text, password: controller2.text);
+      log("message" + userCredential.toString());
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        log('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        log('Wrong password provided for that user.');
+      }
+    }
     log(FirebaseAuth.instance.currentUser.toString());
     log("tamam");
+    controller.clear();
+    controller2.clear();
   }
 }

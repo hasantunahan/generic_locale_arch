@@ -119,7 +119,7 @@ class LoginView extends StatelessWidget {
       buttonColor: theme.colorScheme.secondary,
       textColor: Colors.white,
       text: S.of(context).login.toUpperCase(),
-      onPressed: () => value.logins(emailController, passwordController),
+      onPressed: () => value.login(emailController, passwordController),
     );
   }
 
