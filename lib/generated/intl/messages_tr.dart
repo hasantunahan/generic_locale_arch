@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signup": MessageLookupByLibrary.simpleMessage("Kayıt Ol"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Geç"),
         "start": MessageLookupByLibrary.simpleMessage("Giriş"),
+        "tarik": MessageLookupByLibrary.simpleMessage("tariks"),
         "welcome": MessageLookupByLibrary.simpleMessage("Hoşgeldiniz"),
         "what": MessageLookupByLibrary.simpleMessage("Anons Nedir?")
       };

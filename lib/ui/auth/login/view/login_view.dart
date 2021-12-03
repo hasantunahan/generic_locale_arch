@@ -90,7 +90,7 @@ class LoginView extends StatelessWidget {
               const SizedBox(height: 10),
               renderLoginButton(theme, context, value),
               const SizedBox(height: 20),
-              renderActionsButtons(context, theme)
+              renderActionsButtons(context, theme, value)
             ],
           ),
         ),
@@ -98,7 +98,8 @@ class LoginView extends StatelessWidget {
     );
   }
 
-  renderActionsButtons(BuildContext context, ThemeData theme) {
+  renderActionsButtons(
+      BuildContext context, ThemeData theme, LoginViewModel value) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -108,7 +109,8 @@ class LoginView extends StatelessWidget {
           style: theme.textTheme.bodyText1!
               .copyWith(color: theme.colorScheme.primary),
         ),
-        DefaultText(onPress: () => log("1"), data: S.of(context).signup)
+        DefaultText(
+            onPress: () => value.goRegister(), data: S.of(context).signup)
       ],
     );
   }

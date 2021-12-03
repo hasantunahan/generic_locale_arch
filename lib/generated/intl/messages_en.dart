@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Skip"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
+        "tarik": MessageLookupByLibrary.simpleMessage("tarik"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "what": MessageLookupByLibrary.simpleMessage("What is Anons?")
       };

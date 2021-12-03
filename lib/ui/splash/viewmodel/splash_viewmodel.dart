@@ -86,5 +86,6 @@ abstract class _SplashViewModelBase with Store, BaseViewModel {
   @override
   void init() async {
     await fetchData();
+    log("First user control" + FirebaseAuth.instance.currentUser.toString());
   }
 }

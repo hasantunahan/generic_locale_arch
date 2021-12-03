@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:with_retro_firebase/core/base/model/baseviewmodel.dart';
+import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
 part 'login_viewmodel.g.dart';
 
 class LoginViewModel = _LoginViewModelBase with _$LoginViewModel;
@@ -33,5 +34,9 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
     log("tamam");
     controller.clear();
     controller2.clear();
+  }
+
+  Future<void> goRegister() async {
+    await navigation.navigateToPage(path: NavigationConstants.register);
   }
 }
