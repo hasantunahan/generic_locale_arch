@@ -210,11 +210,21 @@ class S {
     );
   }
 
-  /// `tarik`
-  String get tarik {
+  /// `Create new account`
+  String get register_info_text {
     return Intl.message(
-      'tarik',
-      name: 'tarik',
+      'Create new account',
+      name: 'register_info_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repeat password again`
+  String get enter_password_again {
+    return Intl.message(
+      'Repeat password again',
+      name: 'enter_password_again',
       desc: '',
       args: [],
     );

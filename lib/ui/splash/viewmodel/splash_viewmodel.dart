@@ -64,7 +64,7 @@ abstract class _SplashViewModelBase with Store, BaseViewModel {
       if (FirebaseAuth.instance.currentUser == null) {
         await navigation.navigateToPageClear(path: NavigationConstants.login);
       } else {
-        await navigation.navigateToPageClear(path: NavigationConstants.login);
+        await navigation.navigateToPageClear(path: NavigationConstants.homenav);
       }
     }
   }

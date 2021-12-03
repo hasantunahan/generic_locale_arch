@@ -15,5 +15,6 @@
   "enter_password" : "Enter password",
   "forgot_password" : "Forgot Password",
   "signup" : "Sign Up",
-  "tarik" : "tarik"
+  "register_info_text" : "Create new account",
+  "enter_password_again" : "Repeat password again"
 }

@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter email address"),
         "enter_password":
             MessageLookupByLibrary.simpleMessage("Enter password"),
+        "enter_password_again":
+            MessageLookupByLibrary.simpleMessage("Repeat password again"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot Password"),
         "intro1Body": MessageLookupByLibrary.simpleMessage(
@@ -40,10 +42,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_email_infotext":
             MessageLookupByLibrary.simpleMessage("Login with email address"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "register_info_text":
+            MessageLookupByLibrary.simpleMessage("Create new account"),
         "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Skip"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
-        "tarik": MessageLookupByLibrary.simpleMessage("tarik"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "what": MessageLookupByLibrary.simpleMessage("What is Anons?")
       };

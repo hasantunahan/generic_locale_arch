@@ -15,5 +15,6 @@
   "enter_password" : "Şifre giriniz",
   "forgot_password" : "Şifremi Unuttum",
   "signup" : "Kayıt Ol",
-  "tarik" : "tariks"
+  "register_info_text" : "Yeni Hesap Oluştur",
+  "enter_password_again" : "Şifrenizi tekrar giriniz"
 }

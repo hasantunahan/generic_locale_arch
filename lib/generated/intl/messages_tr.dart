@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "enter_email":
             MessageLookupByLibrary.simpleMessage("Email adresi giriniz"),
         "enter_password": MessageLookupByLibrary.simpleMessage("Şifre giriniz"),
+        "enter_password_again":
+            MessageLookupByLibrary.simpleMessage("Şifrenizi tekrar giriniz"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Şifremi Unuttum"),
         "intro1Body": MessageLookupByLibrary.simpleMessage(
@@ -39,10 +41,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_email_infotext": MessageLookupByLibrary.simpleMessage(
             "Email ile giriş yapabilirsiniz."),
         "next": MessageLookupByLibrary.simpleMessage("İleri"),
+        "register_info_text":
+            MessageLookupByLibrary.simpleMessage("Yeni Hesap Oluştur"),
         "signup": MessageLookupByLibrary.simpleMessage("Kayıt Ol"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Geç"),
         "start": MessageLookupByLibrary.simpleMessage("Giriş"),
-        "tarik": MessageLookupByLibrary.simpleMessage("tariks"),
         "welcome": MessageLookupByLibrary.simpleMessage("Hoşgeldiniz"),
         "what": MessageLookupByLibrary.simpleMessage("Anons Nedir?")
       };

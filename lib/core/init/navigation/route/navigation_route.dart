@@ -24,7 +24,7 @@ class NavigationRoute {
       case NavigationConstants.homenav:
         return _normalNavigate(const HomeNavView());
       case NavigationConstants.register:
-        return _normalNavigate(const RegisterView());
+        return _normalNavigate(RegisterView());
       default:
         return MaterialPageRoute(
           builder: (context) => const NotFoundNavigationWidget(),
@@ -34,17 +34,17 @@ class NavigationRoute {
 
   _normalNavigate(Widget widget) {
     return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) {
-        return widget;
-      },
+        pageBuilder: (context, animation, secondaryAnimation) {
+      return widget;
+    } /* ,
       transitionsBuilder: (
         BuildContext context,
         Animation<double> animation,
         Animation<double> secondaryAnimation,
         Widget child,
       ) =>
-          scaleTransition(animation, child),
-    );
+          scaleTransition(animation, child), */
+        );
   }
 
   static ScaleTransition scaleTransition(
