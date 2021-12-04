@@ -16,5 +16,10 @@
   "forgot_password" : "Şifremi Unuttum",
   "signup" : "Kayıt Ol",
   "register_info_text" : "Yeni Hesap Oluştur",
-  "enter_password_again" : "Şifrenizi tekrar giriniz"
+  "enter_password_again" : "Şifrenizi tekrar giriniz",
+  "email_verify" : "Email Doğrulama",
+  "verify_info_textarea" : "Giriş yapabilmen için email adresine doğrulama linki gönderdik. Lütfen emailinizi doğrulayınız.",
+  "didgetMail" : "Email gelmedi mi?",
+  "verify" : "Doğrula",
+  "send_again" : "Tekrar Gönder"
 }

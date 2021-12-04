@@ -16,5 +16,10 @@
   "forgot_password" : "Forgot Password",
   "signup" : "Sign Up",
   "register_info_text" : "Create new account",
-  "enter_password_again" : "Repeat password again"
+  "enter_password_again" : "Repeat password again",
+  "email_verify" : "Email Verification",
+  "verify_info_textarea" : "We have sent a verification link to your email address so you can log in. Please verify email.",
+  "didgetMail" : "Didn't get your email?",
+  "verify" : "Verify",
+  "send_again" : "Send again"
 }

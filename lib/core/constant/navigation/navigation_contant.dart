@@ -6,4 +6,5 @@ class NavigationConstants {
   static const login = '/login';
   static const homenav = '/homenav';
   static const register = '/register';
+  static const verify = '/verify';
 }

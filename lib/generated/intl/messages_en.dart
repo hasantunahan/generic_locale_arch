@@ -24,6 +24,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
+        "didgetMail":
+            MessageLookupByLibrary.simpleMessage("Didn\'t get your email?"),
+        "email_verify":
+            MessageLookupByLibrary.simpleMessage("Email Verification"),
         "enter_email":
             MessageLookupByLibrary.simpleMessage("Enter email address"),
         "enter_password":
@@ -44,9 +48,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "register_info_text":
             MessageLookupByLibrary.simpleMessage("Create new account"),
+        "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
         "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Skip"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
+        "verify": MessageLookupByLibrary.simpleMessage("Verify"),
+        "verify_info_textarea": MessageLookupByLibrary.simpleMessage(
+            "We have sent a verification link to your email address so you can log in. Please verify email."),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "what": MessageLookupByLibrary.simpleMessage("What is Anons?")
       };

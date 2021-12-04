@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
         "back": MessageLookupByLibrary.simpleMessage("Geri"),
+        "didgetMail": MessageLookupByLibrary.simpleMessage("Email gelmedi mi?"),
+        "email_verify": MessageLookupByLibrary.simpleMessage("Email Doğrulama"),
         "enter_email":
             MessageLookupByLibrary.simpleMessage("Email adresi giriniz"),
         "enter_password": MessageLookupByLibrary.simpleMessage("Şifre giriniz"),
@@ -43,9 +45,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "next": MessageLookupByLibrary.simpleMessage("İleri"),
         "register_info_text":
             MessageLookupByLibrary.simpleMessage("Yeni Hesap Oluştur"),
+        "send_again": MessageLookupByLibrary.simpleMessage("Tekrar Gönder"),
         "signup": MessageLookupByLibrary.simpleMessage("Kayıt Ol"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Geç"),
         "start": MessageLookupByLibrary.simpleMessage("Giriş"),
+        "verify": MessageLookupByLibrary.simpleMessage("Doğrula"),
+        "verify_info_textarea": MessageLookupByLibrary.simpleMessage(
+            "Giriş yapabilmen için email adresine doğrulama linki gönderdik. Lütfen emailinizi doğrulayınız."),
         "welcome": MessageLookupByLibrary.simpleMessage("Hoşgeldiniz"),
         "what": MessageLookupByLibrary.simpleMessage("Anons Nedir?")
       };

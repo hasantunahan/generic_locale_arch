@@ -24,7 +24,12 @@ abstract class _RegisterViewModelBase with Store, BaseViewModel {
       try {
         await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: e.text, password: p1.text);
-        goHome();
+        if (auth!.emailVerified) {
+          goHome();
+        } else {
+          await auth!.sendEmailVerification();
+          goVerify();
+        }
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
           log('The password provided is too weak.');
@@ -47,5 +52,9 @@ abstract class _RegisterViewModelBase with Store, BaseViewModel {
 
   Future<void> goHome() async {
     await navigation.navigateToPage(path: NavigationConstants.homenav);
+  }
+
+  Future<void> goVerify() async {
+    await navigation.navigateToPage(path: NavigationConstants.verify);
   }
 }

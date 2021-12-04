@@ -229,6 +229,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Email Verification`
+  String get email_verify {
+    return Intl.message(
+      'Email Verification',
+      name: 'email_verify',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We have sent a verification link to your email address so you can log in. Please verify email.`
+  String get verify_info_textarea {
+    return Intl.message(
+      'We have sent a verification link to your email address so you can log in. Please verify email.',
+      name: 'verify_info_textarea',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Didn't get your email?`
+  String get didgetMail {
+    return Intl.message(
+      'Didn\'t get your email?',
+      name: 'didgetMail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify`
+  String get verify {
+    return Intl.message(
+      'Verify',
+      name: 'verify',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send again`
+  String get send_again {
+    return Intl.message(
+      'Send again',
+      name: 'send_again',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
