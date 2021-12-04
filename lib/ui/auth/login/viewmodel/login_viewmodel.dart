@@ -22,6 +22,17 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(
               email: controller.text, password: controller2.text);
+      User? user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        if (user.emailVerified) {
+          await navigation.navigateToPageClear(
+              path: NavigationConstants.homenav);
+        } else {
+          await navigation.navigateToPage(path: NavigationConstants.verify);
+        }
+      } else {
+        log("user not fount");
+      }
       log("message" + userCredential.toString());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {

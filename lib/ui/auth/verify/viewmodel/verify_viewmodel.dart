@@ -28,16 +28,11 @@ abstract class _VerifyViewModelBase with Store, BaseViewModel {
 
   @action
   Future<void> verifyControl() async {
-    FirebaseAuth.instance.authStateChanges().listen((User? user) {
-      if (user == null) {
-        log("çıkış yapmış");
-      } else {
-        if (user.emailVerified) {
-          navigation.navigateToPageClear(path: NavigationConstants.homenav);
-        } else {
-          log("You didn't verfied,yet");
-        }
-      }
-    });
+    await FirebaseAuth.instance.currentUser!.reload();
+    if (FirebaseAuth.instance.currentUser!.emailVerified) {
+      await navigation.navigateToPageClear(path: NavigationConstants.homenav);
+    } else {
+      log("not verified");
+    }
   }
 }

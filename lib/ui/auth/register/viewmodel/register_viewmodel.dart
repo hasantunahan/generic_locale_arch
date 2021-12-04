@@ -24,12 +24,16 @@ abstract class _RegisterViewModelBase with Store, BaseViewModel {
       try {
         await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: e.text, password: p1.text);
+        auth = FirebaseAuth.instance.currentUser;
         if (auth!.emailVerified) {
           goHome();
         } else {
           await auth!.sendEmailVerification();
           goVerify();
         }
+        e.clear();
+        p1.clear();
+        p2.clear();
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
           log('The password provided is too weak.');
@@ -40,9 +44,6 @@ abstract class _RegisterViewModelBase with Store, BaseViewModel {
         log(e.toString());
       }
     }
-    e.clear();
-    p1.clear();
-    p2.clear();
   }
 
   @action
