@@ -104,7 +104,7 @@ class LoginView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         DefaultText(
-          onPress: () => log("message"),
+          onPress: () => value.goForgotPassword(),
           data: S.of(context).forgot_password,
           style: theme.textTheme.bodyText1!
               .copyWith(color: theme.colorScheme.primary),

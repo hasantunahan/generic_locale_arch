@@ -24,6 +24,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
         "back": MessageLookupByLibrary.simpleMessage("Geri"),
+        "check_email":
+            MessageLookupByLibrary.simpleMessage("Emailini kontrol et"),
+        "check_email_info": MessageLookupByLibrary.simpleMessage(
+            "Şifrenizi sıfırlamak için mail adresinizi kontrol ediniz."),
         "didgetMail": MessageLookupByLibrary.simpleMessage("Email gelmedi mi?"),
         "email_verify": MessageLookupByLibrary.simpleMessage("Email Doğrulama"),
         "enter_email":
@@ -33,6 +37,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Şifrenizi tekrar giriniz"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Şifremi Unuttum"),
+        "go_login":
+            MessageLookupByLibrary.simpleMessage("Giriş sayfasına geri dön"),
         "intro1Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard"),
         "intro2Body": MessageLookupByLibrary.simpleMessage(
@@ -43,9 +49,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_email_infotext": MessageLookupByLibrary.simpleMessage(
             "Email ile giriş yapabilirsiniz."),
         "next": MessageLookupByLibrary.simpleMessage("İleri"),
+        "open_email": MessageLookupByLibrary.simpleMessage("Emaili aç"),
         "register_info_text":
             MessageLookupByLibrary.simpleMessage("Yeni Hesap Oluştur"),
         "send_again": MessageLookupByLibrary.simpleMessage("Tekrar Gönder"),
+        "send_reset":
+            MessageLookupByLibrary.simpleMessage("Sıfırlama Linki Gönder"),
         "signup": MessageLookupByLibrary.simpleMessage("Kayıt Ol"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Geç"),
         "start": MessageLookupByLibrary.simpleMessage("Giriş"),

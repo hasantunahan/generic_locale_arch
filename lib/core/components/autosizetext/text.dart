@@ -5,7 +5,9 @@ class DefaultText extends StatelessWidget {
   final String data;
   final TextStyle? style;
   final VoidCallback? onPress;
-  const DefaultText({Key? key, required this.data, this.style, this.onPress})
+  final TextAlign? alignment;
+  const DefaultText(
+      {Key? key, required this.data, this.style, this.onPress, this.alignment})
       : super(key: key);
 
   @override
@@ -17,6 +19,7 @@ class DefaultText extends StatelessWidget {
         maxFontSize: 15,
         minFontSize: 6,
         style: style,
+        textAlign: alignment ?? TextAlign.left,
       ),
     );
   }

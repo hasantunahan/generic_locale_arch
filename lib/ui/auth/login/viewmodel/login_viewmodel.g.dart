@@ -17,6 +17,14 @@ mixin _$LoginViewModel on _LoginViewModelBase, Store {
     return _$loginAsyncAction.run(() => super.login(controller, controller2));
   }
 
+  final _$goForgotPasswordAsyncAction =
+      AsyncAction('_LoginViewModelBase.goForgotPassword');
+
+  @override
+  Future<void> goForgotPassword() {
+    return _$goForgotPasswordAsyncAction.run(() => super.goForgotPassword());
+  }
+
   @override
   String toString() {
     return '''

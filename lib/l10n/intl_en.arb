@@ -21,5 +21,10 @@
   "verify_info_textarea" : "We have sent a verification link to your email address so you can log in. Please verify email.",
   "didgetMail" : "Didn't get your email?",
   "verify" : "Verify",
-  "send_again" : "Send again"
+  "send_again" : "Send again",
+  "check_email" : "Check your email",
+  "check_email_info" : "If you want to reset password, check your email address.",
+  "open_email" : "Open Email",
+  "send_reset" : "Send Reset Link",
+  "go_login" : "Go back login page"
 }

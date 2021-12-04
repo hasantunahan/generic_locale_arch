@@ -50,4 +50,9 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   Future<void> goRegister() async {
     await navigation.navigateToPageClear(path: NavigationConstants.register);
   }
+
+  @action
+  Future<void> goForgotPassword() async {
+    await navigation.navigateToPage(path: NavigationConstants.forgotpassword);
+  }
 }

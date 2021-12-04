@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:with_retro_firebase/ui/auth/forgotpassword/view/forgotpassword_view.dart';
 import 'package:with_retro_firebase/ui/auth/login/view/login_view.dart';
 import 'package:with_retro_firebase/ui/auth/register/view/registerview.dart';
 import 'package:with_retro_firebase/ui/auth/verify/view/verify_view.dart';
@@ -28,6 +29,8 @@ class NavigationRoute {
         return _normalNavigate(RegisterView());
       case NavigationConstants.verify:
         return _normalNavigate(const VerifyView());
+      case NavigationConstants.forgotpassword:
+        return _normalNavigate(const ForgotPasswordView());
       default:
         return MaterialPageRoute(
           builder: (context) => const NotFoundNavigationWidget(),
@@ -35,7 +38,7 @@ class NavigationRoute {
     }
   }
 
-  _normalNavigate(Widget widget) {
+  /* _normalNavigate(Widget widget) {
     return PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) {
       return widget;
@@ -48,6 +51,14 @@ class NavigationRoute {
       ) =>
           scaleTransition(animation, child), */
         );
+  } */
+
+  _normalNavigate(Widget widget) {
+    return MaterialPageRoute(
+      builder: (context) {
+        return widget;
+      },
+    );
   }
 
   static ScaleTransition scaleTransition(

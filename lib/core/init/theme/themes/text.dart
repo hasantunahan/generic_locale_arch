@@ -10,7 +10,8 @@ class TextThemes {
       headline6: TextStyle(color: Colors.white, fontFamily: 'Comfortaa'),
       bodyText1:
           TextStyle(color: Colors.white, fontFamily: 'Comfortaa', fontSize: 14),
-      bodyText2: TextStyle(color: Colors.white, fontFamily: 'Comfortaa'),
+      bodyText2:
+          TextStyle(color: Colors.white, fontFamily: 'Comfortaa', fontSize: 16),
     );
   }
 
@@ -23,7 +24,8 @@ class TextThemes {
       headline6: TextStyle(color: Color(0xFF303030), fontFamily: 'Comfortaa'),
       bodyText1: TextStyle(
           color: Color(0xFF303030), fontFamily: 'Comfortaa', fontSize: 14),
-      bodyText2: TextStyle(color: Color(0xFF303030), fontFamily: 'Comfortaa'),
+      bodyText2: TextStyle(
+          color: Color(0xFF303030), fontFamily: 'Comfortaa', fontSize: 16),
     );
   }
 }

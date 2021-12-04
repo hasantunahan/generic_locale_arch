@@ -24,6 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
+        "check_email": MessageLookupByLibrary.simpleMessage("Check your email"),
+        "check_email_info": MessageLookupByLibrary.simpleMessage(
+            "If you want to reset password, check your email address."),
         "didgetMail":
             MessageLookupByLibrary.simpleMessage("Didn\'t get your email?"),
         "email_verify":
@@ -36,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Repeat password again"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot Password"),
+        "go_login": MessageLookupByLibrary.simpleMessage("Go back login page"),
         "intro1Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard"),
         "intro2Body": MessageLookupByLibrary.simpleMessage(
@@ -46,9 +50,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_email_infotext":
             MessageLookupByLibrary.simpleMessage("Login with email address"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "open_email": MessageLookupByLibrary.simpleMessage("Open Email"),
         "register_info_text":
             MessageLookupByLibrary.simpleMessage("Create new account"),
         "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
+        "send_reset": MessageLookupByLibrary.simpleMessage("Send Reset Link"),
         "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Skip"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
