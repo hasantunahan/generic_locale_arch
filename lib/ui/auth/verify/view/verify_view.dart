@@ -16,7 +16,10 @@ class VerifyView extends StatelessWidget {
     final theme = Theme.of(context);
     return BaseView<VerifyViewModel>(
         viewModel: VerifyViewModel(),
-        onModelReady: (model) {},
+        onModelReady: (model) {
+          model.setContext(context);
+          model.init();
+        },
         onPageBuilder: (BuildContext context, VerifyViewModel viewModel) =>
             renderBody(context, theme, viewModel));
   }

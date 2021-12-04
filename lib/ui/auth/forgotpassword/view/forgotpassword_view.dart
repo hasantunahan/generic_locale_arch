@@ -19,7 +19,10 @@ class ForgotPasswordView extends StatelessWidget {
     final theme = Theme.of(context);
     return BaseView<ForgotPasswordViewModel>(
         viewModel: ForgotPasswordViewModel(),
-        onModelReady: (model) {},
+        onModelReady: (model) {
+          model.setContext(context);
+          model.init();
+        },
         onPageBuilder:
             (BuildContext context, ForgotPasswordViewModel viewModel) =>
                 renderBody(theme, context, emailController, viewModel));

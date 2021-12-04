@@ -11,17 +11,22 @@ class HomeNavView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BaseView<HomeNavViewModel>(
         viewModel: HomeNavViewModel(),
-        onModelReady: (model) {},
+        onModelReady: (model) {
+          model.setContext(context);
+          model.init();
+        },
         onPageBuilder: (BuildContext context, HomeNavViewModel viewModel) =>
-            Center(
-                child: TextButton(
-                    onPressed: () async {
-                      await FirebaseAuth.instance.signOut();
-                      Navigator.pushNamed(context, NavigationConstants.login);
-                    },
-                    child: const Text(
-                      "Logout",
-                      style: TextStyle(color: Colors.red),
-                    ))));
+            Scaffold(
+                body: Center(
+              child: TextButton(
+                  onPressed: () async {
+                    await FirebaseAuth.instance.signOut();
+                    Navigator.pushNamed(context, NavigationConstants.login);
+                  },
+                  child: const Text(
+                    "Logout",
+                    style: TextStyle(color: Colors.red),
+                  )),
+            )));
   }
 }

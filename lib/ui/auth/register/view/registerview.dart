@@ -23,7 +23,10 @@ class RegisterView extends StatelessWidget {
     final theme = Theme.of(context);
     return BaseView<RegisterViewModel>(
         viewModel: RegisterViewModel(),
-        onModelReady: (model) {},
+        onModelReady: (model) {
+          model.setContext(context);
+          model.init();
+        },
         onPageBuilder: (BuildContext context, RegisterViewModel viewModel) =>
             renderBody(context, theme, viewModel));
   }
