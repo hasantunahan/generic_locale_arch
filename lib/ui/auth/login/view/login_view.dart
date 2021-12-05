@@ -3,13 +3,13 @@ import 'dart:developer';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:with_retro_firebase/_product/utils/validation/validate.dart';
 import 'package:with_retro_firebase/core/base/view/baseview.dart';
 import 'package:with_retro_firebase/core/components/autosizetext/text.dart';
 import 'package:with_retro_firebase/core/components/button/button.dart';
 import 'package:with_retro_firebase/core/components/container/bottom_container.dart';
 import 'package:with_retro_firebase/core/components/textfield/textfield.dart';
 import 'package:with_retro_firebase/core/extension/context_extension.dart';
+import 'package:with_retro_firebase/core/utils/validation/validate.dart';
 import 'package:with_retro_firebase/generated/l10n.dart';
 import 'package:with_retro_firebase/ui/_partial/loading/loading.dart';
 import 'package:with_retro_firebase/ui/auth/login/viewmodel/login_viewmodel.dart';
@@ -26,7 +26,10 @@ class LoginView extends StatelessWidget {
     final theme = Theme.of(context);
     return BaseView<LoginViewModel>(
         viewModel: LoginViewModel(),
-        onModelReady: (model) {},
+        onModelReady: (model) {
+          model.setContext(context);
+          model.init();
+        },
         onPageBuilder: (BuildContext context, LoginViewModel viewModel) =>
             renderPage(context, theme, viewModel));
   }

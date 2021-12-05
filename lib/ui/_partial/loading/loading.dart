@@ -12,7 +12,7 @@ class LoadingWidget extends StatelessWidget {
     return Visibility(
       visible: visible ?? false,
       child: Container(
-        color: Colors.black.withOpacity(0.1),
+        color: Colors.black.withOpacity(0.15),
         height: context.height,
         width: context.width,
         child: Center(

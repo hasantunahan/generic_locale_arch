@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:with_retro_firebase/core/base/model/baseviewmodel.dart';
+import 'package:with_retro_firebase/core/components/snackbar/snackbar.dart';
 import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
 part 'register_viewmodel.g.dart';
 
@@ -27,7 +28,7 @@ abstract class _RegisterViewModelBase with Store, BaseViewModel {
   Future<void> register(TextEditingController e, TextEditingController p1,
       TextEditingController p2) async {
     if (p1.text != p2.text) {
-      log("password not match");
+      DefaultSnackBar().getSnackbar(context, 'Password not match', Colors.red);
     } else {
       changeLoading();
       try {
@@ -48,13 +49,15 @@ abstract class _RegisterViewModelBase with Store, BaseViewModel {
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
           changeLoading();
-          log('The password provided is too weak.');
+          DefaultSnackBar().getSnackbar(
+              context, 'The password provided is too weak.', Colors.red);
         } else if (e.code == 'email-already-in-use') {
           changeLoading();
-          log('The account already exists for that email.');
+          DefaultSnackBar().getSnackbar(context,
+              'The account already exists for that email.', Colors.red);
         }
       } catch (e) {
-        log(e.toString());
+        DefaultSnackBar().getSnackbar(context, e.toString(), Colors.red);
       }
     }
   }

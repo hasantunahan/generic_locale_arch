@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:with_retro_firebase/core/base/model/baseviewmodel.dart';
+import 'package:with_retro_firebase/core/components/snackbar/snackbar.dart';
 import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
 part 'login_viewmodel.g.dart';
 
@@ -43,18 +44,19 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
         }
       } else {
         changeLoading();
-        log("user not fount");
+        DefaultSnackBar().getSnackbar(context, "User not found", Colors.red);
       }
       log("message" + userCredential.toString());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        log('No user found for that email.');
+        DefaultSnackBar()
+            .getSnackbar(context, 'No user found for that email.', Colors.red);
       } else if (e.code == 'wrong-password') {
-        log('Wrong password provided for that user.');
+        DefaultSnackBar().getSnackbar(
+            context, 'Wrong password provided for that user.', Colors.red);
       }
+      changeLoading();
     }
-    log(FirebaseAuth.instance.currentUser.toString());
-    log("tamam");
     controller.clear();
     controller2.clear();
   }
