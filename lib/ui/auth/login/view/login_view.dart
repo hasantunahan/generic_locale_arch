@@ -164,6 +164,9 @@ class LoginView extends StatelessWidget {
       icon: Icons.email,
       hintText: S.of(context).enter_email,
       theme: theme,
+      validator: (value) {
+        return Validator.emailValidate(context, emailController.text);
+      },
     );
   }
 

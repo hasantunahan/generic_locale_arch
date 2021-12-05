@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Didn\'t get your email?"),
         "email_validate":
             MessageLookupByLibrary.simpleMessage("Email mustn\'t be blank"),
+        "email_validate_confirm":
+            MessageLookupByLibrary.simpleMessage("Please enter valid email!"),
         "email_verify":
             MessageLookupByLibrary.simpleMessage("Email Verification"),
         "enter_email":

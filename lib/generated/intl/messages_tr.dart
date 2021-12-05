@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "didgetMail": MessageLookupByLibrary.simpleMessage("Email gelmedi mi?"),
         "email_validate":
             MessageLookupByLibrary.simpleMessage("Email boş geçilemez!"),
+        "email_validate_confirm":
+            MessageLookupByLibrary.simpleMessage("Geçerli email giriniz!"),
         "email_verify": MessageLookupByLibrary.simpleMessage("Email Doğrulama"),
         "enter_email":
             MessageLookupByLibrary.simpleMessage("Email adresi giriniz"),

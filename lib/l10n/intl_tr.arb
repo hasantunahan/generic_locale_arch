@@ -31,5 +31,6 @@
   "email_validate" : "Email boş geçilemez!",
   "password_match"  : "Şifreler eşleşmiyor!",
   "password_validate_lenght" : "Şifre en az 6 karakterli olmak zorundadır!",
-  "want_change_email": "Başka bir email kullanmak istiyorum."
+  "want_change_email": "Başka bir email kullanmak istiyorum.",
+  "email_validate_confirm" : "Geçerli email giriniz!"
 }

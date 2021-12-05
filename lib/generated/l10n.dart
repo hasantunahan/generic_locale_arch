@@ -379,6 +379,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Please enter valid email!`
+  String get email_validate_confirm {
+    return Intl.message(
+      'Please enter valid email!',
+      name: 'email_validate_confirm',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

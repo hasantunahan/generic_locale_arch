@@ -13,4 +13,18 @@ class Validator {
       }
     }
   }
+
+  static String? emailValidate(BuildContext context, String value) {
+    if (value.isEmpty) {
+      return S.of(context).email_validate;
+    } else {
+      if (!RegExp(
+              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+          .hasMatch(value)) {
+        return S.of(context).email_validate_confirm;
+      } else {
+        return null;
+      }
+    }
+  }
 }

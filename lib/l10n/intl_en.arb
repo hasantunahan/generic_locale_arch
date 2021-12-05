@@ -31,6 +31,6 @@
   "email_validate" : "Email mustn't be blank",
   "password_match"  : "Passwords not match",
   "password_validate_lenght" : "Password must be at least 6 characters!",
-  "want_change_email": "I want to use another email"
-
+  "want_change_email": "I want to use another email",
+  "email_validate_confirm" : "Please enter valid email!"
 }
