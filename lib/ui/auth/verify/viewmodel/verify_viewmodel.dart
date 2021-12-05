@@ -35,4 +35,10 @@ abstract class _VerifyViewModelBase with Store, BaseViewModel {
       log("not verified");
     }
   }
+
+  @action
+  Future<void> goLoginAgain() async {
+    FirebaseAuth.instance.signOut();
+    await navigation.navigateToPageClear(path: NavigationConstants.login);
+  }
 }

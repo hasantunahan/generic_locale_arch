@@ -16,7 +16,3 @@ class ResponseData<T> {
         return fromJsonT(json);
       });
 }
-
-T _dataFromJson<T>(Map<String, dynamic> input) => input['value'] as T;
-
-Map<String, dynamic> _dataToJson<T>(T input) => {'value': input};

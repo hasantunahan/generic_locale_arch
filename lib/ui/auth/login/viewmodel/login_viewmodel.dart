@@ -9,6 +9,14 @@ part 'login_viewmodel.g.dart';
 class LoginViewModel = _LoginViewModelBase with _$LoginViewModel;
 
 abstract class _LoginViewModelBase with Store, BaseViewModel {
+  @observable
+  bool isLoading = false;
+
+  @action
+  changeLoading() {
+    isLoading = !isLoading;
+  }
+
   @override
   void setContext(BuildContext context) => this.context = context;
 
@@ -19,18 +27,22 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   Future login(TextEditingController controller,
       TextEditingController controller2) async {
     try {
+      changeLoading();
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(
               email: controller.text, password: controller2.text);
       User? user = FirebaseAuth.instance.currentUser;
       if (user != null) {
         if (user.emailVerified) {
+          changeLoading();
           await navigation.navigateToPageClear(
               path: NavigationConstants.homenav);
         } else {
+          changeLoading();
           await navigation.navigateToPage(path: NavigationConstants.verify);
         }
       } else {
+        changeLoading();
         log("user not fount");
       }
       log("message" + userCredential.toString());

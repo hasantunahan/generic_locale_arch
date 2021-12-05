@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "check_email_info": MessageLookupByLibrary.simpleMessage(
             "Şifrenizi sıfırlamak için mail adresinizi kontrol ediniz."),
         "didgetMail": MessageLookupByLibrary.simpleMessage("Email gelmedi mi?"),
+        "email_validate":
+            MessageLookupByLibrary.simpleMessage("Email boş geçilemez!"),
         "email_verify": MessageLookupByLibrary.simpleMessage("Email Doğrulama"),
         "enter_email":
             MessageLookupByLibrary.simpleMessage("Email adresi giriniz"),
@@ -50,6 +52,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Email ile giriş yapabilirsiniz."),
         "next": MessageLookupByLibrary.simpleMessage("İleri"),
         "open_email": MessageLookupByLibrary.simpleMessage("Emaili aç"),
+        "password_match":
+            MessageLookupByLibrary.simpleMessage("Şifreler eşleşmiyor!"),
+        "password_validate":
+            MessageLookupByLibrary.simpleMessage("Şifre boş geçilemez!"),
+        "password_validate_lenght": MessageLookupByLibrary.simpleMessage(
+            "Şifre en az 6 karakterli olmak zorundadır!"),
         "register_info_text":
             MessageLookupByLibrary.simpleMessage("Yeni Hesap Oluştur"),
         "send_again": MessageLookupByLibrary.simpleMessage("Tekrar Gönder"),
@@ -61,6 +69,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "verify": MessageLookupByLibrary.simpleMessage("Doğrula"),
         "verify_info_textarea": MessageLookupByLibrary.simpleMessage(
             "Giriş yapabilmen için email adresine doğrulama linki gönderdik. Lütfen emailinizi doğrulayınız."),
+        "want_change_email": MessageLookupByLibrary.simpleMessage(
+            "Başka bir email kullanmak istiyorum."),
         "welcome": MessageLookupByLibrary.simpleMessage("Hoşgeldiniz"),
         "what": MessageLookupByLibrary.simpleMessage("Anons Nedir?")
       };

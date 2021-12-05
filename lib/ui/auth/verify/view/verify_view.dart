@@ -81,6 +81,13 @@ class VerifyView extends StatelessWidget {
                 height: 10,
               ),
               renderSendAgainButton(context, value),
+              const SizedBox(
+                height: 10,
+              ),
+              DefaultText(
+                data: S.of(context).want_change_email,
+                onPress: () async => await value.goLoginAgain(),
+              )
             ],
           ),
         ),

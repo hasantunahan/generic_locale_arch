@@ -26,5 +26,11 @@
   "check_email_info" : "If you want to reset password, check your email address.",
   "open_email" : "Open Email",
   "send_reset" : "Send Reset Link",
-  "go_login" : "Go back login page"
+  "go_login" : "Go back login page",
+  "password_validate" : "Password mustn't be blank",
+  "email_validate" : "Email mustn't be blank",
+  "password_match"  : "Passwords not match",
+  "password_validate_lenght" : "Password must be at least 6 characters!",
+  "want_change_email": "I want to use another email"
+
 }

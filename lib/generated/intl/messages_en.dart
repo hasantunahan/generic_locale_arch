@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "If you want to reset password, check your email address."),
         "didgetMail":
             MessageLookupByLibrary.simpleMessage("Didn\'t get your email?"),
+        "email_validate":
+            MessageLookupByLibrary.simpleMessage("Email mustn\'t be blank"),
         "email_verify":
             MessageLookupByLibrary.simpleMessage("Email Verification"),
         "enter_email":
@@ -51,6 +53,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Login with email address"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "open_email": MessageLookupByLibrary.simpleMessage("Open Email"),
+        "password_match":
+            MessageLookupByLibrary.simpleMessage("Passwords not match"),
+        "password_validate":
+            MessageLookupByLibrary.simpleMessage("Password mustn\'t be blank"),
+        "password_validate_lenght": MessageLookupByLibrary.simpleMessage(
+            "Password must be at least 6 characters!"),
         "register_info_text":
             MessageLookupByLibrary.simpleMessage("Create new account"),
         "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
@@ -61,6 +69,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "verify": MessageLookupByLibrary.simpleMessage("Verify"),
         "verify_info_textarea": MessageLookupByLibrary.simpleMessage(
             "We have sent a verification link to your email address so you can log in. Please verify email."),
+        "want_change_email":
+            MessageLookupByLibrary.simpleMessage("I want to use another email"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "what": MessageLookupByLibrary.simpleMessage("What is Anons?")
       };

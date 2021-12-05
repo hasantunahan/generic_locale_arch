@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:with_retro_firebase/_product/utils/validation/validate.dart';
 import 'package:with_retro_firebase/core/base/view/baseview.dart';
 import 'package:with_retro_firebase/core/components/autosizetext/text.dart';
 import 'package:with_retro_firebase/core/components/button/button.dart';
@@ -9,12 +11,14 @@ import 'package:with_retro_firebase/core/components/container/bottom_container.d
 import 'package:with_retro_firebase/core/components/textfield/textfield.dart';
 import 'package:with_retro_firebase/core/extension/context_extension.dart';
 import 'package:with_retro_firebase/generated/l10n.dart';
+import 'package:with_retro_firebase/ui/_partial/loading/loading.dart';
 import 'package:with_retro_firebase/ui/auth/login/viewmodel/login_viewmodel.dart';
 import 'package:with_retro_firebase/core/extension/image/image_extension.dart';
 
 class LoginView extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   LoginView({Key? key}) : super(key: key);
 
   @override
@@ -24,7 +28,20 @@ class LoginView extends StatelessWidget {
         viewModel: LoginViewModel(),
         onModelReady: (model) {},
         onPageBuilder: (BuildContext context, LoginViewModel viewModel) =>
-            renderBody(context, theme, viewModel));
+            renderPage(context, theme, viewModel));
+  }
+
+  renderPage(BuildContext context, ThemeData theme, LoginViewModel viewModel) {
+    return Stack(
+      children: [
+        renderBody(context, theme, viewModel),
+        Observer(builder: (_) {
+          return LoadingWidget(
+            visible: viewModel.isLoading,
+          );
+        }),
+      ],
+    );
   }
 
   renderBody(BuildContext context, ThemeData theme, value) {
@@ -74,24 +91,27 @@ class LoginView extends StatelessWidget {
       containerColor: theme.colorScheme.onPrimary,
       width: context.width,
       widget: SingleChildScrollView(
-        child: Padding(
-          padding: context.paddingMedium,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                S.of(context).login,
-                style: theme.textTheme.headline6,
-              ),
-              const SizedBox(height: 10),
-              renderEmailTextField(context, theme),
-              const SizedBox(height: 10),
-              renderPasswordTextField(context, theme),
-              const SizedBox(height: 10),
-              renderLoginButton(theme, context, value),
-              const SizedBox(height: 20),
-              renderActionsButtons(context, theme, value)
-            ],
+        child: Form(
+          key: formKey,
+          child: Padding(
+            padding: context.paddingMedium,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  S.of(context).login,
+                  style: theme.textTheme.headline6,
+                ),
+                const SizedBox(height: 10),
+                renderEmailTextField(context, theme),
+                const SizedBox(height: 10),
+                renderPasswordTextField(context, theme),
+                const SizedBox(height: 10),
+                renderLoginButton(theme, context, value),
+                const SizedBox(height: 20),
+                renderActionsButtons(context, theme, value),
+              ],
+            ),
           ),
         ),
       ),
@@ -121,7 +141,7 @@ class LoginView extends StatelessWidget {
       buttonColor: theme.colorScheme.secondary,
       textColor: Colors.white,
       text: S.of(context).login.toUpperCase(),
-      onPressed: () => value.login(emailController, passwordController),
+      onPressed: () => {value.login(emailController, passwordController)},
     );
   }
 
@@ -132,6 +152,9 @@ class LoginView extends StatelessWidget {
       icon: Icons.lock,
       hintText: S.of(context).enter_password,
       theme: theme,
+      validator: (value) {
+        return Validator.passwordValidate(context, passwordController.text);
+      },
     );
   }
 

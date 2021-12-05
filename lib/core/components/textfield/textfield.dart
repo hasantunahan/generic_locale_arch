@@ -7,6 +7,7 @@ class DefaultTextField extends StatelessWidget {
   final bool? secure;
   final IconData? icon;
   final Widget? customIcon;
+  final String? Function(String? value)? validator;
   const DefaultTextField(
       {Key? key,
       this.controller,
@@ -14,12 +15,15 @@ class DefaultTextField extends StatelessWidget {
       this.hintText,
       this.secure,
       this.icon,
-      this.customIcon})
+      this.customIcon,
+      this.validator})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      validator: (value) => validator != null ? validator!(value) : null,
       style: TextStyle(color: theme!.colorScheme.primaryVariant),
       controller: controller,
       obscureText: secure ?? false,

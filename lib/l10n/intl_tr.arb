@@ -26,5 +26,10 @@
   "check_email_info" : "Şifrenizi sıfırlamak için mail adresinizi kontrol ediniz.",
   "open_email" : "Emaili aç",
   "send_reset" : "Sıfırlama Linki Gönder",
-  "go_login" : "Giriş sayfasına geri dön"
+  "go_login" : "Giriş sayfasına geri dön",
+  "password_validate" : "Şifre boş geçilemez!",
+  "email_validate" : "Email boş geçilemez!",
+  "password_match"  : "Şifreler eşleşmiyor!",
+  "password_validate_lenght" : "Şifre en az 6 karakterli olmak zorundadır!",
+  "want_change_email": "Başka bir email kullanmak istiyorum."
 }

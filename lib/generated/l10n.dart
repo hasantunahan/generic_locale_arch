@@ -329,6 +329,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Password mustn't be blank`
+  String get password_validate {
+    return Intl.message(
+      'Password mustn\'t be blank',
+      name: 'password_validate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email mustn't be blank`
+  String get email_validate {
+    return Intl.message(
+      'Email mustn\'t be blank',
+      name: 'email_validate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords not match`
+  String get password_match {
+    return Intl.message(
+      'Passwords not match',
+      name: 'password_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 6 characters!`
+  String get password_validate_lenght {
+    return Intl.message(
+      'Password must be at least 6 characters!',
+      name: 'password_validate_lenght',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I want to use another email`
+  String get want_change_email {
+    return Intl.message(
+      'I want to use another email',
+      name: 'want_change_email',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

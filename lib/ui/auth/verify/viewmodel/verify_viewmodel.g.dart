@@ -24,6 +24,14 @@ mixin _$VerifyViewModel on _VerifyViewModelBase, Store {
     return _$verifyControlAsyncAction.run(() => super.verifyControl());
   }
 
+  final _$goLoginAgainAsyncAction =
+      AsyncAction('_VerifyViewModelBase.goLoginAgain');
+
+  @override
+  Future<void> goLoginAgain() {
+    return _$goLoginAgainAsyncAction.run(() => super.goLoginAgain());
+  }
+
   @override
   String toString() {
     return '''
