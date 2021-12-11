@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:with_retro_firebase/_product/components/anons_home_card/anons_home_card.dart';
+import 'package:with_retro_firebase/_product/components/avatar_with_add/avatar_with_add.dart';
 import 'package:with_retro_firebase/_product/constants/image/image_list.dart';
+import 'package:with_retro_firebase/_product/model/income_anons/income_anons.dart';
 import 'package:with_retro_firebase/core/base/view/baseview.dart';
 import 'package:with_retro_firebase/core/components/autosizetext/text.dart';
 import 'package:with_retro_firebase/core/extension/context_extension.dart';
@@ -40,18 +43,16 @@ class HomeView extends StatelessWidget {
           ),
           Expanded(
             flex: 17,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                renderNearText(context, theme),
-                renderNearAvatarList(viewModel, context),
-                renderAnonsText(context, theme),
-                Expanded(
-                  child: Container(
-                    color: Colors.red,
-                  ),
-                )
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  renderNearText(context, theme),
+                  renderNearAvatarList(viewModel, context, theme),
+                  renderAnonsText(context, theme),
+                  renderIcomeAnons(viewModel, theme, context)
+                ],
+              ),
             ),
           )
         ],
@@ -59,20 +60,48 @@ class HomeView extends StatelessWidget {
     );
   }
 
+  renderIcomeAnons(
+      HomeViewModel viewModel, ThemeData theme, BuildContext context) {
+    return Observer(
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.only(top: 2),
+          child: StreamBuilder<List<IncomeAnons>>(
+            initialData: viewModel.incomeAnonsList,
+            builder: (context, AsyncSnapshot<List<IncomeAnons>> snapshot) {
+              if (snapshot.hasData) {
+                return Column(
+                  children: snapshot.data!.map((e) {
+                    return AnonsHomeCard(
+                      e: e,
+                    );
+                  }).toList(),
+                );
+              } else {
+                return const SizedBox.shrink();
+              }
+            },
+          ),
+        );
+      },
+    );
+  }
+
   renderAnonsText(BuildContext context, ThemeData theme) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          S.of(context).app_name,
-          style: theme.textTheme.headline5,
+          "#${S.of(context).app_name}",
+          style: theme.textTheme.bodyText1,
         ),
         Padding(
           padding: context.paddingLowHorizontal,
           child: Image.asset(
             ImageList.logo.toImagePng,
-            width: 20,
-            height: 20,
+            width: 16,
+            height: 16,
           ),
         )
       ],
@@ -81,25 +110,21 @@ class HomeView extends StatelessWidget {
 
   renderNearText(BuildContext context, ThemeData theme) {
     return DefaultText(
-      data: S.of(context).anons_send_near_time,
-      style: theme.textTheme.subtitle1,
+      data: "#${S.of(context).anons_send_near_time}",
+      style: theme.textTheme.bodyText1,
     );
   }
 
-  renderNearAvatarList(HomeViewModel viewModel, BuildContext context) {
+  renderNearAvatarList(
+      HomeViewModel viewModel, BuildContext context, ThemeData theme) {
     return Observer(builder: (_) {
       return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
           children: viewModel.nearList.map((e) {
-            return Container(
-              padding: context.paddingNearAvatar,
-              child: Image.network(
-                e.url ?? "",
-                width: 66,
-                height: 66,
-                key: Key(e.id.toString()),
-              ),
+            return AvatarWithAdd(
+              imageUrl: e.url,
+              id: e.id,
             );
           }).toList(),
         ),

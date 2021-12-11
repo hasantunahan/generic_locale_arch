@@ -24,12 +24,14 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "anons_send_near_time": MessageLookupByLibrary.simpleMessage(
             "Yakın zamanda anons gönderelenler"),
+        "answer_t": MessageLookupByLibrary.simpleMessage("Cevapla"),
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
         "back": MessageLookupByLibrary.simpleMessage("Geri"),
         "check_email":
             MessageLookupByLibrary.simpleMessage("Emailini kontrol et"),
         "check_email_info": MessageLookupByLibrary.simpleMessage(
             "Şifrenizi sıfırlamak için mail adresinizi kontrol ediniz."),
+        "comments": MessageLookupByLibrary.simpleMessage("cevaplanma"),
         "didgetMail": MessageLookupByLibrary.simpleMessage("Email gelmedi mi?"),
         "email_validate":
             MessageLookupByLibrary.simpleMessage("Email boş geçilemez!"),

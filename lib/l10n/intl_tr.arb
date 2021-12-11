@@ -33,5 +33,7 @@
   "password_validate_lenght" : "Şifre en az 6 karakterli olmak zorundadır!",
   "want_change_email": "Başka bir email kullanmak istiyorum.",
   "email_validate_confirm" : "Geçerli email giriniz!",
-  "anons_send_near_time"  : "Yakın zamanda anons gönderelenler"
+  "anons_send_near_time"  : "Yakın zamanda anons gönderelenler",
+  "answer_t" : "Cevapla",
+  "comments" : "cevaplanma"
 }

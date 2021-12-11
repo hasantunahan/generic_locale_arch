@@ -399,6 +399,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Answer`
+  String get answer_t {
+    return Intl.message(
+      'Answer',
+      name: 'answer_t',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `answering`
+  String get comments {
+    return Intl.message(
+      'answering',
+      name: 'comments',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

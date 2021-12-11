@@ -33,6 +33,7 @@
   "password_validate_lenght" : "Password must be at least 6 characters!",
   "want_change_email": "I want to use another email",
   "email_validate_confirm" : "Please enter valid email!",
-  "anons_send_near_time"  : "Recent anons postings"
-
+  "anons_send_near_time"  : "Recent anons postings",
+  "answer_t" : "Answer",
+  "comments" : "answering"
 }

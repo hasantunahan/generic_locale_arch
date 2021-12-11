@@ -24,11 +24,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "anons_send_near_time":
             MessageLookupByLibrary.simpleMessage("Recent anons postings"),
+        "answer_t": MessageLookupByLibrary.simpleMessage("Answer"),
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
         "check_email": MessageLookupByLibrary.simpleMessage("Check your email"),
         "check_email_info": MessageLookupByLibrary.simpleMessage(
             "If you want to reset password, check your email address."),
+        "comments": MessageLookupByLibrary.simpleMessage("answering"),
         "didgetMail":
             MessageLookupByLibrary.simpleMessage("Didn\'t get your email?"),
         "email_validate":

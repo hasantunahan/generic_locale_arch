@@ -14,9 +14,9 @@ class TextThemes {
           TextStyle(color: Colors.white, fontFamily: 'Comfortaa', fontSize: 25),
       headline6: TextStyle(color: Colors.white, fontFamily: 'Comfortaa'),
       bodyText1:
-          TextStyle(color: Colors.white, fontFamily: 'Comfortaa', fontSize: 14),
+          TextStyle(color: Colors.white, fontFamily: 'Comfortaa', fontSize: 11),
       bodyText2:
-          TextStyle(color: Colors.white, fontFamily: 'Comfortaa', fontSize: 16),
+          TextStyle(color: Colors.white, fontFamily: 'Comfortaa', fontSize: 13),
     );
   }
 
@@ -33,9 +33,9 @@ class TextThemes {
           color: Color(0xFF303030), fontFamily: 'Comfortaa', fontSize: 25),
       headline6: TextStyle(color: Color(0xFF303030), fontFamily: 'Comfortaa'),
       bodyText1: TextStyle(
-          color: Color(0xFF303030), fontFamily: 'Comfortaa', fontSize: 14),
+          color: Color(0xFF303030), fontFamily: 'Comfortaa', fontSize: 11),
       bodyText2: TextStyle(
-          color: Color(0xFF303030), fontFamily: 'Comfortaa', fontSize: 16),
+          color: Color(0xFF303030), fontFamily: 'Comfortaa', fontSize: 13),
     );
   }
 }

@@ -24,6 +24,22 @@ mixin _$HomeViewModel on _HomeViewModelBase, Store {
     });
   }
 
+  final _$incomeAnonsListAtom =
+      Atom(name: '_HomeViewModelBase.incomeAnonsList');
+
+  @override
+  List<IncomeAnons> get incomeAnonsList {
+    _$incomeAnonsListAtom.reportRead();
+    return super.incomeAnonsList;
+  }
+
+  @override
+  set incomeAnonsList(List<IncomeAnons> value) {
+    _$incomeAnonsListAtom.reportWrite(value, super.incomeAnonsList, () {
+      super.incomeAnonsList = value;
+    });
+  }
+
   final _$_HomeViewModelBaseActionController =
       ActionController(name: '_HomeViewModelBase');
 
@@ -41,7 +57,8 @@ mixin _$HomeViewModel on _HomeViewModelBase, Store {
   @override
   String toString() {
     return '''
-nearList: ${nearList}
+nearList: ${nearList},
+incomeAnonsList: ${incomeAnonsList}
     ''';
   }
 }
