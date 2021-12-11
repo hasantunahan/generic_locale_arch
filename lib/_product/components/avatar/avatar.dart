@@ -9,13 +9,9 @@ class DefaultAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration:
-          const BoxDecoration(boxShadow: [BoxShadow(color: Colors.grey)]),
-      child: ClipRRect(
-          borderRadius: BorderRadius.circular(4.0),
-          child: Image.network(photoUrl ?? "",
-              width: width ?? 66, height: height ?? 66, fit: BoxFit.cover)),
-    );
+    return ClipRRect(
+        borderRadius: BorderRadius.circular(4.0),
+        child: Image.network(photoUrl ?? "",
+            width: width ?? 66, height: height ?? 66, fit: BoxFit.cover));
   }
 }
