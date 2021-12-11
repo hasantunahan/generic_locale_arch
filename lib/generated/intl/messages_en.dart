@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "anons_send_near_time":
+            MessageLookupByLibrary.simpleMessage("Recent anons postings"),
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
         "check_email": MessageLookupByLibrary.simpleMessage("Check your email"),

@@ -46,6 +46,8 @@ extension PaddingExtensionSymetric on BuildContext {
       EdgeInsets.symmetric(horizontal: mediumValue);
   EdgeInsets get paddingHighHorizontal =>
       EdgeInsets.symmetric(horizontal: highValue);
+  EdgeInsets get paddingNearAvatar =>
+      EdgeInsets.only(right: normalValue, top: lowValue, bottom: lowValue);
 }
 
 extension PageExtension on BuildContext {

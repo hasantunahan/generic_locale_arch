@@ -389,6 +389,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Recent anons postings`
+  String get anons_send_near_time {
+    return Intl.message(
+      'Recent anons postings',
+      name: 'anons_send_near_time',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
