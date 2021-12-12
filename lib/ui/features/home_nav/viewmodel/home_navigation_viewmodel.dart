@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:with_retro_firebase/core/base/model/baseviewmodel.dart';
+import 'package:with_retro_firebase/core/extension/context_extension.dart';
 import 'package:with_retro_firebase/ui/features/chat/view/chat_view.dart';
 import 'package:with_retro_firebase/ui/features/home/view/home_view.dart';
 import 'package:with_retro_firebase/ui/features/profile/view/profile_view.dart';
@@ -11,10 +14,47 @@ class HomeNavViewModel = _HomeNavViewModelBase with _$HomeNavViewModel;
 
 abstract class _HomeNavViewModelBase with Store, BaseViewModel {
   @observable
+  bool sheet = false;
+
+  @observable
   int currentindex = 0;
 
   @action
+  changeSheet() {
+    sheet = !sheet;
+  }
+
+  @action
   setCurrentIndex(int index) => currentindex = index;
+
+  @action
+  showSendAnons(GlobalKey<ScaffoldState> scaffoldKey) {
+    changeSheet();
+    var res = scaffoldKey.currentState!.showBottomSheet(
+      (context) => SizedBox(
+        height: context.height,
+        width: context.width,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Container(
+                height: context.height * .7,
+                width: context.width,
+                decoration: const BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
+                    )),
+                child: const Text("sheet test")),
+          ],
+        ),
+      ),
+      backgroundColor: Colors.transparent,
+    );
+    res.closed.then((value) => changeSheet());
+  }
 
   @action
   Widget setPage(index) {

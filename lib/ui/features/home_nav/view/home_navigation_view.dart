@@ -11,6 +11,7 @@ class HomeNavView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return BaseView<HomeNavViewModel>(
         viewModel: HomeNavViewModel(),
         onModelReady: (model) {
@@ -18,12 +19,13 @@ class HomeNavView extends StatelessWidget {
           model.init();
         },
         onPageBuilder: (BuildContext context, HomeNavViewModel viewModel) =>
-            renderBody(viewModel, theme, context));
+            renderBody(viewModel, theme, context, scaffoldKey));
   }
 
-  renderBody(
-      HomeNavViewModel viewModel, ThemeData theme, BuildContext context) {
+  renderBody(HomeNavViewModel viewModel, ThemeData theme, BuildContext context,
+      GlobalKey<ScaffoldState> scaffoldKey) {
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: theme.backgroundColor,
       appBar: AppBar(
         toolbarHeight: 0,
@@ -36,15 +38,29 @@ class HomeNavView extends StatelessWidget {
       }),
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterDocked,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: theme.colorScheme.secondary,
-        onPressed: () {},
-        child: const Icon(
-          Icons.notifications,
-          color: Colors.white,
-        ),
+      floatingActionButton: Observer(
+        builder: (context) {
+          return Visibility(
+              visible: !viewModel.sheet,
+              child: FloatingActionButton(
+                backgroundColor: theme.colorScheme.secondary,
+                onPressed: () {
+                  viewModel.showSendAnons(scaffoldKey);
+                },
+                child: const Icon(
+                  Icons.notifications,
+                  color: Colors.white,
+                ),
+              ));
+        },
       ),
-      bottomNavigationBar: renderBottomBar(viewModel, theme, context),
+      bottomNavigationBar: Observer(
+        builder: (context) {
+          return Visibility(
+              visible: !viewModel.sheet,
+              child: renderBottomBar(viewModel, theme, context));
+        },
+      ),
     );
   }
 
