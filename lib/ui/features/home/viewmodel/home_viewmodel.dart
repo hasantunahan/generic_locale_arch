@@ -28,21 +28,21 @@ abstract class _HomeViewModelBase with Store, BaseViewModel {
           id: 2,
           name: "Hasan",
           url:
-              "https://lh3.googleusercontent.com/proxy/DLfGgUSjEcyY2sKZuOs1O6N4YPHF_0cBZFW8y7wzasQT_ndhY45vufbSvbs2llyDefjqIy-qQ4B6BCdZAQ5gviaGnsjXonMqTlcoBv1njA"),
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4glkxnuYj0sidq0TsYPhqR8Xwo4UWYH03wjsvU2vI62-kxL-r0ij68cj-9d_fjWH-vxs&usqp=CAU"),
     );
     nearList.add(
       UserDTO(
           id: 3,
           name: "Hasan",
           url:
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlcEOxSIW6Gh2KlUB57JuLdQc7abhYGC0Nu1PcVFqKatiIwTSb3__-kGcH6BnkoY093NY&usqp=CAU"),
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4glkxnuYj0sidq0TsYPhqR8Xwo4UWYH03wjsvU2vI62-kxL-r0ij68cj-9d_fjWH-vxs&usqp=CAU"),
     );
     nearList.add(
       UserDTO(
           id: 4,
           name: "Hasan",
           url:
-              "https://i.pinimg.com/originals/2d/e5/7f/2de57f8025bd64dffd554de0f080ee7f.jpg"),
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4glkxnuYj0sidq0TsYPhqR8Xwo4UWYH03wjsvU2vI62-kxL-r0ij68cj-9d_fjWH-vxs&usqp=CAU"),
     );
     nearList.add(
       UserDTO(

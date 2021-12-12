@@ -35,5 +35,10 @@
   "email_validate_confirm" : "Please enter valid email!",
   "anons_send_near_time"  : "Recent anons postings",
   "answer_t" : "Answer",
-  "comments" : "answering"
+  "comments" : "answering",
+  "friend": "Friends",
+  "like" : "Like",
+  "editprofile" : "Edit Profile",
+  "responders": "Responders to their announcements",
+  "myanons" : "My Anons"
 }

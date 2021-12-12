@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Şifrenizi sıfırlamak için mail adresinizi kontrol ediniz."),
         "comments": MessageLookupByLibrary.simpleMessage("cevaplanma"),
         "didgetMail": MessageLookupByLibrary.simpleMessage("Email gelmedi mi?"),
+        "editprofile": MessageLookupByLibrary.simpleMessage("Profili Düzenle"),
         "email_validate":
             MessageLookupByLibrary.simpleMessage("Email boş geçilemez!"),
         "email_validate_confirm":
@@ -45,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Şifrenizi tekrar giriniz"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Şifremi Unuttum"),
+        "friend": MessageLookupByLibrary.simpleMessage("Arkadaş"),
         "go_login":
             MessageLookupByLibrary.simpleMessage("Giriş sayfasına geri dön"),
         "intro1Body": MessageLookupByLibrary.simpleMessage(
@@ -53,9 +55,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s "),
         "intro3Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  has been  industry\'s standard"),
+        "like": MessageLookupByLibrary.simpleMessage("Beğeni"),
         "login": MessageLookupByLibrary.simpleMessage("Giriş yap"),
         "login_email_infotext": MessageLookupByLibrary.simpleMessage(
             "Email ile giriş yapabilirsiniz."),
+        "myanons": MessageLookupByLibrary.simpleMessage("Anonslarım"),
         "next": MessageLookupByLibrary.simpleMessage("İleri"),
         "open_email": MessageLookupByLibrary.simpleMessage("Emaili aç"),
         "password_match":
@@ -66,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Şifre en az 6 karakterli olmak zorundadır!"),
         "register_info_text":
             MessageLookupByLibrary.simpleMessage("Yeni Hesap Oluştur"),
+        "responders":
+            MessageLookupByLibrary.simpleMessage("Anonslarıma cevap verenler"),
         "send_again": MessageLookupByLibrary.simpleMessage("Tekrar Gönder"),
         "send_reset":
             MessageLookupByLibrary.simpleMessage("Sıfırlama Linki Gönder"),

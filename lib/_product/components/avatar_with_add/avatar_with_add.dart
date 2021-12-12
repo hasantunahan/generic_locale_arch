@@ -6,7 +6,11 @@ import 'package:with_retro_firebase/core/extension/context_extension.dart';
 class AvatarWithAdd extends StatelessWidget {
   final int? id;
   final String? imageUrl;
-  const AvatarWithAdd({Key? key, this.imageUrl, this.id}) : super(key: key);
+  final double? height;
+  final double? width;
+  const AvatarWithAdd(
+      {Key? key, this.imageUrl, this.id, this.height, this.width})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +23,8 @@ class AvatarWithAdd extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
             child: Image.network(
               imageUrl ?? "",
-              width: 66,
-              height: 66,
+              width: width ?? 66,
+              height: height ?? 66,
               fit: BoxFit.cover,
               key: Key(id.toString()),
             ),

@@ -419,6 +419,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Friends`
+  String get friend {
+    return Intl.message(
+      'Friends',
+      name: 'friend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Like`
+  String get like {
+    return Intl.message(
+      'Like',
+      name: 'like',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get editprofile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'editprofile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Responders to their announcements`
+  String get responders {
+    return Intl.message(
+      'Responders to their announcements',
+      name: 'responders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Anons`
+  String get myanons {
+    return Intl.message(
+      'My Anons',
+      name: 'myanons',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

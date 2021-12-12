@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "comments": MessageLookupByLibrary.simpleMessage("answering"),
         "didgetMail":
             MessageLookupByLibrary.simpleMessage("Didn\'t get your email?"),
+        "editprofile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "email_validate":
             MessageLookupByLibrary.simpleMessage("Email mustn\'t be blank"),
         "email_validate_confirm":
@@ -47,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Repeat password again"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot Password"),
+        "friend": MessageLookupByLibrary.simpleMessage("Friends"),
         "go_login": MessageLookupByLibrary.simpleMessage("Go back login page"),
         "intro1Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard"),
@@ -54,9 +56,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s "),
         "intro3Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  has been  industry\'s standard"),
+        "like": MessageLookupByLibrary.simpleMessage("Like"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "login_email_infotext":
             MessageLookupByLibrary.simpleMessage("Login with email address"),
+        "myanons": MessageLookupByLibrary.simpleMessage("My Anons"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "open_email": MessageLookupByLibrary.simpleMessage("Open Email"),
         "password_match":
@@ -67,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password must be at least 6 characters!"),
         "register_info_text":
             MessageLookupByLibrary.simpleMessage("Create new account"),
+        "responders": MessageLookupByLibrary.simpleMessage(
+            "Responders to their announcements"),
         "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
         "send_reset": MessageLookupByLibrary.simpleMessage("Send Reset Link"),
         "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),

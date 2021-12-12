@@ -23,9 +23,9 @@ abstract class _HomeNavViewModelBase with Store, BaseViewModel {
         return const HomeView();
       case 1:
         return const ProfileView();
-      case 2:
-        return const ChatView();
       case 3:
+        return const ChatView();
+      case 4:
         return const SettingsView();
       default:
         return const HomeView();

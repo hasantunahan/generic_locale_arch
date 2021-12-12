@@ -21,7 +21,7 @@ class ThemeColors {
   static ColorScheme lightColors() {
     return const ColorScheme(
         primary: Color(0xFF7F41FA),
-        primaryVariant: Color(0xFF4E4E4E), //xx
+        primaryVariant: Color(0xFF383838), //xx
         secondary: Color(0xFFFB003F),
         secondaryVariant: Colors.white,
         surface: Colors.blue, //xx

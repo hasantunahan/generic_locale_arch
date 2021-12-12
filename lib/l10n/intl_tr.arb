@@ -35,5 +35,11 @@
   "email_validate_confirm" : "Geçerli email giriniz!",
   "anons_send_near_time"  : "Yakın zamanda anons gönderelenler",
   "answer_t" : "Cevapla",
-  "comments" : "cevaplanma"
+  "comments" : "cevaplanma",
+  "friend": "Arkadaş",
+  "like" : "Beğeni",
+  "editprofile" : "Profili Düzenle",
+  "responders": "Anonslarıma cevap verenler",
+  "myanons" : "Anonslarım"
+
 }

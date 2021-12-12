@@ -21,6 +21,7 @@ class DefaultButtonWithStyle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return SizedBox(
       width: width ?? MediaQuery.of(context).size.width * .9,
       child: ElevatedButton(
@@ -33,15 +34,16 @@ class DefaultButtonWithStyle extends StatelessWidget {
                 borderRadius: BorderRadius.circular(radius ?? 5),
               ))),
           child: Center(
-            child: renderText(),
+            child: renderText(theme),
           )),
     );
   }
 
-  renderText() {
+  renderText(ThemeData theme) {
     return Text(
       text ?? 'Button',
-      style: TextStyle(color: textColor ?? Colors.white),
+      style:
+          theme.textTheme.bodyText2!.copyWith(color: textColor ?? Colors.white),
     );
   }
 }
