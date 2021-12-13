@@ -45,7 +45,7 @@ class HomeNavView extends StatelessWidget {
               child: FloatingActionButton(
                 backgroundColor: theme.colorScheme.secondary,
                 onPressed: () {
-                  viewModel.showSendAnons(scaffoldKey);
+                  viewModel.showSendAnons(scaffoldKey, theme, context);
                 },
                 child: const Icon(
                   Icons.notifications,

@@ -60,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_email_infotext": MessageLookupByLibrary.simpleMessage(
             "Email ile giriş yapabilirsiniz."),
         "myanons": MessageLookupByLibrary.simpleMessage("Anonslarım"),
+        "newanons": MessageLookupByLibrary.simpleMessage("Yeni Anons"),
         "next": MessageLookupByLibrary.simpleMessage("İleri"),
         "open_email": MessageLookupByLibrary.simpleMessage("Emaili aç"),
         "password_match":

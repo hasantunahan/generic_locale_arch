@@ -65,11 +65,12 @@ mixin _$HomeNavViewModel on _HomeNavViewModelBase, Store {
   }
 
   @override
-  dynamic showSendAnons(GlobalKey<ScaffoldState> scaffoldKey) {
+  dynamic showSendAnons(GlobalKey<ScaffoldState> scaffoldKey, ThemeData theme,
+      BuildContext context) {
     final _$actionInfo = _$_HomeNavViewModelBaseActionController.startAction(
         name: '_HomeNavViewModelBase.showSendAnons');
     try {
-      return super.showSendAnons(scaffoldKey);
+      return super.showSendAnons(scaffoldKey, theme, context);
     } finally {
       _$_HomeNavViewModelBaseActionController.endAction(_$actionInfo);
     }

@@ -40,5 +40,6 @@
   "like" : "Like",
   "editprofile" : "Edit Profile",
   "responders": "Responders to their announcements",
-  "myanons" : "My Anons"
+  "myanons" : "My Anons",
+  "newanons" : "New Anons"
 }

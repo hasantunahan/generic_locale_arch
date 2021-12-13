@@ -469,6 +469,16 @@ class S {
       args: [],
     );
   }
+
+  /// `New Anons`
+  String get newanons {
+    return Intl.message(
+      'New Anons',
+      name: 'newanons',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

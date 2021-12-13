@@ -61,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_email_infotext":
             MessageLookupByLibrary.simpleMessage("Login with email address"),
         "myanons": MessageLookupByLibrary.simpleMessage("My Anons"),
+        "newanons": MessageLookupByLibrary.simpleMessage("New Anons"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "open_email": MessageLookupByLibrary.simpleMessage("Open Email"),
         "password_match":

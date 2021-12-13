@@ -7,7 +7,7 @@ class ThemeColors {
         primaryVariant: Colors.white, //xx
         secondary: Color(0xFFFB003F),
         secondaryVariant: Colors.white,
-        surface: Colors.blue, //xx
+        surface: Colors.black12, //xx
         background: Color(0xFF1D1D1D), //xx
         error: Colors.red,
         onPrimary: Color(0xFF464646),
@@ -24,7 +24,7 @@ class ThemeColors {
         primaryVariant: Color(0xFF383838), //xx
         secondary: Color(0xFFFB003F),
         secondaryVariant: Colors.white,
-        surface: Colors.blue, //xx
+        surface: Colors.white, //xx
         background: Color(0xffffffff), //xx
         error: Colors.red,
         onPrimary: Color(0xFFEBEBEB),

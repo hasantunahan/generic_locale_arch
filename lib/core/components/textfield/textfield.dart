@@ -8,6 +8,9 @@ class DefaultTextField extends StatelessWidget {
   final IconData? icon;
   final Widget? customIcon;
   final String? Function(String? value)? validator;
+  final bool? rightPadding;
+  final int? maxLines;
+  final int? minLines;
   const DefaultTextField(
       {Key? key,
       this.controller,
@@ -16,26 +19,36 @@ class DefaultTextField extends StatelessWidget {
       this.secure,
       this.icon,
       this.customIcon,
-      this.validator})
+      this.validator,
+      this.rightPadding,
+      this.maxLines,
+      this.minLines})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: (value) => validator != null ? validator!(value) : null,
-      style: TextStyle(color: theme!.colorScheme.primaryVariant),
-      controller: controller,
-      obscureText: secure ?? false,
-      decoration: InputDecoration(
-          prefixIcon: customIcon ??
-              Icon(
-                icon,
-                color: theme!.colorScheme.secondary,
-              ),
-          hintText: hintText,
-          hintStyle: theme!.textTheme.bodyText1!
-              .copyWith(color: theme!.colorScheme.onSurface)),
+    return Padding(
+      padding: rightPadding ?? false
+          ? const EdgeInsets.only(right: 50)
+          : const EdgeInsets.all(0),
+      child: TextFormField(
+        maxLines: maxLines ?? 1,
+        minLines: minLines ?? 1,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        validator: (value) => validator != null ? validator!(value) : null,
+        style: TextStyle(color: theme!.colorScheme.primaryVariant),
+        controller: controller,
+        obscureText: secure ?? false,
+        decoration: InputDecoration(
+            prefixIcon: customIcon ??
+                Icon(
+                  icon,
+                  color: theme!.colorScheme.secondary,
+                ),
+            hintText: hintText,
+            hintStyle: theme!.textTheme.bodyText1!
+                .copyWith(color: theme!.colorScheme.onSurface)),
+      ),
     );
   }
 }

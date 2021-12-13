@@ -1,8 +1,9 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
+import 'package:with_retro_firebase/_product/components/add_anons_sheet/add_anons_sheet.dart';
 import 'package:with_retro_firebase/core/base/model/baseviewmodel.dart';
+import 'package:with_retro_firebase/core/components/bottomsheet/bottomsheet.dart';
 import 'package:with_retro_firebase/core/extension/context_extension.dart';
 import 'package:with_retro_firebase/ui/features/chat/view/chat_view.dart';
 import 'package:with_retro_firebase/ui/features/home/view/home_view.dart';
@@ -28,27 +29,18 @@ abstract class _HomeNavViewModelBase with Store, BaseViewModel {
   setCurrentIndex(int index) => currentindex = index;
 
   @action
-  showSendAnons(GlobalKey<ScaffoldState> scaffoldKey) {
+  showSendAnons(GlobalKey<ScaffoldState> scaffoldKey, ThemeData theme,
+      BuildContext context) {
     changeSheet();
     var res = scaffoldKey.currentState!.showBottomSheet(
-      (context) => SizedBox(
-        height: context.height,
-        width: context.width,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Container(
-                height: context.height * .7,
-                width: context.width,
-                decoration: const BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                    )),
-                child: const Text("sheet test")),
-          ],
+      (context) => DefaultBottomSheet(
+        bottomsheetColor: theme.colorScheme.surface,
+        height: context.height * .35,
+        widget: AddAnonsSheet(
+          onPress: () {
+            log("send");
+          },
+          theme: theme,
         ),
       ),
       backgroundColor: Colors.transparent,
