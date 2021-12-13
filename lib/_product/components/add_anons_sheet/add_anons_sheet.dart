@@ -10,12 +10,13 @@ import 'package:with_retro_firebase/generated/l10n.dart';
 
 class AddAnonsSheet extends StatelessWidget {
   final ThemeData theme;
-  final VoidCallback onPress;
+  final Function onPress;
   const AddAnonsSheet({Key? key, required this.theme, required this.onPress})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController anonsController = TextEditingController();
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -49,7 +50,7 @@ class AddAnonsSheet extends StatelessWidget {
             ),
             const SizedBox(
               height: 10,
-            ),
+            )
           ],
         ),
         Stack(
@@ -60,13 +61,15 @@ class AddAnonsSheet extends StatelessWidget {
               hintText: S.of(context).newanons,
               rightPadding: true,
               maxLines: 4,
+              controller: anonsController,
             ),
             Positioned(
                 right: 0,
                 bottom: 0,
                 child: InkWell(
                   onTap: () {
-                    log("send");
+                    onPress(anonsController.text);
+                    anonsController.text = '';
                   },
                   child: Container(
                     color: theme.colorScheme.primary,

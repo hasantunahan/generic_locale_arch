@@ -1,4 +1,5 @@
 import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:with_retro_firebase/_product/components/add_anons_sheet/add_anons_sheet.dart';
@@ -37,8 +38,8 @@ abstract class _HomeNavViewModelBase with Store, BaseViewModel {
         bottomsheetColor: theme.colorScheme.surface,
         height: context.height * .35,
         widget: AddAnonsSheet(
-          onPress: () {
-            log("send");
+          onPress: (val) {
+            log(val);
           },
           theme: theme,
         ),

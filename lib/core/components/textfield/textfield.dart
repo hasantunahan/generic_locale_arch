@@ -11,6 +11,7 @@ class DefaultTextField extends StatelessWidget {
   final bool? rightPadding;
   final int? maxLines;
   final int? minLines;
+  final VoidCallback? value;
   const DefaultTextField(
       {Key? key,
       this.controller,
@@ -22,7 +23,8 @@ class DefaultTextField extends StatelessWidget {
       this.validator,
       this.rightPadding,
       this.maxLines,
-      this.minLines})
+      this.minLines,
+      this.value})
       : super(key: key);
 
   @override
