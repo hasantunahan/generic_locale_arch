@@ -22,17 +22,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aboutme": MessageLookupByLibrary.simpleMessage("To Inform"),
         "anons_send_near_time":
             MessageLookupByLibrary.simpleMessage("Recent anons postings"),
         "answer_t": MessageLookupByLibrary.simpleMessage("Answer"),
+        "appSettings": MessageLookupByLibrary.simpleMessage("App Settings"),
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
+        "appevaluate":
+            MessageLookupByLibrary.simpleMessage("Evaluate the application"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
+        "changetheme": MessageLookupByLibrary.simpleMessage("Change Theme"),
         "chats": MessageLookupByLibrary.simpleMessage("Chats"),
         "chatsearch": MessageLookupByLibrary.simpleMessage("Search in chat"),
         "check_email": MessageLookupByLibrary.simpleMessage("Check your email"),
         "check_email_info": MessageLookupByLibrary.simpleMessage(
             "If you want to reset password, check your email address."),
         "comments": MessageLookupByLibrary.simpleMessage("answering"),
+        "contact": MessageLookupByLibrary.simpleMessage("Contact"),
         "didgetMail":
             MessageLookupByLibrary.simpleMessage("Didn\'t get your email?"),
         "editprofile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
@@ -50,7 +56,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Repeat password again"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot Password"),
+        "frequentlyquestion":
+            MessageLookupByLibrary.simpleMessage("Friquently Asked Questions"),
         "friend": MessageLookupByLibrary.simpleMessage("Friends"),
+        "general": MessageLookupByLibrary.simpleMessage("General"),
+        "getPremium": MessageLookupByLibrary.simpleMessage("Buy Premium"),
         "go_login": MessageLookupByLibrary.simpleMessage("Go back login page"),
         "intro1Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard"),
@@ -58,6 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s "),
         "intro3Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  has been  industry\'s standard"),
+        "issue": MessageLookupByLibrary.simpleMessage("Issue an Error"),
         "like": MessageLookupByLibrary.simpleMessage("Like"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "login_email_infotext":
@@ -65,6 +76,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "myanons": MessageLookupByLibrary.simpleMessage("My Anons"),
         "newanons": MessageLookupByLibrary.simpleMessage("New Anons"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "notification": MessageLookupByLibrary.simpleMessage("Notification"),
+        "notificationSettings":
+            MessageLookupByLibrary.simpleMessage("Notification Settings"),
         "open_email": MessageLookupByLibrary.simpleMessage("Open Email"),
         "password_match":
             MessageLookupByLibrary.simpleMessage("Passwords not match"),
@@ -72,6 +86,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Password mustn\'t be blank"),
         "password_validate_lenght": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 6 characters!"),
+        "personalSettings":
+            MessageLookupByLibrary.simpleMessage("Personal Settings"),
+        "privacypolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "profileSettings":
+            MessageLookupByLibrary.simpleMessage("Profile Settings"),
         "register_info_text":
             MessageLookupByLibrary.simpleMessage("Create new account"),
         "responders": MessageLookupByLibrary.simpleMessage(
@@ -82,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Skip"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
+        "useraggrement": MessageLookupByLibrary.simpleMessage("User Agrement"),
         "verify": MessageLookupByLibrary.simpleMessage("Verify"),
         "verify_info_textarea": MessageLookupByLibrary.simpleMessage(
             "We have sent a verification link to your email address so you can log in. Please verify email."),

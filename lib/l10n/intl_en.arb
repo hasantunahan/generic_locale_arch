@@ -44,5 +44,22 @@
   "newanons" : "New Anons",
   "chats" : "Chats",
   "chatsearch" : "Search in chat",
-  "settings" : "Settings"
+  "settings" : "Settings",
+  "general" : "General",
+  "changetheme" : "Change Theme",
+  "appevaluate" : "Evaluate the application",
+  "notification" : "Notification",
+  "notificationSettings" : "Notification Settings",
+  "aboutme" : "To Inform",
+  "contact" : "Contact",
+  "frequentlyquestion" : "Friquently Asked Questions",
+  "issue" : "Issue an Error",
+  "privacypolicy"  : "Privacy Policy",
+  "useraggrement" : "User Agrement",
+  "getPremium" : "Buy Premium",
+  "personalSettings" : "Personal Settings",
+  "profileSettings" : "Profile Settings",
+  "appSettings" : "App Settings"
+
+
 }

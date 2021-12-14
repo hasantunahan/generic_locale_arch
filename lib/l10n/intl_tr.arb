@@ -44,5 +44,20 @@
   "newanons" : "Yeni Anons",
   "chats" : "Sohbetler",
   "chatsearch" : "Sohbette ara",
-  "settings" : "Ayarlar"
+  "settings" : "Ayarlar",
+  "general" : "Genel",
+  "changetheme" : "Tema Değiştir",
+  "appevaluate" : "Uygulamayı Değerlendir",
+  "notification" : "Bildirimler",
+  "notificationSettings" : "Bildirim Ayarları",
+  "aboutme" : "Bilgilendirme",
+  "contact" : "İletişim",
+  "frequentlyquestion" : "Sıkça Sorulan Sorular",
+  "issue" : "Hata Bildir",
+  "privacypolicy"  : "KVVK ve Gizlilik Sözleşmesi",
+  "useraggrement" : "Kullanıcı Sözleşmesi",
+  "getPremium" : "Premium Satın Al",
+  "personalSettings" : "Kişisel Ayarlar",
+  "profileSettings" : "Profil Ayarları",
+  "appSettings" : "Uygulama Ayarları"
 }

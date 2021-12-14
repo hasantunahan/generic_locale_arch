@@ -509,6 +509,156 @@ class S {
       args: [],
     );
   }
+
+  /// `General`
+  String get general {
+    return Intl.message(
+      'General',
+      name: 'general',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Theme`
+  String get changetheme {
+    return Intl.message(
+      'Change Theme',
+      name: 'changetheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Evaluate the application`
+  String get appevaluate {
+    return Intl.message(
+      'Evaluate the application',
+      name: 'appevaluate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification`
+  String get notification {
+    return Intl.message(
+      'Notification',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification Settings`
+  String get notificationSettings {
+    return Intl.message(
+      'Notification Settings',
+      name: 'notificationSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To Inform`
+  String get aboutme {
+    return Intl.message(
+      'To Inform',
+      name: 'aboutme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact`
+  String get contact {
+    return Intl.message(
+      'Contact',
+      name: 'contact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Friquently Asked Questions`
+  String get frequentlyquestion {
+    return Intl.message(
+      'Friquently Asked Questions',
+      name: 'frequentlyquestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Issue an Error`
+  String get issue {
+    return Intl.message(
+      'Issue an Error',
+      name: 'issue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get privacypolicy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacypolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User Agrement`
+  String get useraggrement {
+    return Intl.message(
+      'User Agrement',
+      name: 'useraggrement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buy Premium`
+  String get getPremium {
+    return Intl.message(
+      'Buy Premium',
+      name: 'getPremium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal Settings`
+  String get personalSettings {
+    return Intl.message(
+      'Personal Settings',
+      name: 'personalSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile Settings`
+  String get profileSettings {
+    return Intl.message(
+      'Profile Settings',
+      name: 'profileSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App Settings`
+  String get appSettings {
+    return Intl.message(
+      'App Settings',
+      name: 'appSettings',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
