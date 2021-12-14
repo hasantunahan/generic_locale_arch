@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "answer_t": MessageLookupByLibrary.simpleMessage("Answer"),
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
+        "chats": MessageLookupByLibrary.simpleMessage("Chats"),
+        "chatsearch": MessageLookupByLibrary.simpleMessage("Search in chat"),
         "check_email": MessageLookupByLibrary.simpleMessage("Check your email"),
         "check_email_info": MessageLookupByLibrary.simpleMessage(
             "If you want to reset password, check your email address."),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class DefaultTextField extends StatelessWidget {
   final TextEditingController? controller;
-  final ThemeData? theme;
+  final ThemeData theme;
   final String? hintText;
   final bool? secure;
   final IconData? icon;
@@ -15,7 +15,7 @@ class DefaultTextField extends StatelessWidget {
   const DefaultTextField(
       {Key? key,
       this.controller,
-      this.theme,
+      required this.theme,
       this.hintText,
       this.secure,
       this.icon,
@@ -38,7 +38,7 @@ class DefaultTextField extends StatelessWidget {
         minLines: minLines ?? 1,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: (value) => validator != null ? validator!(value) : null,
-        style: TextStyle(color: theme!.colorScheme.primaryVariant),
+        style: TextStyle(color: theme.colorScheme.primaryVariant),
         controller: controller,
         obscureText: secure ?? false,
         decoration: InputDecoration(

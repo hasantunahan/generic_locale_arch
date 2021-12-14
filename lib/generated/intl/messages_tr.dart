@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "answer_t": MessageLookupByLibrary.simpleMessage("Cevapla"),
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
         "back": MessageLookupByLibrary.simpleMessage("Geri"),
+        "chats": MessageLookupByLibrary.simpleMessage("Sohbetler"),
+        "chatsearch": MessageLookupByLibrary.simpleMessage("Sohbette ara"),
         "check_email":
             MessageLookupByLibrary.simpleMessage("Emailini kontrol et"),
         "check_email_info": MessageLookupByLibrary.simpleMessage(

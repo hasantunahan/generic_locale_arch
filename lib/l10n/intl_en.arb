@@ -41,5 +41,7 @@
   "editprofile" : "Edit Profile",
   "responders": "Responders to their announcements",
   "myanons" : "My Anons",
-  "newanons" : "New Anons"
+  "newanons" : "New Anons",
+  "chats" : "Chats",
+  "chatsearch" : "Search in chat"
 }

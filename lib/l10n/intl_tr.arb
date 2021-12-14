@@ -41,6 +41,7 @@
   "editprofile" : "Profili Düzenle",
   "responders": "Anonslarıma cevap verenler",
   "myanons" : "Anonslarım",
-  "newanons" : "Yeni Anons"
-
+  "newanons" : "Yeni Anons",
+  "chats" : "Sohbetler",
+  "chatsearch" : "Sohbette ara"
 }

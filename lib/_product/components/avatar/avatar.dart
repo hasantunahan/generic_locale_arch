@@ -10,7 +10,7 @@ class DefaultAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-        borderRadius: BorderRadius.circular(4.0),
+        borderRadius: BorderRadius.circular(8.0),
         child: Image.network(photoUrl ?? "",
             width: width ?? 66, height: height ?? 66, fit: BoxFit.cover));
   }
