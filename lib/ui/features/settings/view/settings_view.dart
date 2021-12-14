@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:with_retro_firebase/_product/components/settings_card/settings_card.dart';
 import 'package:with_retro_firebase/core/base/view/baseview.dart';
 import 'package:with_retro_firebase/core/components/autosizetext/text.dart';
 import 'package:with_retro_firebase/core/extension/context_extension.dart';
@@ -20,8 +23,10 @@ class SettingsView extends StatelessWidget {
         },
         onPageBuilder: (BuildContext context, SettingsViewModel viewModel) =>
             Scaffold(
+              backgroundColor: theme.backgroundColor,
               appBar: AppBar(
                 elevation: 0,
+                backgroundColor: theme.backgroundColor,
                 title: DefaultText(
                   data: S.of(context).settings,
                   style: theme.textTheme.headline5!
@@ -40,8 +45,19 @@ class SettingsView extends StatelessWidget {
                           child: Text("denee")),
                       renderTitleWidget(
                           context, theme, S.of(context).profileSettings),
-                      Row(
-                        children: [],
+                      SettingsCard(
+                        onPress: () {
+                          log("person");
+                        },
+                        icon: const Icon(Icons.person),
+                        text: S.of(context).personalSettings,
+                      ),
+                      SettingsCard(
+                        onPress: () {
+                          log("message");
+                        },
+                        icon: const Icon(Icons.person),
+                        text: S.of(context).aboutme,
                       ),
                       renderTitleWidget(
                           context, theme, S.of(context).appSettings),

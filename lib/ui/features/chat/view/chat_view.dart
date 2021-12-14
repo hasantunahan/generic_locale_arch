@@ -32,6 +32,7 @@ class ChatView extends StatelessWidget {
   renderBody(ThemeData theme, BuildContext context,
       TextEditingController searchController, ChatViewModel viewModel) {
     return Scaffold(
+      backgroundColor: theme.backgroundColor,
       appBar: renderAppBar(theme, context),
       body: Padding(
         padding: context.paddingNormalHorizontal,
