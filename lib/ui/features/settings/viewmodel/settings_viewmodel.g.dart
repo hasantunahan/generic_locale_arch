@@ -24,6 +24,20 @@ mixin _$SettingsViewModel on _SettingsViewModelBase, Store {
     });
   }
 
+  final _$_SettingsViewModelBaseActionController =
+      ActionController(name: '_SettingsViewModelBase');
+
+  @override
+  dynamic test() {
+    final _$actionInfo = _$_SettingsViewModelBaseActionController.startAction(
+        name: '_SettingsViewModelBase.test');
+    try {
+      return super.test();
+    } finally {
+      _$_SettingsViewModelBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''

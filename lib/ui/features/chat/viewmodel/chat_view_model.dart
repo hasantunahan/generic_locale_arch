@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:with_retro_firebase/core/base/model/baseviewmodel.dart';
@@ -54,6 +56,7 @@ abstract class _ChatViewModelBase with Store, BaseViewModel {
         senderName: "Bebitomm",
         unreadCount: 0,
         senderid: 2424));
+    log("get test");
   }
 
   @override

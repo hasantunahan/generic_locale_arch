@@ -33,6 +33,11 @@ class SettingsView extends StatelessWidget {
                   padding: context.paddingNormalHorizontal,
                   child: Column(
                     children: [
+                      TextButton(
+                          onPressed: () {
+                            viewModel.test();
+                          },
+                          child: Text("denee")),
                       renderTitleWidget(
                           context, theme, S.of(context).profileSettings),
                       Row(

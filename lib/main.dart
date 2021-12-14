@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 import 'package:with_retro_firebase/core/init/service/notification.dart';
+import 'package:with_retro_firebase/locator.dart';
 import 'core/init/navigation/route/navigation_route.dart';
 import 'core/init/navigation/service/navigation_service.dart';
 import 'core/init/theme/theme_change_provider.dart';
@@ -19,6 +20,7 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 }
 
 Future<void> main() async {
+  locator();
   await _init();
   await Hive.initFlutter();
   await Firebase.initializeApp();
