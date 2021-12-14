@@ -78,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "send_again": MessageLookupByLibrary.simpleMessage("Tekrar Gönder"),
         "send_reset":
             MessageLookupByLibrary.simpleMessage("Sıfırlama Linki Gönder"),
+        "settings": MessageLookupByLibrary.simpleMessage("Ayarlar"),
         "signup": MessageLookupByLibrary.simpleMessage("Kayıt Ol"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Geç"),
         "start": MessageLookupByLibrary.simpleMessage("Giriş"),

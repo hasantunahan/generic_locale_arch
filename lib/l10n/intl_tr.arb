@@ -43,5 +43,6 @@
   "myanons" : "Anonslarım",
   "newanons" : "Yeni Anons",
   "chats" : "Sohbetler",
-  "chatsearch" : "Sohbette ara"
+  "chatsearch" : "Sohbette ara",
+  "settings" : "Ayarlar"
 }

@@ -43,5 +43,6 @@
   "myanons" : "My Anons",
   "newanons" : "New Anons",
   "chats" : "Chats",
-  "chatsearch" : "Search in chat"
+  "chatsearch" : "Search in chat",
+  "settings" : "Settings"
 }

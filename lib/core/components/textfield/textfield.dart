@@ -45,11 +45,11 @@ class DefaultTextField extends StatelessWidget {
             prefixIcon: customIcon ??
                 Icon(
                   icon,
-                  color: theme!.colorScheme.secondary,
+                  color: theme.colorScheme.secondary,
                 ),
             hintText: hintText,
-            hintStyle: theme!.textTheme.bodyText1!
-                .copyWith(color: theme!.colorScheme.onSurface)),
+            hintStyle: theme.textTheme.bodyText1!
+                .copyWith(color: theme.colorScheme.onSurface)),
       ),
     );
   }

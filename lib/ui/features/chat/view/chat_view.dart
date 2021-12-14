@@ -25,38 +25,52 @@ class ChatView extends StatelessWidget {
           model.setContext(context);
         },
         onPageBuilder: (BuildContext context, ChatViewModel viewModel) =>
-            Scaffold(
-              appBar: renderAppBar(theme, context),
-              body: Padding(
-                padding: context.paddingNormalHorizontal,
-                child: Column(
-                  children: [
-                    DefaultTextField(
-                      theme: theme,
-                      controller: searchController,
-                      hintText: S.of(context).chatsearch,
-                      icon: Icons.search,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Visibility(
-                      visible: viewModel.chatList.length > 0,
-                      child: Flexible(
-                          child: ListView.builder(
-                        itemCount: viewModel.chatList.length,
-                        itemBuilder: (context, index) {
-                          return ChatListCard(
-                            model: viewModel.chatList[index],
-                            onPress: (val) => {log(val.senderName ?? "")},
-                          );
-                        },
-                      )),
-                    )
-                  ],
-                ),
-              ),
-            ));
+            renderBody(theme, context, searchController, viewModel));
+  }
+
+  renderBody(ThemeData theme, BuildContext context,
+      TextEditingController searchController, ChatViewModel viewModel) {
+    return Scaffold(
+      appBar: renderAppBar(theme, context),
+      body: Padding(
+        padding: context.paddingNormalHorizontal,
+        child: Column(
+          children: [
+            renderSearchButton(theme, searchController, context),
+            const SizedBox(
+              height: 10,
+            ),
+            renderChatlist(viewModel)
+          ],
+        ),
+      ),
+    );
+  }
+
+  renderChatlist(ChatViewModel viewModel) {
+    return Visibility(
+      visible: viewModel.chatList.length > 0,
+      child: Flexible(
+          child: ListView.builder(
+        itemCount: viewModel.chatList.length,
+        itemBuilder: (context, index) {
+          return ChatListCard(
+            model: viewModel.chatList[index],
+            onPress: (val) => {log(val.senderName ?? "")},
+          );
+        },
+      )),
+    );
+  }
+
+  renderSearchButton(ThemeData theme, TextEditingController searchController,
+      BuildContext context) {
+    return DefaultTextField(
+      theme: theme,
+      controller: searchController,
+      hintText: S.of(context).chatsearch,
+      icon: Icons.search,
+    );
   }
 
   renderAppBar(ThemeData theme, BuildContext context) {

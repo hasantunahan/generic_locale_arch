@@ -78,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Responders to their announcements"),
         "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
         "send_reset": MessageLookupByLibrary.simpleMessage("Send Reset Link"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Skip"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
