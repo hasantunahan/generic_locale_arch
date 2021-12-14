@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:with_retro_firebase/_product/components/avatar/avatar.dart';
 import 'package:with_retro_firebase/_product/components/chatlist_card/chatlist_card.dart';
 import 'package:with_retro_firebase/core/base/view/baseview.dart';
@@ -48,19 +49,21 @@ class ChatView extends StatelessWidget {
   }
 
   renderChatlist(ChatViewModel viewModel) {
-    return Visibility(
-      visible: viewModel.chatList.length > 0,
-      child: Flexible(
-          child: ListView.builder(
-        itemCount: viewModel.chatList.length,
-        itemBuilder: (context, index) {
-          return ChatListCard(
-            model: viewModel.chatList[index],
-            onPress: (val) => {log(val.senderName ?? "")},
-          );
-        },
-      )),
-    );
+    return Observer(builder: (_) {
+      return Visibility(
+        visible: viewModel.chatList.length > 0,
+        child: Flexible(
+            child: ListView.builder(
+          itemCount: viewModel.chatList.length,
+          itemBuilder: (context, index) {
+            return ChatListCard(
+              model: viewModel.chatList[index],
+              onPress: (val) => {log(val.senderName ?? "")},
+            );
+          },
+        )),
+      );
+    });
   }
 
   renderSearchButton(ThemeData theme, TextEditingController searchController,
