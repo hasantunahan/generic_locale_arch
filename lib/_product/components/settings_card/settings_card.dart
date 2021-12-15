@@ -8,19 +8,21 @@ class SettingsCard extends StatelessWidget {
   final Widget? rightWidget;
   final Widget? leftWidget;
   final VoidCallback onPress;
+  final Color? backgroundColor;
   const SettingsCard(
       {Key? key,
       this.text,
       this.icon,
       this.rightWidget,
       this.leftWidget,
-      required this.onPress})
+      required this.onPress,
+      this.backgroundColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return InkWell(
+    return GestureDetector(
       onTap: () => onPress(),
       child: Padding(
         padding: context.paddingLowVertical,
@@ -30,15 +32,16 @@ class SettingsCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                leftWidget ??
-                    Container(
-                      padding: const EdgeInsets.all(2.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        color: context.randomColor,
-                      ),
-                      child: icon ?? const Icon(Icons.person),
-                    ),
+                Container(
+                  padding: const EdgeInsets.all(3.0),
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: backgroundColor ?? theme.colorScheme.primary,
+                  ),
+                  child: leftWidget ?? icon ?? const Icon(Icons.person),
+                ),
                 const SizedBox(
                   width: 10,
                 ),
@@ -47,7 +50,7 @@ class SettingsCard extends StatelessWidget {
             ),
             rightWidget ??
                 Icon(Icons.arrow_forward_ios,
-                    size: 12, color: theme.colorScheme.primaryVariant)
+                    size: 10, color: theme.colorScheme.primaryVariant)
           ],
         ),
       ),
