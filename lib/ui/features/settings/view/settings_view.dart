@@ -2,13 +2,17 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:provider/src/provider.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:with_retro_firebase/_product/components/settings_card/settings_card.dart';
 import 'package:with_retro_firebase/_product/constants/image/image_list.dart';
 import 'package:with_retro_firebase/core/base/view/baseview.dart';
 import 'package:with_retro_firebase/core/components/autosizetext/text.dart';
 import 'package:with_retro_firebase/core/components/image/assetimage.dart';
+import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
 import 'package:with_retro_firebase/core/extension/context_extension.dart';
 import 'package:with_retro_firebase/core/extension/image/image_extension.dart';
+import 'package:with_retro_firebase/core/init/lang/language_change_provider.dart';
 import 'package:with_retro_firebase/generated/l10n.dart';
 import 'package:with_retro_firebase/ui/features/settings/viewmodel/settings_viewmodel.dart';
 
@@ -32,22 +36,35 @@ class SettingsView extends StatelessWidget {
       ThemeData theme, BuildContext context, SettingsViewModel viewModel) {
     return Scaffold(
       backgroundColor: theme.backgroundColor,
-      appBar: AppBar(
-        systemOverlayStyle: overlayStyle(theme),
-        elevation: 0,
-        backgroundColor: theme.backgroundColor,
-        title: DefaultText(
-          data: S.of(context).settings,
-          style:
-              theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold),
-        ),
-      ),
+      appBar: renderAppBat(theme, context),
       body: SingleChildScrollView(
         child: Padding(
           padding: context.paddingNormalHorizontal,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Row(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    backgroundImage: AssetImage(ImageList.tr.toImagePng),
+                    radius: 24,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      DefaultText(data: "Name"),
+                      DefaultText(data: "email")
+                    ],
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
               renderTitleWidget(context, theme, S.of(context).profileSettings),
               SettingsCard(
                 onPress: () {
@@ -61,6 +78,19 @@ class SettingsView extends StatelessWidget {
                 text: S.of(context).personalSettings,
               ),
               renderTitleWidget(context, theme, S.of(context).appSettings),
+              SettingsCard(
+                onPress: () {
+                  viewModel.goPageWithArguments(NavigationConstants.language, {
+                    "lang": context.read<LanguageChangeProvider>().currentLocale
+                  });
+                },
+                backgroundColor: Colors.green,
+                icon: const Icon(
+                  Icons.translate_outlined,
+                  color: Colors.white,
+                ),
+                text: S.of(context).languageSettings,
+              ),
               Observer(builder: (_) {
                 return SettingsCard(
                   onPress: () {
@@ -83,10 +113,93 @@ class SettingsView extends StatelessWidget {
                   ),
                 );
               }),
-              renderTitleWidget(context, theme, S.of(context).general),
               renderTitleWidget(
                   context, theme, S.of(context).notificationSettings),
+              SettingsCard(
+                onPress: () {
+                  log("person");
+                },
+                backgroundColor: Colors.redAccent,
+                icon: const Icon(
+                  Icons.notifications,
+                  color: Colors.white,
+                ),
+                text: S.of(context).notification,
+              ),
               renderTitleWidget(context, theme, S.of(context).aboutme),
+              SettingsCard(
+                onPress: () {
+                  log("person");
+                },
+                backgroundColor: Colors.blueGrey,
+                icon: const Icon(
+                  Icons.policy,
+                  color: Colors.white,
+                ),
+                text: S.of(context).privacypolicy,
+              ),
+              SettingsCard(
+                onPress: () {
+                  log("person");
+                },
+                backgroundColor: Colors.blueGrey,
+                icon: const Icon(
+                  Icons.document_scanner,
+                  color: Colors.white,
+                ),
+                text: S.of(context).useraggrement,
+              ),
+              SettingsCard(
+                onPress: () {
+                  log("person");
+                },
+                backgroundColor: Colors.amberAccent,
+                icon: const Icon(
+                  Icons.help,
+                  color: Colors.white,
+                ),
+                text: S.of(context).help,
+              ),
+              SettingsCard(
+                onPress: () async => await Alert(
+                    context: context,
+                    style: AlertStyle(
+                      backgroundColor: theme.colorScheme.onPrimary,
+                    ),
+                    content: Text(
+                      S.of(context).aresurelogout,
+                      style: TextStyle(
+                          color: theme.colorScheme.primaryVariant,
+                          fontSize: 11),
+                      textAlign: TextAlign.start,
+                    ),
+                    buttons: [
+                      DialogButton(
+                        color: Colors.redAccent,
+                        child: Text(
+                          S.of(context).iptal,
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                      DialogButton(
+                        color: Colors.green,
+                        child: Text(
+                          S.of(context).ok,
+                        ),
+                        onPressed: () {
+                          viewModel.logout();
+                        },
+                      )
+                    ]).show(),
+                backgroundColor: Colors.red,
+                icon: const Icon(
+                  Icons.logout,
+                  color: Colors.white,
+                ),
+                text: S.of(context).logout,
+              ),
               Observer(builder: (_) {
                 return Visibility(
                     visible: viewModel.version != '',
@@ -98,6 +211,17 @@ class SettingsView extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  AppBar renderAppBat(ThemeData theme, BuildContext context) {
+    return AppBar(
+      elevation: 0,
+      backgroundColor: theme.backgroundColor,
+      title: DefaultText(
+        data: S.of(context).settings,
+        style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold),
       ),
     );
   }

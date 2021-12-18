@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/src/provider.dart';
 import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
+import 'package:with_retro_firebase/core/init/lang/change/change_theme.dart';
 import '../../../core/base/model/baseviewmodel.dart';
 import '../../../core/constant/cache/cache_constant.dart';
 import '../../../core/constant/enum/theme/enum.dart';
@@ -33,6 +34,17 @@ abstract class _SplashViewModelBase with Store, BaseViewModel {
     } else {
       log("message res");
       context!.read<ThemeProvider>().toggleTheme(res.toString());
+    }
+  }
+
+  langControl() {
+    var res = themeManager.getItem(Cacheconstant.lang);
+    if (res == null) {
+      log(" lng lng");
+      ChangeLanguage(context!, "en").changes();
+    } else {
+      log("message res lang");
+      ChangeLanguage(context!, res.toString()).changes();
     }
   }
 
@@ -77,7 +89,7 @@ abstract class _SplashViewModelBase with Store, BaseViewModel {
 
   @action
   Future fetchData() async {
-    themeManager.init().then((value) => {themeControl()});
+    themeManager.init().then((value) => {themeControl(), langControl()});
     Future.delayed(const Duration(milliseconds: 2500), () {
       introSeenControl();
     });

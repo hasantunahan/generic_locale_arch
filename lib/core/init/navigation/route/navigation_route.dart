@@ -3,6 +3,7 @@ import 'package:with_retro_firebase/ui/auth/forgotpassword/view/forgotpassword_v
 import 'package:with_retro_firebase/ui/auth/login/view/login_view.dart';
 import 'package:with_retro_firebase/ui/auth/register/view/registerview.dart';
 import 'package:with_retro_firebase/ui/auth/verify/view/verify_view.dart';
+import 'package:with_retro_firebase/ui/features/changelanguage/view/language_view.dart';
 import 'package:with_retro_firebase/ui/features/home_nav/view/home_navigation_view.dart';
 import 'package:with_retro_firebase/ui/intro/intro_view.dart';
 import '../../../base/error/page/not_found_page.dart';
@@ -31,6 +32,8 @@ class NavigationRoute {
         return _normalNavigate(const VerifyView());
       case NavigationConstants.forgotpassword:
         return _normalNavigate(const ForgotPasswordView());
+      case NavigationConstants.language:
+        return _normalNavigate(LanguageView(args: args.arguments));
       default:
         return MaterialPageRoute(
           builder: (context) => const NotFoundNavigationWidget(),

@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:package_info/package_info.dart';
@@ -7,6 +8,7 @@ import 'package:with_retro_firebase/_product/model/user/user_dto.dart';
 import 'package:with_retro_firebase/core/base/model/baseviewmodel.dart';
 import 'package:with_retro_firebase/core/constant/cache/cache_constant.dart';
 import 'package:with_retro_firebase/core/constant/enum/theme/enum.dart';
+import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
 import 'package:with_retro_firebase/core/init/cache/cache_manager.dart';
 import 'package:with_retro_firebase/core/init/theme/theme_change_provider.dart';
 import 'package:with_retro_firebase/locator.dart';
@@ -58,6 +60,22 @@ abstract class _SettingsViewModelBase with Store, BaseViewModel {
   test() {
     log("test");
     chatViewModel.setDummy();
+  }
+
+  @action
+  logout() async {
+    await FirebaseAuth.instance.signOut().then((value) =>
+        navigation.navigateToPageClear(path: NavigationConstants.login));
+  }
+
+  @action
+  goPageWithoutArguments(String? name) async {
+    await navigation.navigateToPage(path: name);
+  }
+
+  @action
+  goPageWithArguments(String? name, Object? body) async {
+    await navigation.navigateToPage(path: name, data: body);
   }
 
   @observable

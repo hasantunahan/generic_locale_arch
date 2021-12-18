@@ -59,7 +59,13 @@
   "getPremium" : "Buy Premium",
   "personalSettings" : "Personal Settings",
   "profileSettings" : "Profile Settings",
-  "appSettings" : "App Settings"
-
-
+  "appSettings" : "App Settings",
+  "languageSettings" : "Language Settings",
+  "open" : "Open",
+  "activelanguage" : "Active Language",
+  "logout" : "Logout",
+  "help" : "Help",
+  "aresurelogout" : "Are you sure logout app?",
+  "ok" : "Ok",
+  "iptal" : "Cancel"
 }

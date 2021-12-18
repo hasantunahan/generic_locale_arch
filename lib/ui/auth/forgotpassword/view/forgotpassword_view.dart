@@ -34,6 +34,7 @@ class ForgotPasswordView extends StatelessWidget {
       TextEditingController emailController,
       ForgotPasswordViewModel viewModel) {
     return Scaffold(
+      backgroundColor: theme.backgroundColor,
       appBar: renderAppBar(theme),
       body: SizedBox(
         width: context.width,
@@ -48,7 +49,8 @@ class ForgotPasswordView extends StatelessWidget {
   renderAppBar(ThemeData theme) {
     return AppBar(
       elevation: 0,
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.backgroundColor,
+      iconTheme: theme.iconTheme,
     );
   }
 

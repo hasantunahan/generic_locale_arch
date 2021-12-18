@@ -59,5 +59,13 @@
   "getPremium" : "Premium Satın Al",
   "personalSettings" : "Kişisel Ayarlar",
   "profileSettings" : "Profil Ayarları",
-  "appSettings" : "Uygulama Ayarları"
+  "appSettings" : "Uygulama Ayarları",
+  "languageSettings" : "Dil Ayarları",
+  "open" : "Açık",
+  "activelanguage" : "Aktif Dil",
+  "logout" : "Çıkış yap",
+  "help" : "Yardım",
+  "aresurelogout" : "Uygulamadan çıkmak istediğine eminmisin?",
+  "ok" : "Tamam",
+  "iptal" : "İptal"
 }

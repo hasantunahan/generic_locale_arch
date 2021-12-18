@@ -35,6 +35,7 @@ abstract class _HomeNavViewModelBase with Store, BaseViewModel {
     changeSheet();
     var res = scaffoldKey.currentState!.showBottomSheet(
       (context) => DefaultBottomSheet(
+        scaffoldKey: scaffoldKey,
         bottomsheetColor: theme.colorScheme.surface,
         height: context.height * .35,
         widget: AddAnonsSheet(

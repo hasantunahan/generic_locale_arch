@@ -49,6 +49,7 @@ class LoginView extends StatelessWidget {
 
   renderBody(BuildContext context, ThemeData theme, value) {
     return Scaffold(
+      backgroundColor: theme.backgroundColor,
       appBar: AppBar(
         backgroundColor: theme.backgroundColor,
         toolbarHeight: 0,

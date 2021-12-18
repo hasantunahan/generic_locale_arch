@@ -8,7 +8,6 @@
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
-// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -23,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutme": MessageLookupByLibrary.simpleMessage("Bilgilendirme"),
+        "activelanguage": MessageLookupByLibrary.simpleMessage("Aktif Dil"),
         "anons_send_near_time": MessageLookupByLibrary.simpleMessage(
             "Yakın zamanda anons gönderelenler"),
         "answer_t": MessageLookupByLibrary.simpleMessage("Cevapla"),
@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
         "appevaluate":
             MessageLookupByLibrary.simpleMessage("Uygulamayı Değerlendir"),
+        "aresurelogout": MessageLookupByLibrary.simpleMessage(
+            "Uygulamadan çıkmak istediğine eminmisin?"),
         "back": MessageLookupByLibrary.simpleMessage("Geri"),
         "changetheme": MessageLookupByLibrary.simpleMessage("Tema Değiştir"),
         "chats": MessageLookupByLibrary.simpleMessage("Sohbetler"),
@@ -62,23 +64,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "getPremium": MessageLookupByLibrary.simpleMessage("Premium Satın Al"),
         "go_login":
             MessageLookupByLibrary.simpleMessage("Giriş sayfasına geri dön"),
+        "help": MessageLookupByLibrary.simpleMessage("Yardım"),
         "intro1Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard"),
         "intro2Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s "),
         "intro3Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  has been  industry\'s standard"),
+        "iptal": MessageLookupByLibrary.simpleMessage("İptal"),
         "issue": MessageLookupByLibrary.simpleMessage("Hata Bildir"),
+        "languageSettings":
+            MessageLookupByLibrary.simpleMessage("Dil Ayarları"),
         "like": MessageLookupByLibrary.simpleMessage("Beğeni"),
         "login": MessageLookupByLibrary.simpleMessage("Giriş yap"),
         "login_email_infotext": MessageLookupByLibrary.simpleMessage(
             "Email ile giriş yapabilirsiniz."),
+        "logout": MessageLookupByLibrary.simpleMessage("Çıkış yap"),
         "myanons": MessageLookupByLibrary.simpleMessage("Anonslarım"),
         "newanons": MessageLookupByLibrary.simpleMessage("Yeni Anons"),
         "next": MessageLookupByLibrary.simpleMessage("İleri"),
         "notification": MessageLookupByLibrary.simpleMessage("Bildirimler"),
         "notificationSettings":
             MessageLookupByLibrary.simpleMessage("Bildirim Ayarları"),
+        "ok": MessageLookupByLibrary.simpleMessage("Tamam"),
+        "open": MessageLookupByLibrary.simpleMessage("Açık"),
         "open_email": MessageLookupByLibrary.simpleMessage("Emaili aç"),
         "password_match":
             MessageLookupByLibrary.simpleMessage("Şifreler eşleşmiyor!"),

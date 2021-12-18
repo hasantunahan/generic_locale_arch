@@ -8,7 +8,6 @@
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
-// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -23,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutme": MessageLookupByLibrary.simpleMessage("To Inform"),
+        "activelanguage":
+            MessageLookupByLibrary.simpleMessage("Active Language"),
         "anons_send_near_time":
             MessageLookupByLibrary.simpleMessage("Recent anons postings"),
         "answer_t": MessageLookupByLibrary.simpleMessage("Answer"),
@@ -30,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "app_name": MessageLookupByLibrary.simpleMessage("Anons"),
         "appevaluate":
             MessageLookupByLibrary.simpleMessage("Evaluate the application"),
+        "aresurelogout":
+            MessageLookupByLibrary.simpleMessage("Are you sure logout app?"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
         "changetheme": MessageLookupByLibrary.simpleMessage("Change Theme"),
         "chats": MessageLookupByLibrary.simpleMessage("Chats"),
@@ -62,23 +65,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "general": MessageLookupByLibrary.simpleMessage("General"),
         "getPremium": MessageLookupByLibrary.simpleMessage("Buy Premium"),
         "go_login": MessageLookupByLibrary.simpleMessage("Go back login page"),
+        "help": MessageLookupByLibrary.simpleMessage("Help"),
         "intro1Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard"),
         "intro2Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s "),
         "intro3Body": MessageLookupByLibrary.simpleMessage(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem  has been  industry\'s standard"),
+        "iptal": MessageLookupByLibrary.simpleMessage("Cancel"),
         "issue": MessageLookupByLibrary.simpleMessage("Issue an Error"),
+        "languageSettings":
+            MessageLookupByLibrary.simpleMessage("Language Settings"),
         "like": MessageLookupByLibrary.simpleMessage("Like"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "login_email_infotext":
             MessageLookupByLibrary.simpleMessage("Login with email address"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "myanons": MessageLookupByLibrary.simpleMessage("My Anons"),
         "newanons": MessageLookupByLibrary.simpleMessage("New Anons"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "notificationSettings":
             MessageLookupByLibrary.simpleMessage("Notification Settings"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "open": MessageLookupByLibrary.simpleMessage("Open"),
         "open_email": MessageLookupByLibrary.simpleMessage("Open Email"),
         "password_match":
             MessageLookupByLibrary.simpleMessage("Passwords not match"),

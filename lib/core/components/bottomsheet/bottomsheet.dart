@@ -5,8 +5,13 @@ class DefaultBottomSheet extends StatelessWidget {
   final Color? bottomsheetColor;
   final double? height;
   final Widget? widget;
+  final GlobalKey scaffoldKey;
   const DefaultBottomSheet(
-      {Key? key, this.bottomsheetColor, this.height, this.widget})
+      {Key? key,
+      this.bottomsheetColor,
+      this.height,
+      this.widget,
+      required this.scaffoldKey})
       : super(key: key);
 
   @override
@@ -21,6 +26,10 @@ class DefaultBottomSheet extends StatelessWidget {
           Container(
               height: height ?? context.height * .7,
               width: context.width,
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(scaffoldKey.currentState!.context)
+                      .viewPadding
+                      .bottom),
               decoration: BoxDecoration(
                   boxShadow: const [
                     BoxShadow(color: Colors.black, offset: Offset(1, 2))

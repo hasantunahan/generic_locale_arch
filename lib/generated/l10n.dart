@@ -659,6 +659,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Language Settings`
+  String get languageSettings {
+    return Intl.message(
+      'Language Settings',
+      name: 'languageSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open`
+  String get open {
+    return Intl.message(
+      'Open',
+      name: 'open',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Active Language`
+  String get activelanguage {
+    return Intl.message(
+      'Active Language',
+      name: 'activelanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message(
+      'Logout',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help`
+  String get help {
+    return Intl.message(
+      'Help',
+      name: 'help',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure logout app?`
+  String get aresurelogout {
+    return Intl.message(
+      'Are you sure logout app?',
+      name: 'aresurelogout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get iptal {
+    return Intl.message(
+      'Cancel',
+      name: 'iptal',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

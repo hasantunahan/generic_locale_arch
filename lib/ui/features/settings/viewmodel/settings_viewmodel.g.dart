@@ -62,6 +62,24 @@ mixin _$SettingsViewModel on _SettingsViewModelBase, Store {
     return _$getPackagesInfoAsyncAction.run(() => super.getPackagesInfo());
   }
 
+  final _$goPageWithoutArgumentsAsyncAction =
+      AsyncAction('_SettingsViewModelBase.goPageWithoutArguments');
+
+  @override
+  Future goPageWithoutArguments(String? name) {
+    return _$goPageWithoutArgumentsAsyncAction
+        .run(() => super.goPageWithoutArguments(name));
+  }
+
+  final _$goPageWithArgumentsAsyncAction =
+      AsyncAction('_SettingsViewModelBase.goPageWithArguments');
+
+  @override
+  Future goPageWithArguments(String? name, Object? body) {
+    return _$goPageWithArgumentsAsyncAction
+        .run(() => super.goPageWithArguments(name, body));
+  }
+
   final _$_SettingsViewModelBaseActionController =
       ActionController(name: '_SettingsViewModelBase');
 

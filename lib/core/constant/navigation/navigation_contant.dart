@@ -8,4 +8,5 @@ class NavigationConstants {
   static const register = '/register';
   static const verify = '/verify';
   static const forgotpassword = '/forgotpassword';
+  static const language = '/language';
 }

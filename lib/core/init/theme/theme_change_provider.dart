@@ -16,21 +16,21 @@ class ThemeProvider with ChangeNotifier {
 
   static ThemeData get lightTheme {
     return ThemeData(
-      primaryColor: Colors.amberAccent,
-      backgroundColor: Colors.white,
-      scaffoldBackgroundColor: Colors.white,
-      textTheme: TextThemes.lightTextTheme(),
-      colorScheme: ThemeColors.lightColors(),
-    );
+        primaryColor: Colors.amberAccent,
+        backgroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.white,
+        textTheme: TextThemes.lightTextTheme(),
+        colorScheme: ThemeColors.lightColors(),
+        iconTheme: const IconThemeData(color: Colors.black));
   }
 
   static ThemeData get darkTheme {
     return ThemeData(
-      primaryColor: Colors.black,
-      backgroundColor: const Color(0xFF171717),
-      scaffoldBackgroundColor: Colors.grey,
-      textTheme: TextThemes.darkTextTheme(),
-      colorScheme: ThemeColors.darkColors(),
-    );
+        primaryColor: Colors.black,
+        backgroundColor: const Color(0xFF171717),
+        scaffoldBackgroundColor: Colors.grey,
+        textTheme: TextThemes.darkTextTheme(),
+        colorScheme: ThemeColors.darkColors(),
+        iconTheme: const IconThemeData(color: Colors.white));
   }
 }

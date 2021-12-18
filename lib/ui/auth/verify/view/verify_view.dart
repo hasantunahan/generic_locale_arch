@@ -26,9 +26,11 @@ class VerifyView extends StatelessWidget {
 
   renderBody(BuildContext context, ThemeData theme, value) {
     return Scaffold(
+      backgroundColor: theme.backgroundColor,
       appBar: AppBar(
         backgroundColor: theme.backgroundColor,
         elevation: 0,
+        iconTheme: theme.iconTheme,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

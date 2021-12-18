@@ -3,4 +3,6 @@ class ImageList {
   static const logodark = 'logo_text_white';
   static const logo = 'logo_image';
   static const theme = 'theme';
+  static const tr = 'tr';
+  static const en = 'en';
 }
