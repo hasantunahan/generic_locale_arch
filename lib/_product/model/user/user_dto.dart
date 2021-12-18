@@ -22,5 +22,5 @@ class UserDTO {
   factory UserDTO.fromJson(Map<String, dynamic> json) =>
       _$UserDTOFromJson(json);
 
-  // factory Map<String, dynamic> User.toJson() => _$UserToJson(this);
+  Map<String, dynamic> toJson() => _$UserDTOToJson(this);
 }
