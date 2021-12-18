@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:mobx/mobx.dart';
 import 'package:with_retro_firebase/_product/manager/user/firebase_user.dart';
 import 'package:with_retro_firebase/_product/model/my_anons/myanons.dart';
@@ -127,7 +128,6 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
   void setContext(BuildContext context) => this.context = context;
   @override
   void init() async {
-    log("geliyooorr");
     setDummyData();
   }
 }
