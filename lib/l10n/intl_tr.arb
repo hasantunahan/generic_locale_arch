@@ -67,5 +67,8 @@
   "help" : "Yardım",
   "aresurelogout" : "Uygulamadan çıkmak istediğine eminmisin?",
   "ok" : "Tamam",
-  "iptal" : "İptal"
+  "iptal" : "İptal",
+  "enterusername" : "Kullanıcı adı giriniz",
+  "user_validate_empty" : "Kullanıcı adı boş geçilemez",
+  "user_validate_lenght" : "Kullanıcı adı en az 2 karakter olmalı"
 }

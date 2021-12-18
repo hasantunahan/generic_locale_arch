@@ -739,6 +739,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter username`
+  String get enterusername {
+    return Intl.message(
+      'Enter username',
+      name: 'enterusername',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username cannot be blank`
+  String get user_validate_empty {
+    return Intl.message(
+      'Username cannot be blank',
+      name: 'user_validate_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username must be at least 2 characters!`
+  String get user_validate_lenght {
+    return Intl.message(
+      'Username must be at least 2 characters!',
+      name: 'user_validate_lenght',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

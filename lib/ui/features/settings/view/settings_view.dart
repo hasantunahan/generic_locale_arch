@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/src/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:with_retro_firebase/_product/components/avatar/avatar.dart';
 import 'package:with_retro_firebase/_product/components/settings_card/settings_card.dart';
 import 'package:with_retro_firebase/_product/constants/image/image_list.dart';
 import 'package:with_retro_firebase/core/base/view/baseview.dart';
@@ -43,25 +44,7 @@ class SettingsView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    backgroundImage: AssetImage(ImageList.tr.toImagePng),
-                    radius: 24,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      DefaultText(data: "Name"),
-                      DefaultText(data: "email")
-                    ],
-                  )
-                ],
-              ),
+              renderMyProfile(viewModel),
               const SizedBox(
                 height: 10,
               ),
@@ -70,7 +53,7 @@ class SettingsView extends StatelessWidget {
                 onPress: () {
                   log("person");
                 },
-                backgroundColor: Colors.indigo,
+                backgroundColor: Colors.green,
                 icon: const Icon(
                   Icons.person,
                   color: Colors.white,
@@ -84,7 +67,7 @@ class SettingsView extends StatelessWidget {
                     "lang": context.read<LanguageChangeProvider>().currentLocale
                   });
                 },
-                backgroundColor: Colors.green,
+                backgroundColor: Colors.indigo,
                 icon: const Icon(
                   Icons.translate_outlined,
                   color: Colors.white,
@@ -212,6 +195,28 @@ class SettingsView extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  renderMyProfile(SettingsViewModel viewModel) {
+    return Row(
+      children: [
+        DefaultAvatar(
+          photoUrl: viewModel.my.getUser()!.photoURL,
+          width: 45,
+          height: 45,
+        ),
+        const SizedBox(
+          width: 10,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            DefaultText(data: viewModel.my.getUser()!.displayName ?? ""),
+            DefaultText(data: viewModel.my.getUser()!.email ?? "")
+          ],
+        )
+      ],
     );
   }
 

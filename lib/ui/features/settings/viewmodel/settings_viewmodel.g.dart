@@ -62,6 +62,13 @@ mixin _$SettingsViewModel on _SettingsViewModelBase, Store {
     return _$getPackagesInfoAsyncAction.run(() => super.getPackagesInfo());
   }
 
+  final _$logoutAsyncAction = AsyncAction('_SettingsViewModelBase.logout');
+
+  @override
+  Future logout() {
+    return _$logoutAsyncAction.run(() => super.logout());
+  }
+
   final _$goPageWithoutArgumentsAsyncAction =
       AsyncAction('_SettingsViewModelBase.goPageWithoutArguments');
 

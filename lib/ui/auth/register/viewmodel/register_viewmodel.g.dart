@@ -28,8 +28,8 @@ mixin _$RegisterViewModel on _RegisterViewModelBase, Store {
 
   @override
   Future<void> register(TextEditingController e, TextEditingController p1,
-      TextEditingController p2) {
-    return _$registerAsyncAction.run(() => super.register(e, p1, p2));
+      TextEditingController p2, TextEditingController user) {
+    return _$registerAsyncAction.run(() => super.register(e, p1, p2, user));
   }
 
   final _$goLoginAsyncAction = AsyncAction('_RegisterViewModelBase.goLogin');

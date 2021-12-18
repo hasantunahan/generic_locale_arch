@@ -27,4 +27,16 @@ class Validator {
       }
     }
   }
+
+  static String? userNameValidate(BuildContext context, String value) {
+    if (value.isEmpty) {
+      return S.of(context).user_validate_empty;
+    } else {
+      if (value.length < 2) {
+        return S.of(context).user_validate_lenght;
+      } else {
+        return null;
+      }
+    }
+  }
 }

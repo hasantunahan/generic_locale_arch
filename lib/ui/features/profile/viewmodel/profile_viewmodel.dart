@@ -1,13 +1,19 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
+import 'package:with_retro_firebase/_product/manager/user/firebase_user.dart';
 import 'package:with_retro_firebase/_product/model/my_anons/myanons.dart';
 import 'package:with_retro_firebase/_product/model/user/user_dto.dart';
 import 'package:with_retro_firebase/core/base/model/baseviewmodel.dart';
+import 'package:with_retro_firebase/locator.dart';
 part 'profile_viewmodel.g.dart';
 
 class ProfileViewModel = _ProfileViewModelBase with _$ProfileViewModel;
 
 abstract class _ProfileViewModelBase with Store, BaseViewModel {
+  var my = getIt<FirebaseUser>();
+
   @observable
   List<UserDTO> answeredUser = <UserDTO>[];
 
@@ -121,6 +127,7 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
   void setContext(BuildContext context) => this.context = context;
   @override
   void init() async {
+    log("geliyooorr");
     setDummyData();
   }
 }

@@ -41,7 +41,7 @@ class ProfileView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              renderProfileDescription(context, theme),
+              renderProfileDescription(context, theme, viewModel),
               const SizedBox(
                 height: 10,
               ),
@@ -143,15 +143,18 @@ class ProfileView extends StatelessWidget {
     );
   }
 
-  renderProfileDescription(BuildContext context, ThemeData theme) => Row(
+  renderProfileDescription(
+          BuildContext context, ThemeData theme, ProfileViewModel viewModel) =>
+      Row(
         children: [
           Container(
             padding: const EdgeInsets.all(3.0),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.0),
-                border: Border.all(color: theme.colorScheme.primary, width: 2)),
-            child: const DefaultAvatar(
-              photoUrl: 'https://tashteam.com/images/sero.png',
+                border:
+                    Border.all(color: theme.colorScheme.secondary, width: 2)),
+            child: DefaultAvatar(
+              photoUrl: viewModel.my.getUser()!.photoURL ?? "",
               height: 60,
               width: 60,
             ),
@@ -164,7 +167,7 @@ class ProfileView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 DefaultText(
-                  data: "Şerefcan Oğuz",
+                  data: "${viewModel.my.getUser()!.displayName}",
                   style: theme.textTheme.headline6!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
@@ -190,19 +193,19 @@ class ProfileView extends StatelessWidget {
                       child: Text(
                     '120',
                     style: theme.textTheme.subtitle1!
-                        .copyWith(color: theme.colorScheme.primary),
+                        .copyWith(color: theme.colorScheme.secondary),
                   )),
                   Expanded(
                       child: Text(
                     '23K',
                     style: theme.textTheme.subtitle1!
-                        .copyWith(color: theme.colorScheme.primary),
+                        .copyWith(color: theme.colorScheme.secondary),
                   )),
                   Expanded(
                       child: Text(
                     '17',
                     style: theme.textTheme.subtitle1!
-                        .copyWith(color: theme.colorScheme.primary),
+                        .copyWith(color: theme.colorScheme.secondary),
                   )),
                 ])
               ],

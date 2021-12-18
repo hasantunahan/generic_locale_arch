@@ -8,6 +8,7 @@
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -55,6 +56,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "enter_password": MessageLookupByLibrary.simpleMessage("Şifre giriniz"),
         "enter_password_again":
             MessageLookupByLibrary.simpleMessage("Şifrenizi tekrar giriniz"),
+        "enterusername":
+            MessageLookupByLibrary.simpleMessage("Kullanıcı adı giriniz"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Şifremi Unuttum"),
         "frequentlyquestion":
@@ -112,6 +115,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "signup": MessageLookupByLibrary.simpleMessage("Kayıt Ol"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Geç"),
         "start": MessageLookupByLibrary.simpleMessage("Giriş"),
+        "user_validate_empty":
+            MessageLookupByLibrary.simpleMessage("Kullanıcı adı boş geçilemez"),
+        "user_validate_lenght": MessageLookupByLibrary.simpleMessage(
+            "Kullanıcı adı en az 2 karakter olmalı"),
         "useraggrement":
             MessageLookupByLibrary.simpleMessage("Kullanıcı Sözleşmesi"),
         "verify": MessageLookupByLibrary.simpleMessage("Doğrula"),

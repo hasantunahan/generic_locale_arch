@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:package_info/package_info.dart';
+import 'package:with_retro_firebase/_product/manager/user/firebase_user.dart';
 import 'package:with_retro_firebase/_product/model/user/user_dto.dart';
 import 'package:with_retro_firebase/core/base/model/baseviewmodel.dart';
 import 'package:with_retro_firebase/core/constant/cache/cache_constant.dart';
@@ -24,6 +25,7 @@ class SettingsViewModel = _SettingsViewModelBase with _$SettingsViewModel;
 abstract class _SettingsViewModelBase with Store, BaseViewModel {
   var chatViewModel = getIt<ChatViewModel>();
   var themeManager = CacheManager<String>("setting");
+  var my = getIt<FirebaseUser>();
 
   @observable
   String version = '';
@@ -85,6 +87,7 @@ abstract class _SettingsViewModelBase with Store, BaseViewModel {
   void setContext(BuildContext context) => this.context = context;
   @override
   void init() async {
+    log("settins");
     themeManager.init().then((value) {
       themeManager.getItem(Cacheconstant.theme) == "dark"
           ? theme = true

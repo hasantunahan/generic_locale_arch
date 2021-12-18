@@ -15,6 +15,7 @@ import 'package:with_retro_firebase/core/extension/image/image_extension.dart';
 
 class RegisterView extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController passwordControllerAgain = TextEditingController();
   final formkey = GlobalKey<FormState>();
@@ -109,6 +110,8 @@ class RegisterView extends StatelessWidget {
                 const SizedBox(height: 10),
                 renderEmailTextField(context, theme),
                 const SizedBox(height: 10),
+                renderUserNameTextField(context, theme),
+                const SizedBox(height: 10),
                 renderPasswordTextField(context, theme),
                 const SizedBox(height: 10),
                 renderPasswordTextFieldAgain(context, theme),
@@ -140,8 +143,8 @@ class RegisterView extends StatelessWidget {
       buttonColor: theme.colorScheme.secondary,
       textColor: Colors.white,
       text: S.of(context).signup.toUpperCase(),
-      onPressed: () => value.register(
-          emailController, passwordController, passwordControllerAgain),
+      onPressed: () => value.register(emailController, passwordController,
+          passwordControllerAgain, usernameController),
     );
   }
 
@@ -180,6 +183,18 @@ class RegisterView extends StatelessWidget {
       theme: theme,
       validator: (value) {
         return Validator.emailValidate(context, emailController.text);
+      },
+    );
+  }
+
+  renderUserNameTextField(BuildContext context, ThemeData theme) {
+    return DefaultTextField(
+      controller: usernameController,
+      icon: Icons.person,
+      hintText: S.of(context).enterusername,
+      theme: theme,
+      validator: (value) {
+        return Validator.userNameValidate(context, usernameController.text);
       },
     );
   }

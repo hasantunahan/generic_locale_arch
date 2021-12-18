@@ -8,6 +8,7 @@
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -57,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter password"),
         "enter_password_again":
             MessageLookupByLibrary.simpleMessage("Repeat password again"),
+        "enterusername": MessageLookupByLibrary.simpleMessage("Enter username"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot Password"),
         "frequentlyquestion":
@@ -111,6 +113,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Skip"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
+        "user_validate_empty":
+            MessageLookupByLibrary.simpleMessage("Username cannot be blank"),
+        "user_validate_lenght": MessageLookupByLibrary.simpleMessage(
+            "Username must be at least 2 characters!"),
         "useraggrement": MessageLookupByLibrary.simpleMessage("User Agrement"),
         "verify": MessageLookupByLibrary.simpleMessage("Verify"),
         "verify_info_textarea": MessageLookupByLibrary.simpleMessage(
