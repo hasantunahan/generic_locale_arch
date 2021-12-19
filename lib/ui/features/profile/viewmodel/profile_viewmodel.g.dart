@@ -9,6 +9,21 @@ part of 'profile_viewmodel.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$ProfileViewModel on _ProfileViewModelBase, Store {
+  final _$myAtom = Atom(name: '_ProfileViewModelBase.my');
+
+  @override
+  FirebaseUser get my {
+    _$myAtom.reportRead();
+    return super.my;
+  }
+
+  @override
+  set my(FirebaseUser value) {
+    _$myAtom.reportWrite(value, super.my, () {
+      super.my = value;
+    });
+  }
+
   final _$answeredUserAtom = Atom(name: '_ProfileViewModelBase.answeredUser');
 
   @override
@@ -39,6 +54,14 @@ mixin _$ProfileViewModel on _ProfileViewModelBase, Store {
     });
   }
 
+  final _$goEditPageAsyncAction =
+      AsyncAction('_ProfileViewModelBase.goEditPage');
+
+  @override
+  Future goEditPage() {
+    return _$goEditPageAsyncAction.run(() => super.goEditPage());
+  }
+
   final _$_ProfileViewModelBaseActionController =
       ActionController(name: '_ProfileViewModelBase');
 
@@ -56,6 +79,7 @@ mixin _$ProfileViewModel on _ProfileViewModelBase, Store {
   @override
   String toString() {
     return '''
+my: ${my},
 answeredUser: ${answeredUser},
 myAnons: ${myAnons}
     ''';

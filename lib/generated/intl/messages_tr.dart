@@ -35,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "aresurelogout": MessageLookupByLibrary.simpleMessage(
             "Uygulamadan çıkmak istediğine eminmisin?"),
         "back": MessageLookupByLibrary.simpleMessage("Geri"),
+        "changeprofileimage":
+            MessageLookupByLibrary.simpleMessage("Profil fotoğrafı değitir"),
         "changetheme": MessageLookupByLibrary.simpleMessage("Tema Değiştir"),
         "chats": MessageLookupByLibrary.simpleMessage("Sohbetler"),
         "chatsearch": MessageLookupByLibrary.simpleMessage("Sohbette ara"),
@@ -108,6 +110,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Yeni Hesap Oluştur"),
         "responders":
             MessageLookupByLibrary.simpleMessage("Anonslarıma cevap verenler"),
+        "save": MessageLookupByLibrary.simpleMessage("Kaydet"),
         "send_again": MessageLookupByLibrary.simpleMessage("Tekrar Gönder"),
         "send_reset":
             MessageLookupByLibrary.simpleMessage("Sıfırlama Linki Gönder"),

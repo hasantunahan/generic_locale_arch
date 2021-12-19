@@ -70,5 +70,7 @@
   "iptal" : "İptal",
   "enterusername" : "Kullanıcı adı giriniz",
   "user_validate_empty" : "Kullanıcı adı boş geçilemez",
-  "user_validate_lenght" : "Kullanıcı adı en az 2 karakter olmalı"
+  "user_validate_lenght" : "Kullanıcı adı en az 2 karakter olmalı",
+  "changeprofileimage" : "Profil fotoğrafı değitir",
+  "save" : "Kaydet"
 }

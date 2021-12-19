@@ -35,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "aresurelogout":
             MessageLookupByLibrary.simpleMessage("Are you sure logout app?"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
+        "changeprofileimage":
+            MessageLookupByLibrary.simpleMessage("Change profile image"),
         "changetheme": MessageLookupByLibrary.simpleMessage("Change Theme"),
         "chats": MessageLookupByLibrary.simpleMessage("Chats"),
         "chatsearch": MessageLookupByLibrary.simpleMessage("Search in chat"),
@@ -107,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Create new account"),
         "responders": MessageLookupByLibrary.simpleMessage(
             "Responders to their announcements"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
         "send_reset": MessageLookupByLibrary.simpleMessage("Send Reset Link"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),

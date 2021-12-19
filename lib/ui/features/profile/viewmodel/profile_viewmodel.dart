@@ -7,12 +7,14 @@ import 'package:with_retro_firebase/_product/manager/user/firebase_user.dart';
 import 'package:with_retro_firebase/_product/model/my_anons/myanons.dart';
 import 'package:with_retro_firebase/_product/model/user/user_dto.dart';
 import 'package:with_retro_firebase/core/base/model/baseviewmodel.dart';
+import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
 import 'package:with_retro_firebase/locator.dart';
 part 'profile_viewmodel.g.dart';
 
 class ProfileViewModel = _ProfileViewModelBase with _$ProfileViewModel;
 
 abstract class _ProfileViewModelBase with Store, BaseViewModel {
+  @observable
   var my = getIt<FirebaseUser>();
 
   @observable
@@ -20,6 +22,11 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
 
   @observable
   List<MyAnons> myAnons = <MyAnons>[];
+
+  @action
+  goEditPage() async {
+    await navigation.navigateToPage(path: NavigationConstants.editprofile);
+  }
 
   @action
   setDummyData() {
@@ -128,6 +135,7 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
   void setContext(BuildContext context) => this.context = context;
   @override
   void init() async {
+    my.getUser()!.reload();
     setDummyData();
   }
 }

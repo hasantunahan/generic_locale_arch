@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:with_retro_firebase/_product/components/anons_profile_card/anons_profile_card.dart';
 import 'package:with_retro_firebase/_product/components/avatar/avatar.dart';
 import 'package:with_retro_firebase/_product/components/avatar_with_add/avatar_with_add.dart';
@@ -52,7 +53,7 @@ class ProfileView extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              renderEditProfile(context, theme),
+              renderEditProfile(context, theme, viewModel),
               const SizedBox(
                 height: 5,
               ),
@@ -125,7 +126,8 @@ class ProfileView extends StatelessWidget {
     );
   }
 
-  renderEditProfile(BuildContext context, ThemeData theme) {
+  renderEditProfile(
+      BuildContext context, ThemeData theme, ProfileViewModel viewModel) {
     return Row(
       children: [
         Expanded(
@@ -134,7 +136,7 @@ class ProfileView extends StatelessWidget {
             textColor: theme.colorScheme.primaryVariant,
             buttonColor: theme.colorScheme.onPrimary,
             onPressed: () {
-              log("edit");
+              viewModel.goEditPage();
             },
           ),
         ),
@@ -175,11 +177,13 @@ class ProfileView extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8.0),
                 border:
                     Border.all(color: theme.colorScheme.secondary, width: 2)),
-            child: DefaultAvatar(
-              photoUrl: viewModel.my.getUser()!.photoURL ?? "",
-              height: 60,
-              width: 60,
-            ),
+            child: Observer(builder: (_) {
+              return DefaultAvatar(
+                photoUrl: viewModel.my.getUser()!.photoURL ?? "",
+                height: 60,
+                width: 60,
+              );
+            }),
           ),
           const SizedBox(
             width: 12,
@@ -188,11 +192,13 @@ class ProfileView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                DefaultText(
-                  data: "${viewModel.my.getUser()!.displayName}",
-                  style: theme.textTheme.headline6!
-                      .copyWith(fontWeight: FontWeight.bold),
-                ),
+                Observer(builder: (_) {
+                  return DefaultText(
+                    data: "${viewModel.my.getUser()!.displayName}",
+                    style: theme.textTheme.headline6!
+                        .copyWith(fontWeight: FontWeight.bold),
+                  );
+                }),
                 Row(children: [
                   Expanded(
                       child: Text(

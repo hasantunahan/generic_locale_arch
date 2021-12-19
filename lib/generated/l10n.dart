@@ -769,6 +769,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Change profile image`
+  String get changeprofileimage {
+    return Intl.message(
+      'Change profile image',
+      name: 'changeprofileimage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

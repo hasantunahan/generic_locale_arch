@@ -70,5 +70,7 @@
   "iptal" : "Cancel",
   "enterusername" : "Enter username",
   "user_validate_empty" : "Username cannot be blank",
-  "user_validate_lenght" : "Username must be at least 2 characters!"
-}
+  "user_validate_lenght" : "Username must be at least 2 characters!",
+  "changeprofileimage" : "Change profile image",
+  "save" : "Save"
+ }

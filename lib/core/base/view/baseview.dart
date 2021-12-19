@@ -39,6 +39,12 @@ class _BaseViewState<T> extends State<BaseView<T>> {
   }
 
   @override
+  void didUpdateWidget(covariant BaseView<T> oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    log("update");
+  }
+
+  @override
   Widget build(BuildContext context) {
     return widget.onPageBuilder(context, model);
   }

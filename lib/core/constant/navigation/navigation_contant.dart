@@ -9,4 +9,5 @@ class NavigationConstants {
   static const verify = '/verify';
   static const forgotpassword = '/forgotpassword';
   static const language = '/language';
+  static const editprofile = '/editprofile';
 }
