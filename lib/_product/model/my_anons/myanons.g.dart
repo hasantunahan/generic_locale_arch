@@ -7,7 +7,7 @@ part of 'myanons.dart';
 // **************************************************************************
 
 MyAnons _$MyAnonsFromJson(Map<String, dynamic> json) => MyAnons(
-      id: json['id'] as int?,
+      id: json['id'] as String?,
       name: json['name'] as String?,
       email: json['email'] as String?,
       sender: json['sender'] as String?,

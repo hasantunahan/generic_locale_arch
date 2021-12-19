@@ -1,8 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:with_retro_firebase/core/base/model/basemodel.dart';
 part 'user_dto.g.dart';
 
 @JsonSerializable()
-class UserDTO {
+class UserDTO extends BaseModel<UserDTO> {
   int? id;
   String? name;
   String? email;
@@ -19,8 +20,13 @@ class UserDTO {
     this.url,
   });
 
-  factory UserDTO.fromJson(Map<String, dynamic> json) =>
-      _$UserDTOFromJson(json);
+  @override
+  UserDTO fromJson(Map<String, Object?> json) {
+    return _$UserDTOFromJson(json);
+  }
 
-  Map<String, dynamic> toJson() => _$UserDTOToJson(this);
+  @override
+  Map<String, Object?> toJson() {
+    return _$UserDTOToJson(this);
+  }
 }

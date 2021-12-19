@@ -1,11 +1,17 @@
 import 'dart:developer';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:with_retro_firebase/_product/components/anons_profile_card/anons_profile_card.dart';
 import 'package:with_retro_firebase/_product/components/avatar/avatar.dart';
 import 'package:with_retro_firebase/_product/components/avatar_with_add/avatar_with_add.dart';
+import 'package:with_retro_firebase/_product/constants/firebase/collection.dart';
 import 'package:with_retro_firebase/_product/constants/image/image_list.dart';
+import 'package:with_retro_firebase/_product/manager/collections/firebase_collection.dart';
+import 'package:with_retro_firebase/_product/manager/user/firebase_user.dart';
+import 'package:with_retro_firebase/_product/model/my_anons/myanons.dart';
+import 'package:with_retro_firebase/_product/model/test/test.dart';
 import 'package:with_retro_firebase/core/base/view/baseview.dart';
 import 'package:with_retro_firebase/core/components/autosizetext/text.dart';
 import 'package:with_retro_firebase/core/components/button/button.dart';
@@ -13,6 +19,7 @@ import 'package:with_retro_firebase/core/extension/context_extension.dart';
 import 'package:with_retro_firebase/core/extension/image/image_extension.dart';
 import 'package:with_retro_firebase/generated/l10n.dart';
 import 'package:with_retro_firebase/ui/features/profile/viewmodel/profile_viewmodel.dart';
+import 'package:with_retro_firebase/ui/splash/model/user.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -61,12 +68,27 @@ class ProfileView extends StatelessWidget {
   }
 
   renderMyAnonsList(ProfileViewModel viewModel) {
-    return Column(
-      children: viewModel.myAnons.map((e) {
-        return AnonsProfileCard(
-          e: e,
-        );
-      }).toList(),
+    return StreamBuilder(
+      stream:
+          FirebaseCollection.instance.readLiveData(FirebaseCollections.anons),
+      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasData) {
+          return ListView(
+            shrinkWrap: true,
+            children: FirebaseCollection.instance
+                .liveData(snapshot, MyAnons())
+                .map((e) {
+              return Visibility(
+                  visible: FirebaseUser.instance.getUser()!.uid == e.id,
+                  child: AnonsProfileCard(
+                    e: e,
+                  ));
+            }).toList(),
+          );
+        } else {
+          return Container();
+        }
+      },
     );
   }
 

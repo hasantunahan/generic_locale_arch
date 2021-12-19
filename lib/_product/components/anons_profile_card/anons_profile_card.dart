@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:with_retro_firebase/_product/components/avatar/avatar.dart';
+import 'package:with_retro_firebase/_product/manager/user/firebase_user.dart';
 import 'package:with_retro_firebase/_product/model/my_anons/myanons.dart';
 import 'package:with_retro_firebase/core/components/autosizetext/text.dart';
 import 'package:with_retro_firebase/core/extension/context_extension.dart';
@@ -28,7 +29,7 @@ class AnonsProfileCard extends StatelessWidget {
               Row(
                 children: [
                   DefaultAvatar(
-                    photoUrl: e!.url,
+                    photoUrl: FirebaseUser.instance.getUser()!.photoURL,
                     width: 20,
                     height: 20,
                   ),
@@ -36,7 +37,7 @@ class AnonsProfileCard extends StatelessWidget {
                     width: 10,
                   ),
                   DefaultText(
-                      data: e!.name ?? "",
+                      data: FirebaseUser.instance.getUser()!.displayName ?? "",
                       style: theme.textTheme.bodyText2!
                           .copyWith(fontWeight: FontWeight.bold))
                 ],

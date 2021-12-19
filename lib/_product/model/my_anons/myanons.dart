@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:with_retro_firebase/core/base/model/basemodel.dart';
 part 'myanons.g.dart';
 
 @JsonSerializable()
-class MyAnons {
-  int? id;
+class MyAnons extends BaseModel<MyAnons> {
+  String? id;
   String? name;
   String? email;
   String? sender;
@@ -31,8 +33,18 @@ class MyAnons {
     this.likes,
   });
 
-  factory MyAnons.fromJson(Map<String, dynamic> json) =>
-      _$MyAnonsFromJson(json);
+  /* factory MyAnons.fromJson(Map<String, dynamic> json) =>
+      _$MyAnonsFromJson(json); */
 
   // factory Map<String, dynamic> User.toJson() => _$UserToJson(this);
+
+  @override
+  MyAnons fromJson(Map<String, Object?> json) {
+    return _$MyAnonsFromJson(json);
+  }
+
+  @override
+  Map<String, Object?> toJson() {
+    return _$MyAnonsToJson(this);
+  }
 }

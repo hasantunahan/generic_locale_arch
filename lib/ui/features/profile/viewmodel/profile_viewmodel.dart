@@ -60,7 +60,7 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
     );
 
     myAnons.add(MyAnons(
-        id: 1,
+        id: "1",
         name: "Şerefcan Oğuz",
         isFavorite: true,
         date: '10.12.2021',
@@ -71,7 +71,7 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
         text: "Okeye 4. arıyoruz gelmek isteyen varsa Kızılaydayız X mekan"));
 
     myAnons.add(MyAnons(
-        id: 2,
+        id: "2",
         name: "Şerefcan Oğuz",
         isFavorite: false,
         comments: 12,
@@ -81,7 +81,7 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
         location: "US / Malta",
         text: "Okeye 4. arıyoruz gelmek isteyen varsa Kızılaydayız X mekan"));
     myAnons.add(MyAnons(
-        id: 1,
+        id: "1",
         name: "Şerefcan Oğuz",
         isFavorite: true,
         date: '10.12.2021',
@@ -92,7 +92,7 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
         text: "Okeye 4. arıyoruz gelmek isteyen varsa Kızılaydayız X mekan"));
 
     myAnons.add(MyAnons(
-        id: 2,
+        id: "2",
         name: "Şerefcan Oğuz",
         isFavorite: false,
         comments: 12,
@@ -102,7 +102,7 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
         location: "US / Malta",
         text: "Okeye 4. arıyoruz gelmek isteyen varsa Kızılaydayız X mekan"));
     myAnons.add(MyAnons(
-        id: 1,
+        id: "1",
         name: "Şerefcan Oğuz",
         isFavorite: true,
         date: '10.12.2021',
@@ -113,7 +113,7 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
         text: "Okeye 4. arıyoruz gelmek isteyen varsa Kızılaydayız X mekan"));
 
     myAnons.add(MyAnons(
-        id: 2,
+        id: "2",
         name: "Şerefcan Oğuz",
         isFavorite: false,
         comments: 12,
