@@ -81,9 +81,12 @@ class ProfileView extends StatelessWidget {
                 .map((e) {
               return Visibility(
                   visible: FirebaseUser.instance.getUser()!.uid == e.id,
-                  child: AnonsProfileCard(
-                    e: e,
-                  ));
+                  child: Observer(builder: (_) {
+                    return AnonsProfileCard(
+                      user: viewModel.user,
+                      e: e,
+                    );
+                  }));
             }).toList(),
           );
         } else {
@@ -179,7 +182,7 @@ class ProfileView extends StatelessWidget {
                     Border.all(color: theme.colorScheme.secondary, width: 2)),
             child: Observer(builder: (_) {
               return DefaultAvatar(
-                photoUrl: viewModel.my.getUser()!.photoURL ?? "",
+                photoUrl: viewModel.user.photoURL,
                 height: 60,
                 width: 60,
               );
@@ -194,7 +197,7 @@ class ProfileView extends StatelessWidget {
               children: [
                 Observer(builder: (_) {
                   return DefaultText(
-                    data: "${viewModel.my.getUser()!.displayName}",
+                    data: "${viewModel.user.displayName}",
                     style: theme.textTheme.headline6!
                         .copyWith(fontWeight: FontWeight.bold),
                   );

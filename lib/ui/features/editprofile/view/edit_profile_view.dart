@@ -28,70 +28,75 @@ class EditProfile extends StatelessWidget {
           model.setContext(context);
         },
         onPageBuilder: (BuildContext context, EditProfileViewModel viewModel) =>
-            Scaffold(
-              backgroundColor: theme.backgroundColor,
-              appBar: AppBar(
+            WillPopScope(
+              onWillPop: () async {
+                return true;
+              },
+              child: Scaffold(
                 backgroundColor: theme.backgroundColor,
-                iconTheme: theme.iconTheme,
-                elevation: 0,
-                title: DefaultText(
-                  data: S.of(context).editprofile,
-                  style: theme.textTheme.bodyText2,
+                appBar: AppBar(
+                  backgroundColor: theme.backgroundColor,
+                  iconTheme: theme.iconTheme,
+                  elevation: 0,
+                  title: DefaultText(
+                    data: S.of(context).editprofile,
+                    style: theme.textTheme.bodyText2,
+                  ),
                 ),
-              ),
-              body: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Center(
-                      child: DefaultAvatar(
-                        photoUrl: FirebaseUser.instance.getUser()!.photoURL,
+                body: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    TextButton(
-                        onPressed: () {
-                          log("edit profile image");
-                        },
-                        child: DefaultText(
-                          data: S.of(context).changeprofileimage,
-                          style: theme.textTheme.bodyText1!
-                              .copyWith(color: theme.colorScheme.secondary),
-                        )),
-                    Divider(
-                      color: theme.colorScheme.primaryVariant,
-                      thickness: 0.2,
-                    ),
-                    DefaultTextField(
-                      theme: theme,
-                      controller: nameController,
-                      icon: Icons.person,
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        DefaultButtonWithStyle(
-                          width: context.width * .4,
-                          text: S.of(context).iptal,
-                          onPressed: () {},
-                          buttonColor: Colors.red,
+                      Center(
+                        child: DefaultAvatar(
+                          photoUrl: FirebaseUser.instance.getUser()!.photoURL,
                         ),
-                        DefaultButtonWithStyle(
-                          width: context.width * .4,
-                          text: S.of(context).save,
-                          buttonColor: Colors.green,
+                      ),
+                      TextButton(
                           onPressed: () {
-                            viewModel.changeProfile(
-                                "photoURL", nameController.text);
+                            log("edit profile image");
                           },
-                        ),
-                      ],
-                    )
-                  ],
+                          child: DefaultText(
+                            data: S.of(context).changeprofileimage,
+                            style: theme.textTheme.bodyText1!
+                                .copyWith(color: theme.colorScheme.secondary),
+                          )),
+                      Divider(
+                        color: theme.colorScheme.primaryVariant,
+                        thickness: 0.2,
+                      ),
+                      DefaultTextField(
+                        theme: theme,
+                        controller: nameController,
+                        icon: Icons.person,
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          DefaultButtonWithStyle(
+                            width: context.width * .4,
+                            text: S.of(context).iptal,
+                            onPressed: () {},
+                            buttonColor: Colors.red,
+                          ),
+                          DefaultButtonWithStyle(
+                            width: context.width * .4,
+                            text: S.of(context).save,
+                            buttonColor: Colors.green,
+                            onPressed: () {
+                              viewModel.changeProfile(
+                                  "photoURL", nameController.text);
+                            },
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ));

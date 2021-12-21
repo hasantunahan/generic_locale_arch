@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:with_retro_firebase/_product/manager/user/firebase_user.dart';
@@ -16,13 +17,13 @@ class EditProfileViewModel = _EditProfileViewModelBase
 abstract class _EditProfileViewModelBase with Store, BaseViewModel {
   var profileView = getIt<ProfileViewModel>();
   var nav = getIt<HomeNavViewModel>();
+  ProfileViewModel profileViewModel = ProfileViewModel();
 
   @action
   changeProfile(String photoURL, String name) async {
     try {
       await FirebaseUser.instance.getUser()!.updateDisplayName(name);
       DefaultSnackBar().getSnackbar(context, 'Başarılı', Colors.greenAccent);
-      nav.currentindex = 1;
     } catch (e) {
       log("başarızsız");
     }

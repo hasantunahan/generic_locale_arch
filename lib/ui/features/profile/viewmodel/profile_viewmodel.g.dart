@@ -24,6 +24,36 @@ mixin _$ProfileViewModel on _ProfileViewModelBase, Store {
     });
   }
 
+  final _$userAtom = Atom(name: '_ProfileViewModelBase.user');
+
+  @override
+  User get user {
+    _$userAtom.reportRead();
+    return super.user;
+  }
+
+  @override
+  set user(User value) {
+    _$userAtom.reportWrite(value, super.user, () {
+      super.user = value;
+    });
+  }
+
+  final _$nameAtom = Atom(name: '_ProfileViewModelBase.name');
+
+  @override
+  String get name {
+    _$nameAtom.reportRead();
+    return super.name;
+  }
+
+  @override
+  set name(String value) {
+    _$nameAtom.reportWrite(value, super.name, () {
+      super.name = value;
+    });
+  }
+
   final _$answeredUserAtom = Atom(name: '_ProfileViewModelBase.answeredUser');
 
   @override
@@ -66,6 +96,17 @@ mixin _$ProfileViewModel on _ProfileViewModelBase, Store {
       ActionController(name: '_ProfileViewModelBase');
 
   @override
+  dynamic setNewName() {
+    final _$actionInfo = _$_ProfileViewModelBaseActionController.startAction(
+        name: '_ProfileViewModelBase.setNewName');
+    try {
+      return super.setNewName();
+    } finally {
+      _$_ProfileViewModelBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   dynamic setDummyData() {
     final _$actionInfo = _$_ProfileViewModelBaseActionController.startAction(
         name: '_ProfileViewModelBase.setDummyData');
@@ -80,6 +121,8 @@ mixin _$ProfileViewModel on _ProfileViewModelBase, Store {
   String toString() {
     return '''
 my: ${my},
+user: ${user},
+name: ${name},
 answeredUser: ${answeredUser},
 myAnons: ${myAnons}
     ''';

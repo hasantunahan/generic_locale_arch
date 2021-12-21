@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:with_retro_firebase/_product/components/avatar/avatar.dart';
 import 'package:with_retro_firebase/_product/manager/user/firebase_user.dart';
@@ -9,7 +10,9 @@ import 'package:with_retro_firebase/generated/l10n.dart';
 
 class AnonsProfileCard extends StatelessWidget {
   final MyAnons? e;
-  const AnonsProfileCard({Key? key, this.e}) : super(key: key);
+  final User user;
+  const AnonsProfileCard({Key? key, this.e, required this.user})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,7 @@ class AnonsProfileCard extends StatelessWidget {
               Row(
                 children: [
                   DefaultAvatar(
-                    photoUrl: FirebaseUser.instance.getUser()!.photoURL,
+                    photoUrl: user.photoURL,
                     width: 20,
                     height: 20,
                   ),
@@ -37,7 +40,7 @@ class AnonsProfileCard extends StatelessWidget {
                     width: 10,
                   ),
                   DefaultText(
-                      data: FirebaseUser.instance.getUser()!.displayName ?? "",
+                      data: user.displayName ?? "",
                       style: theme.textTheme.bodyText2!
                           .copyWith(fontWeight: FontWeight.bold))
                 ],

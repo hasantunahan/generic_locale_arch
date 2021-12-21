@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:mobx/mobx.dart';
@@ -18,6 +19,12 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
   var my = getIt<FirebaseUser>();
 
   @observable
+  User user = FirebaseAuth.instance.currentUser!;
+
+  @observable
+  String name = 'hasan';
+
+  @observable
   List<UserDTO> answeredUser = <UserDTO>[];
 
   @observable
@@ -26,6 +33,15 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
   @action
   goEditPage() async {
     await navigation.navigateToPage(path: NavigationConstants.editprofile);
+    await FirebaseAuth.instance.currentUser!.reload();
+    user = FirebaseAuth.instance.currentUser!;
+  }
+
+  @action
+  setNewName() {
+    log("merhabaaa");
+    name = "tunahan";
+    log(name);
   }
 
   @action
@@ -135,7 +151,6 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
   void setContext(BuildContext context) => this.context = context;
   @override
   void init() async {
-    my.getUser()!.reload();
     setDummyData();
   }
 }

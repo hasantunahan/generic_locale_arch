@@ -21,7 +21,7 @@ class BaseView<T> extends StatefulWidget {
   _BaseViewState<T> createState() => _BaseViewState<T>();
 }
 
-class _BaseViewState<T> extends State<BaseView<T>> {
+class _BaseViewState<T> extends State<BaseView<T>> with WidgetsBindingObserver {
   late T model;
   @override
   void initState() {
@@ -41,11 +41,22 @@ class _BaseViewState<T> extends State<BaseView<T>> {
   @override
   void didUpdateWidget(covariant BaseView<T> oldWidget) {
     super.didUpdateWidget(oldWidget);
-    log("update");
+    log("did update widget");
   }
 
   @override
   Widget build(BuildContext context) {
     return widget.onPageBuilder(context, model);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    log("didChangeDependencies");
+  }
+
+  @override
+  didChangeAppLifecycleState(AppLifecycleState state) {
+    log("lifecycle");
   }
 }
