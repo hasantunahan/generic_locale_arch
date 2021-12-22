@@ -72,5 +72,8 @@
   "user_validate_empty" : "Username cannot be blank",
   "user_validate_lenght" : "Username must be at least 2 characters!",
   "changeprofileimage" : "Change profile image",
-  "save" : "Save"
+  "save" : "Save",
+  "takeaphoto" : "Take a photo",
+  "selectgallery" : "Select gallery",
+  "updateSuccessfully" : "Update successfully"
  }

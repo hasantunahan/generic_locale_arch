@@ -110,12 +110,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "responders": MessageLookupByLibrary.simpleMessage(
             "Responders to their announcements"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
+        "selectgallery": MessageLookupByLibrary.simpleMessage("Select gallery"),
         "send_again": MessageLookupByLibrary.simpleMessage("Send again"),
         "send_reset": MessageLookupByLibrary.simpleMessage("Send Reset Link"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Skip"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
+        "takeaphoto": MessageLookupByLibrary.simpleMessage("Take a photo"),
+        "updateSuccessfully":
+            MessageLookupByLibrary.simpleMessage("Update successfully"),
         "user_validate_empty":
             MessageLookupByLibrary.simpleMessage("Username cannot be blank"),
         "user_validate_lenght": MessageLookupByLibrary.simpleMessage(

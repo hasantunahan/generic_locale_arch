@@ -111,6 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "responders":
             MessageLookupByLibrary.simpleMessage("Anonslarıma cevap verenler"),
         "save": MessageLookupByLibrary.simpleMessage("Kaydet"),
+        "selectgallery": MessageLookupByLibrary.simpleMessage("Galeriden seç"),
         "send_again": MessageLookupByLibrary.simpleMessage("Tekrar Gönder"),
         "send_reset":
             MessageLookupByLibrary.simpleMessage("Sıfırlama Linki Gönder"),
@@ -118,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "signup": MessageLookupByLibrary.simpleMessage("Kayıt Ol"),
         "skip_intro": MessageLookupByLibrary.simpleMessage("Geç"),
         "start": MessageLookupByLibrary.simpleMessage("Giriş"),
+        "takeaphoto": MessageLookupByLibrary.simpleMessage("Fotoğraf Çek"),
+        "updateSuccessfully":
+            MessageLookupByLibrary.simpleMessage("Güncelleme başarılı"),
         "user_validate_empty":
             MessageLookupByLibrary.simpleMessage("Kullanıcı adı boş geçilemez"),
         "user_validate_lenght": MessageLookupByLibrary.simpleMessage(

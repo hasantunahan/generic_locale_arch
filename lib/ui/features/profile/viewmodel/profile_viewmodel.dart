@@ -35,6 +35,7 @@ abstract class _ProfileViewModelBase with Store, BaseViewModel {
     await navigation.navigateToPage(path: NavigationConstants.editprofile);
     await FirebaseAuth.instance.currentUser!.reload();
     user = FirebaseAuth.instance.currentUser!;
+    log(user.photoURL.toString());
   }
 
   @action
