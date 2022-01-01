@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 import 'package:with_retro_firebase/core/init/service/notification.dart';
+import 'package:with_retro_firebase/environment/config/config_reader.dart';
 import 'package:with_retro_firebase/locator.dart';
 import 'core/init/navigation/route/navigation_route.dart';
 import 'core/init/navigation/service/navigation_service.dart';
@@ -19,9 +20,10 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   log('A bg message just showed up :  ${message.messageId}');
 }
 
-Future<void> main() async {
+Future<void> mainCommon(String env) async {
   locator();
-  await _init();
+  await _init(env);
+  await Configreader.getInitiliaze(env);
   await Hive.initFlutter();
   await Firebase.initializeApp();
   FirebaseMessaging.instance.requestPermission();
@@ -35,8 +37,16 @@ Future<void> main() async {
   );
 }
 
-Future<void> _init() async {
+Future<void> _init(env) async {
   WidgetsFlutterBinding.ensureInitialized();
+  switch (env) {
+    case 'dev':
+      return log("development");
+    case 'prod':
+      return log("prod");
+    default:
+      return log("message");
+  }
 }
 
 class MyApp extends StatelessWidget {

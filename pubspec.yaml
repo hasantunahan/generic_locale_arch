@@ -106,6 +106,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/lotties/
+    - assets/config/
   # fonts:
   #   - family: Schyler
   #     fonts:
