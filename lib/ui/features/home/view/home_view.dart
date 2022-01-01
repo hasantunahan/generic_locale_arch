@@ -9,6 +9,7 @@ import 'package:with_retro_firebase/core/base/view/baseview.dart';
 import 'package:with_retro_firebase/core/components/autosizetext/text.dart';
 import 'package:with_retro_firebase/core/extension/context_extension.dart';
 import 'package:with_retro_firebase/core/extension/image/image_extension.dart';
+import 'package:with_retro_firebase/environment/config/config_reader.dart';
 import 'package:with_retro_firebase/generated/l10n.dart';
 import 'package:with_retro_firebase/ui/features/home/viewmodel/home_viewmodel.dart';
 
@@ -42,6 +43,7 @@ class HomeView extends StatelessWidget {
                   : ImageList.logolight.toImagePng,
             ),
           ),
+          Text(Configreader.getKey()),
           Expanded(
             flex: 17,
             child: SingleChildScrollView(
