@@ -59,7 +59,10 @@ class ChatView extends StatelessWidget {
           itemBuilder: (context, index) {
             return ChatListCard(
               model: viewModel.chatList[index],
-              onPress: (val) => {log(val.senderName ?? "")},
+              onPress: (val) => {
+                viewModel.goMessaging(
+                    {"name": val.senderName, "photo": val.senderPhoto})
+              },
             );
           },
         )),

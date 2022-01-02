@@ -24,6 +24,14 @@ mixin _$ChatViewModel on _ChatViewModelBase, Store {
     });
   }
 
+  final _$goMessagingAsyncAction =
+      AsyncAction('_ChatViewModelBase.goMessaging');
+
+  @override
+  Future goMessaging(Object args) {
+    return _$goMessagingAsyncAction.run(() => super.goMessaging(args));
+  }
+
   final _$_ChatViewModelBaseActionController =
       ActionController(name: '_ChatViewModelBase');
 

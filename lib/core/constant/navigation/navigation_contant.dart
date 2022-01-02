@@ -10,4 +10,5 @@ class NavigationConstants {
   static const forgotpassword = '/forgotpassword';
   static const language = '/language';
   static const editprofile = '/editprofile';
+  static const messaging = "/messaging";
 }

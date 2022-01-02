@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:with_retro_firebase/core/base/model/baseviewmodel.dart';
+import 'package:with_retro_firebase/core/constant/navigation/navigation_contant.dart';
 import 'package:with_retro_firebase/ui/features/chat/model/chat.dart';
 part 'chat_view_model.g.dart';
 
@@ -57,6 +58,12 @@ abstract class _ChatViewModelBase with Store, BaseViewModel {
         unreadCount: 0,
         senderid: 2424));
     log("get test");
+  }
+
+  @action
+  goMessaging(Object args) async {
+    await navigation.navigateToPage(
+        path: NavigationConstants.messaging, data: args);
   }
 
   @override
